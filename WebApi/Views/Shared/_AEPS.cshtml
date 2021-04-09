@@ -1,0 +1,1104 @@
+﻿
+
+
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-6 stretch-card grid-margin pd-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title">
+                    AEPS Services
+                </h4>
+
+                <div class="row">
+                    @*<div class="col-md-3 col-sm-3 col-12 mb-3">
+                        <div class="vertical-tab">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                                        <img src="~/Content/Plugins/bbps/images/ico1.png" /><br /> Cash Withdrawal
+
+                                    </a>
+
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="contact" aria-selected="false">
+
+                                        <img src="~/Content/Plugins/bbps/images/ico3.png" /><br />
+                                        Balance Enquiry
+                                    </a>
+
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="profile" aria-selected="false">
+
+                                        <img src="~/Content/Plugins/bbps/images/ico2.png" /><br />
+                                        Mini Statement
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>*@
+
+                    <div class="col-md-12 col-sm-12 col-12">
+                        <div class="row">
+                            <div class="tab-content tab-c" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="col-md-12 pd-0">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Bank Name</label>
+                                                    <select class="form-control form-control-sm" id="withBankName" required="">
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Aadhar No.</label>
+                                                    <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+                                                        <input type="text" id="1" name="digit-1" data-next="digit-2" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="2" name="digit-2" data-next="digit-3" data-previous="digit-1" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                                        <input type="text" id="3" name="digit-3" data-next="digit-4" data-previous="digit-2" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                                        <input type="text" id="4" name="digit-4" data-next="digit-5" data-previous="digit-3" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+
+                                                        <span class="splitter">&ndash;</span>
+                                                        <input type="text" id="5" name="digit-5" data-next="digit-6" data-previous="digit-4" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                                        <input type="text" id="6" name="digit-6" data-next="digit-7" data-previous="digit-5" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                                        <input type="text" id="7" name="digit-7" data-next="digit-8" data-previous="digit-6" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                                        <input type="text" id="8" name="digit-8" data-next="digit-9" data-previous="digit-7" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                                        <span class="splitter">&ndash;</span>
+
+                                                        <input type="text" id="9" name="digit-9" data-next="digit-10" data-previous="digit-8" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                                        <input type="text" id="10" name="digit-10" data-next="digit-11" data-previous="digit-9" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                                        <input type="text" id="11" name="digit-11" data-next="digit-12" data-previous="digit-10" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                                        <input type="text" id="12" name="digit-12" data-previous="digit-11" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Mobile No.</label>
+                                                    <input type="text" class="form-control form-control-sm" maxlength="10" id="withMobileNumber" placeholder="Mobile Number" onkeypress="return ValidateNumber(event);" required="">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="sel1">Biometric Device</label>
+                                                    <select class="form-control form-control-sm" id="withDeviceName" required="">
+                                                        <option value="MANTRA">MANTRA SCANNER</option>
+                                                        <option value="MORPHO">MORPHO SCANNER</option>
+                                                    </select>
+                                                    <input type="hidden" id="withPidData" />
+                                                    <input type="hidden" id="withPidDataOption" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="sel1">Mode</label>
+                                                    <select class="form-control form-control-sm" id="withRequestType" required="" onchange="showRequestDetails()">
+                                                        <option value="51">CASH WITHDRAWAL</option>
+                                                        <option value="52">BALANCE ENQUIRY</option>
+                                                        <option value="53">MINI STATEMENT</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6" id="withAmountViews">
+                                                <div class="form-group">
+                                                    <label>Amount</label>
+                                                    <input type="text" class="form-control form-control-sm" maxlength="5" id="withAmount" placeholder="Amount" onkeypress="return ValidateNumber(event);" required="">
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-md-12" id="withAmountShortcutViews">
+                                                <div class="useramount">
+                                                    <ul class="amounts" id="amounts" style="display: inline-block;">
+                                                        <li>
+                                                            <a href="#">
+                                                                <img src="~/Content/Plugins/bbps/images/ico1.png" />
+                                                            </a>
+
+                                                        </li>
+                                                        <li><a href="#">500</a></li>
+                                                        <li><a href="#">1000</a></li>
+                                                        <li><a href="#">2000</a></li>
+                                                        <li><a href="#">3000</a></li>
+                                                        <li><a href="#">4000</a></li>
+                                                        <li><a href="#">5000</a></li>
+                                                        <li><a href="#">10000</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="Insurancebox">
+                                                    <span data-toggle="modal" data-target="#AgentTC">*Agent Consent Clause T & C</span>
+                                                    <input type="checkbox" class="check1" id="withAgenttc">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="Insurancebox">
+                                                    <span data-toggle="modal" data-target="#CustomerTC">*Customer Consent Clause T & C</span>
+                                                    <input type="checkbox" class="check1" id="withCustomertc">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-2 text-right">
+                                                <button type="button" class="btn btn-primary mtsmall" onclick="ValidateCustomerv2Request()">Proceed</button><br />
+                                                <label id="withErrorMessage" style="color:red;"></label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                @*<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="col-md-12 pd-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Bank Name</label>
+                            <select class="form-control form-control-sm" id="withBankName" required="">
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Aadhar No.</label>
+                            <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+                                <input type="text" id="1" name="digit-1" data-next="digit-2" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                <input type="text" id="2" name="digit-2" data-next="digit-3" data-previous="digit-1" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                <input type="text" id="3" name="digit-3" data-next="digit-4" data-previous="digit-2" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                <input type="text" id="4" name="digit-4" data-next="digit-5" data-previous="digit-3" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+
+                                <span class="splitter">&ndash;</span>
+                                <input type="text" id="5" name="digit-5" data-next="digit-6" data-previous="digit-4" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                <input type="text" id="6" name="digit-6" data-next="digit-7" data-previous="digit-5" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                <input type="text" id="7" name="digit-7" data-next="digit-8" data-previous="digit-6" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                <input type="text" id="8" name="digit-8" data-next="digit-9" data-previous="digit-7" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                <span class="splitter">&ndash;</span>
+
+                                <input type="text" id="9" name="digit-9" data-next="digit-10" data-previous="digit-8" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                <input type="text" id="10" name="digit-10" data-next="digit-11" data-previous="digit-9" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                <input type="text" id="11" name="digit-11" data-next="digit-12" data-previous="digit-10" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                                <input type="text" id="12" name="digit-12" data-previous="digit-11" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this, event);" />
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Mobile No.</label>
+                            <input type="text" class="form-control form-control-sm" maxlength="10" id="withMobileNumber" placeholder="Mobile Number" onkeypress="return ValidateNumber(event);" required="">
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Amount</label>
+                            <input type="text" class="form-control form-control-sm" maxlength="5" id="withAmount" placeholder="Amount" onkeypress="return ValidateNumber(event);" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="sel1">Biometric Device</label>
+                            <select class="form-control form-control-sm" id="withDeviceName" required="">
+                                <option value="MANTRA">MANTRA SCANNER</option>
+                                <option value="MORPHO">MORPHO SCANNER</option>
+                            </select>
+                            <input type="hidden" id="withPidData" />
+                            <input type="hidden" id="withPidDataOption" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="useramount">
+                            <ul class="amounts" id="amounts" style="display: inline-block;">
+                                <li>
+                                    <a href="#">
+                                        <img src="~/Content/Plugins/bbps/images/ico1.png" />
+                                    </a>
+
+                                </li>
+                                <li><a href="#">500</a></li>
+                                <li><a href="#">1000</a></li>
+                                <li><a href="#">2000</a></li>
+                                <li><a href="#">3000</a></li>
+                                <li><a href="#">4000</a></li>
+                                <li><a href="#">5000</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="Insurancebox">
+                            <span data-toggle="modal" data-target="#AgentTC">*Agent Consent Clause T & C</span>
+                            <input type="checkbox" class="check1" id="withAgenttc">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="Insurancebox">
+                            <span data-toggle="modal" data-target="#CustomerTC">*Customer Consent Clause T & C</span>
+                            <input type="checkbox" class="check1" id="withCustomertc">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-2 ">
+                        <button type="button" class="btn btn-primary mtsmall" onclick="ValidateCustomerRequest()">Proceed</button><br />
+                        <label id="withErrorMessage" style="color:red;"></label>
+                    </div>
+
+                </div>
+            </div>
+        </div>*@
+
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="col-md-12 pd-0">
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect3">Bank Name</label>
+                                                    <select class="form-control form-control-sm" id="InqBankName">
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Aadhar No.</label>
+                                                    <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+                                                        <input type="text" id="21" name="digit-1" data-next="digit-2" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="22" name="digit-2" data-next="digit-3" data-previous="digit-1" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="23" name="digit-3" data-next="digit-4" data-previous="digit-2" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="24" name="digit-4" data-next="digit-5" data-previous="digit-3" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+
+                                                        <span class="splitter">&ndash;</span>
+                                                        <input type="text" id="25" name="digit-5" data-next="digit-6" data-previous="digit-4" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="26" name="digit-6" data-next="digit-7" data-previous="digit-5" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="27" name="digit-7" data-next="digit-8" data-previous="digit-6" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="28" name="digit-8" data-next="digit-9" data-previous="digit-7" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <span class="splitter">&ndash;</span>
+
+                                                        <input type="text" id="29" name="digit-9" data-next="digit-10" data-previous="digit-8" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="30" name="digit-10" data-next="digit-11" data-previous="digit-9" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="31" name="digit-11" data-next="digit-12" data-previous="digit-10" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="32" name="digit-12" data-previous="digit-11" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Mobile No.</label>
+                                                    <input type="text" class="form-control form-control-sm" id="InqMobileNumber" maxlength="10" placeholder="Enter Mobile No." onkeypress="return ValidateNumber(event);" required="">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="sel1" style="width:100%">Choose Biomatric Device:</label>
+                                                    <select class="form-control" id="InqDeviceName">
+                                                        <option value="MANTRA">MANTRA SCANNER</option>
+                                                        <option value="MORPHO">MORPHO SCANNER</option>
+                                                    </select>
+                                                    <input type="hidden" id="InqPidData" />
+                                                    <input type="hidden" id="InqPidDataOption" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label class="Insurancebox">
+                                                    <span data-toggle="modal" data-target="#AgentTC">*Agent Consent Clause T & C</span>
+                                                    <input type="checkbox" class="check1" id="InqAgenttc">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label class="Insurancebox">
+                                                    <span data-toggle="modal" data-target="#CustomerTC">*Customer Consent Clause T & C</span>
+                                                    <input type="checkbox" class="check1" id="InqCustomertc">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
+                                                <button type="button" class="btn btn-primary shadow-sm mtsmall" onclick="ValidateCustomerInqRequest();">Capture Fingerprint</button><br />
+                                                <label id="InqErrorMessage" style="color:red;"></label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                    <div class="col-md-12 pd-0">
+                                        <div class="row">
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="sel1" style="width:100%">Select Bank Name:</label>
+                                                    <select class="form-control" id="MiniBankName" required="" style="width:100%; border:1px solid #ced4da;">
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Aadhar No.</label>
+                                                    <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+                                                        <input type="text" id="41" name="digit-1" data-next="digit-2" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="42" name="digit-2" data-next="digit-3" data-previous="digit-1" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="43" name="digit-3" data-next="digit-4" data-previous="digit-2" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="44" name="digit-4" data-next="digit-5" data-previous="digit-3" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+
+                                                        <span class="splitter">&ndash;</span>
+                                                        <input type="text" id="45" name="digit-5" data-next="digit-6" data-previous="digit-4" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="46" name="digit-6" data-next="digit-7" data-previous="digit-5" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="47" name="digit-7" data-next="digit-8" data-previous="digit-6" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="48" name="digit-8" data-next="digit-9" data-previous="digit-7" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <span class="splitter">&ndash;</span>
+
+                                                        <input type="text" id="49" name="digit-9" data-next="digit-10" data-previous="digit-8" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="50" name="digit-10" data-next="digit-11" data-previous="digit-9" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="51" name="digit-11" data-next="digit-12" data-previous="digit-10" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                        <input type="text" id="52" name="digit-12" data-previous="digit-11" onkeypress="return ValidateNumber(event);" maxlength="1" required="" onkeyup="ValidatePasskey(this);" />
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="form-group">
+                                                    <label>Enter Mobile Number</label>
+                                                    <div class="inputText">
+                                                        <input type="text" class="form-control" id="MiniMobileNumber" placeholder="Enter Mobile number" name="Mobile number" onkeypress="return ValidateNumber(event);" maxlength="10" required="" />
+                                                        <i class="irotate icofont-smart-phone"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="sel1" style="width:100%">Choose Biomatric Device:</label>
+                                                    <select class="form-control" id="MiniDeviceName">
+                                                        <option value="MANTRA">MANTRA SCANNER</option>
+                                                        <option value="MORPHO">MORPHO SCANNER</option>
+                                                    </select>
+                                                    <input type="hidden" id="MiniPidData" />
+                                                    <input type="hidden" id="MiniPidDataOption" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12 col-md-12 col-12">
+                                                <label class="Insurancebox">
+                                                    <span data-toggle="modal" data-target="#AgentTC">*Agent Consent Clause T & C</span>
+                                                    <input type="checkbox" class="check1" id="MiniAgenttc">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <label class="Insurancebox">
+                                                    <span data-toggle="modal" data-target="#CustomerTC">*Customer Consent Clause T & C</span>
+                                                    <input type="checkbox" class="check1" id="MiniCustomertc">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3 mtsmall">
+                                                <button type="button" class="btn btn-primary shadow-sm" onclick="ValidateCustomerMiniRequest();">Capture Fingerprint</button><br />
+                                                <label id="MiniErrorMessage" style="color:red;"></label>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-6 stretch-card grid-margin pd-6">
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Branchless Banking Platform
+                </h4>
+                <div class="pad-10">
+                    <div class="latest-timeline-1 activity-scroll ps ps--active-y">
+                        <ul class="timeline-1 mb-0" id="reportBody">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pd-6">
+        <div class="card mb-4 shadow-sm">
+            <div class="row">
+                <div class="complain">
+                    <p><i class="icofont-exclamation-tringle icost"></i>Raise complain to issue Bank <a href="#" data-toggle="modal" data-target="#bankcomplain">Click here </a></p>
+                    <p><i class="icofont-question-circle icost"></i>Please read advisory carefully while doing Aeps transaction <a href="#" data-toggle="modal" data-target="#advisory"> Click here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog pdt-120">
+        <div class="modal-content">
+            <div class="header">
+                <div class="modal-title1 text-center"> <img src="/Content/Plugins/img/AEPS-Logo.png" class="img-fluid modalImg" style=""></div>
+            </div>
+            <div id="confirmationbox" style="">
+                <div class="col-md-12 col-sm-12 text-center sptop1">
+                    <div class="form-group">
+                        <div class="validate-input m-b-50">
+                            <p style="color:green;font-weight:600;">Please confirm do you want to continue?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 sptop1">
+                    <div class="form-group">
+                        <div class="validate-input m-b-50">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td>Order Type</td>
+                                        <td id="viewtransactiontype">Cash Withdraw</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aadhar Number</td>
+                                        <td><span id="WithAadharNo"></span></td>
+                                    </tr>
+                                    <tr id="transactionAmountViews">
+                                        <td>Withdrwal Value</td>
+                                        <td><i class="icofont-rupee"></i><span id="transactionAmount"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="confirmationboxfirnger" style="display:none;">
+                <div class="col-md-12 col-sm-12 text-center">
+                    <div class="form-group">
+                        <div class="validate-input m-b-50">
+                            <img src="~/Content/Plugins/img/fingerprint.gif" class="img-fluid" style="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 text-right sptop1">
+                <div class="form-group">
+                    <div class="validate-input m-b-50">
+                        <input type="submit" class="btn btn-success mybtn" id="btnFingerConfirmation" value="Scan Fingerprint & Submit" onclick="CaptureAvdmv2Request();" />
+                        <input type="submit" class="btn btn-danger" value="Cancel" data-dismiss="modal" id="btnFingerDismiss">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ResponseModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="header">
+            </div>
+
+            <div class="modal-body">
+                <div class="thank-you-pop">
+                    <img id="responseIcon" alt="Success Screens1" class="img-fluid" />
+                    <h1 id="responseStatus"></h1>
+                    <p id="responseMessage"></p>
+
+                    <table class="table successtable">
+                        <tbody>
+                            <tr>
+                                <td><b>Mobile Number </b></td>
+                                <td id="responseNumber"></td>
+                            </tr>
+                            <tr id="responseAmountViews">
+                                <td><b>Amount </b></td>
+                                <td><i class="icofont-rupee"></i> <span id="responseAmount"></span></td>
+                            </tr>
+
+                            <tr>
+                                <td><b>RRN </b></td>
+                                <td id="responseRRN"></td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Aadhar Number </b></td>
+                                <td id="responseUID"> </td>
+                            </tr>
+                            <tr>
+                                <td><b>Available Balance </b></td>
+                                <td id="responseAvBalance"> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <input type="submit" class="btn btn-danger" data-dismiss="modal" value="Cancel" />
+                    <a href="#" id="responsePrint" class="btn btn-primary">Print</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myInquiryModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm pdt-120">
+        <div class="modal-content">
+            <div class="header">
+                <div class="modal-title1 text-center"> <img src="/Content/Plugins/img/AEPS-Logo.png" class="img-fluid modalImg" style=""></div>
+            </div>
+            <div id="confirmationinqbox" style="">
+                <div class="col-md-12 col-sm-12 text-center sptop1">
+                    <div class="form-group">
+                        <div class="validate-input m-b-50">
+                            <p style="color:green;font-weight:600;">Please confirm do you want to continue?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 sptop1">
+                    <div class="form-group">
+                        <div class="validate-input m-b-50">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td>Order Type</td>
+                                        <td id="viewtransactiontype">Balance Inquiry</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aadhar Number</td>
+                                        <td><span id="inquiryAadhar"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="confirmationinqboxfirnger" style="display:none;">
+                <div class="col-md-12 col-sm-12 text-center">
+                    <div class="form-group">
+                        <div class="validate-input m-b-50">
+                            <img src="~/Content/Plugins/img/fingerprint.gif" class="img-fluid" style="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 text-right sptop1">
+                <div class="form-group">
+                    <div class="validate-input m-b-50">
+                        <input type="submit" class="btn btn-success mybtn" id="btnInquiryConfirmation" value="Confirm" onclick="CaptureInfoAvdmRequest();" />
+                        <input type="submit" class="btn btn-danger" value="Cancel" data-dismiss="modal" id="btnFingerInqDismiss">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="InqResponseModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog mini-modal">
+        <div class="modal-content">
+            <div class="header">
+            </div>
+            <div class="modal-body">
+                <div class="thank-you-pop">
+                    <img id="responseInqIcon" alt="Success Screens1" class="img-fluid" />
+                    <h1 id="responseInqStatus"></h1>
+                    <p id="responseInqMessage"></p>
+
+                    <table class="table successtable">
+                        <tbody>
+                            <tr>
+                                <td><b>Mobile Number </b></td>
+                                <td id="responseInqNumber"></td>
+                            </tr>
+
+                            <tr>
+                                <td><b>RRN </b></td>
+                                <td id="responseInqRRN"></td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Aadhar Number </b></td>
+                                <td id="responseInqUID"> </td>
+                            </tr>
+                            <tr>
+                                <td><b>Available Balance </b></td>
+                                <td id="responseInqAvBalance"> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancel" />
+                    <input type="button" class="btn btn-primary" data-dismiss="modal" value="Ok" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myMiniModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm pdt-120">
+        <div class="modal-content">
+            <div class="header">
+                <div class="modal-title1 text-center"> <img src="/Content/Plugins/img/AEPS-Logo.png" class="img-fluid modalImg" style=""></div>
+            </div>
+            <div id="confirmationminibox" style="">
+                <div class="col-md-12 col-sm-12 text-center sptop1">
+                    <div class="form-group">
+                        <div class="validate-input m-b-50">
+                            <p style="color:green;font-weight:600;">Please confirm do you want to continue?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 sptop1">
+                    <div class="form-group">
+                        <div class="validate-input m-b-50">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td>Order Type</td>
+                                        <td id="viewtransactiontype">Mini Statement</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aadhar Number</td>
+                                        <td><span id="MiniAadhar"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="confirmationminiboxfirnger" style="display:none;">
+                <div class="col-md-12 col-sm-12 text-center">
+                    <div class="form-group">
+                        <div class="validate-input m-b-50">
+                            <img src="~/Content/Plugins/img/fingerprint.gif" class="img-fluid" style="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 text-right sptop1">
+                <div class="form-group">
+                    <div class="validate-input m-b-50">
+                        <input type="submit" class="btn btn-success mybtn" id="btnMiniConfirmation" value="Confirm" onclick="CaptureMiniAvdmRequest();" />
+                        <input type="submit" class="btn btn-danger" value="Cancel" data-dismiss="modal" id="btnFingerMiniDismiss">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="MiniResponseModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog mini-modal">
+        <div class="modal-content">
+            <div class="header">
+            </div>
+
+            <div class="modal-body">
+                <div class="thank-you-pop1">
+                    <img id="responseMiniIcon" alt="Success Screens1" class="img-fluid" style="width:120px" />
+                    <h1 id="responseMiniStatus"></h1>
+                    <p id="responseMiniMessage"></p>
+                    <table class="table ministatement">
+                        <tbody>
+                            <tr>
+                                <td><b>Date & Time </b></td>
+                                <td id="responseMiniDate"></td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Bank Name </b></td>
+                                <td id="responseMiniBankName"></td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Mobile Number </b></td>
+                                <td id="responseMiniNumber"></td>
+                            </tr>
+                            <tr>
+                                <td><b>Amount </b></td>
+                                <td><i class="icofont-rupee"></i> <span id="responseMiniAmount"></span></td>
+                            </tr>
+
+                            <tr>
+                                <td><b>RRN </b></td>
+                                <td id="responseMiniRRN"></td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Aadhar Number </b></td>
+                                <td id="responseMiniUID"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <input type="submit" class="btn btn-danger" value="Cancel" data-dismiss="modal" />
+                    <a href="#" id="responseMiniPrint" class="btn btn-primary">Print</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="bankcomplain" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg  pdt-80">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <div class="logo-block">
+                    <img src="https://moneyart.in/assets/images/logo.png" class="img-fluid" />
+                </div>
+
+                <div class="text-block">
+                    <h4>Bank Complain</h4>
+                </div>
+
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="smallbox">
+                <h6>"If your customer is receiving a complaint in any of the banks given below, then click on the given link and file your complaints"</h6>
+            </div>
+            <div class="modal-body pdt-0">
+                <div class="table-responsive">
+                    <table class="table banktable">
+                        <thead>
+                            <tr>
+                                <th>Bank Name</th>
+                                <th>Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b>State Bank of India</b>
+                                </td>
+                                <td>
+                                    <a target="_blank" href="https://cms.onlinesbi.com/CMS/">https://cms.onlinesbi.com/CMS/</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Punjab National Bank </b>
+                                </td>
+                                <td>
+                                    <a target="_blank" href="https://www.pnbindia.in/CCSRMSForm.aspx">https://www.pnbindia.in/CCSRMSForm.aspx</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Central Bank of India </b>
+                                </td>
+                                <td>
+                                    <a target="_blank" href="https://www.centralbankofindia.co.in/English/GrievMainFormExist.aspx">https://www.centralbankofindia.co.in/English/GrievMainFormExist.aspx</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Bank of Baroda</b>
+                                </td>
+                                <td>
+                                    <a target="_blank" href="https://bobcrm.bankofbaroda.co.in/onlinecomplaint/frmMain.aspx?source=WEBSITE&amp;sid=&amp;id=">https://bobcrm.bankofbaroda.co.in/onlinecomplaint/frmMain.aspx?source=WEBSITE&amp;sid=&amp;id=</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Allahabad Bank</b>
+                                </td>
+                                <td>
+                                    <a target="_blank" href="https://www.allbankcare.in/alb1/APPS/cgrc/frm_cust_comp.aspx?AspxAutoDetectCookieSupport=1">https://www.allbankcare.in/alb1/APPS/cgrc/frm_cust_comp.aspx?AspxAutoDetectCookieSupport=1</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Bank of India</b>
+                                </td>
+                                <td>
+                                    <a target="_blank" href="https://www.bankofindia.co.in/forms/Grievance">https://www.bankofindia.co.in/forms/Grievance</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Union Bank of India</b>
+                                </td>
+                                <td>
+                                    <a target="_blank" href="https://icmt.unionbankofindia.co.in/icmt/LodgeComplaint.aspx">https://icmt.unionbankofindia.co.in/icmt/LodgeComplaint.aspx</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Baroda Rajasthan Kshetriya Gramin Bank</b>
+                                </td>
+                                <td>
+                                    <a target="_blank" href="https://brkgb.com/complaints.php">https://brkgb.com/complaints.php</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Bank of Maharashtra </b>
+                                </td>
+                                <td>
+                                    <a target="_blank" href="https://www.bankofmaharashtra.in/pgrs/register_grievance">https://www.bankofmaharashtra.in/pgrs/register_grievance</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Punjab and Sind Bank</b>
+                                </td>
+                                <td>
+                                    <a target="_blank" href="https://www.psbindia.com/module/complaint-form">https://www.psbindia.com/module/complaint-form</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="advisory" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg pdt-80">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header md-top">
+                <div class="logo-block">
+                    <img src="https://moneyart.in/assets/images/logo.png" class="img-fluid" />
+                </div>
+                <div class="text-block">
+                    <h4>ADVISORY</h4>
+                </div>
+
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body pdt-0">
+                <div class="advisory-main">
+                    <ol type="1">
+                        <li>
+                            It is directed to you that while carrying out cash withdrawal transactions; enter mobile number of the customer
+                            only. Kindly adhere to the direction to avoid charge backs, pre-arbitrage charges etc
+                        </li>
+                        <li>
+                            Also, Register for cash withdrawal transactions must be prepared and maintained by you in a format given below
+                            (can be maintained for other services as well).
+                        </li>
+                    </ol>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th> Sr. No.</th>
+                                    <th> Date and time of transaction</th>
+                                    <th> Name of customer</th>
+
+                                    <th> RRN</th>
+                                    <th> Amount</th>
+                                    <th> Signature of cutomer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <ol type="1" start="3">
+                        <li>It is hereby advised to you that transaction through AEPS must be carried out for cash withdrawal &amp; balance inquiry only and this service/facility must not be used for merchant payment purposes under any circumstances. Any non-adherence to this advisory shall be considered a serious violation and appropriate action can be initiated.</li>
+                    </ol>
+                    <ol type="1" start="4">
+                        <li>It is hereby advised to you that kindly do not split/break the single transaction into multiple transactions. Any non-adherence to this advisory shall be considered a serious violation and appropriate action can be initiated.</li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="AgentTC" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="mdheader">
+                <h4 class="title1">Terms and Conditon</h4>
+                <button type="button" class="close btn-mod" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body pdt-0 modalfixh">
+                <div class="advisory-main">
+                    <ul>
+                        <li>
+                            I, the Customer hereby authorizes the Bank store my AADHAR number and to fetch,
+                            authenticate and store all such necessary details retrieved or to be retrieved from UIDAI through AADHAR Number
+                            and IRIS/biometric authentication for the purpose of this transaction. In case of any discrepancies,
+                            the Bank reserves the sole right to block my account/ relation and transaction without any further notice or intimation.
+                        </li>
+                        <li>
+                            Customer hereby states and undertake that it has no objection, if the information disclosed to the Bank
+                            is authenticated vide Aadhaar based system. Customer hereby voluntarily agree and confirm to provide or disclose
+                            (as required under the Aadhaar Act 2016 and Regulations framed there under) my identification information
+                            (Aadhaar number, biometric information & demographic information) for Aadhaar based authentication system and/or
+                            such similar authentication mechanism as provided or stipulated by the Government, from time to time,
+                            for the purpose of availing banking services, including operations of account or any other facility relating to banking operations.
+                        </li>
+                        <li>
+                            The Customer hereby agree and confirm that the Bank will not be obliged to process any request made by me, if:
+                            <ol type="a">
+                                <li>Aadhaar number provided by me is incorrect</li>
+                                <li>Details in account does not match with details available with UIDAI</li>
+                            </ol>
+                        </li>
+                        <li>The Customer hereby agree and confirm that the Aadhaar details may be updated for all my banking services, including but not limited to the operation of bank account, for the purposes of authentication.</li>
+                        <li>
+                            The Customer hereby agree and confirm that my account may be used for receiving any government payments across schemes that the Customer is eligible and/ or any other payment
+                            using the Aadhaar based information. The Customer hereby acknowledge and agree that NPCI may map the Customer\92s account in the Aadhaar Mapper of NPCI.
+                        <li>
+                            The Customer hereby confirms that the Aadhaar detail provided by the Customer is true,
+                            correct and complete in all aspect.
+                        </li>
+                        <li>
+                            The Customer hereby acknowledges that the Bank will not have any liability or responsibility,
+                            if the details provided by the Customer is or subsequently becomes false, incorrect or incomplete, either in part or as a whole.
+                        </li>
+                        <li>
+                            Before agreeing to the above-mentioned terms and conditions, the Customer have been explained (in a language know to the Customer) about
+                            the nature of information that may be shared upon authentication and have understood the nature and implication of the same, as stipulated
+                            under the applicable law. The Customer declares that all the information has been voluntarily furnished by them to the Bank, without any duress or coercion.
+                        </li>
+                        <li>
+                            The Customer hereby gives consent to use/exchange or share their Aadhaar number, Aadhaar information for registration of client information with Exchange, KRA, CERSAI and with any
+                            other regulatory or statutory authorities or as the Bank deems fit or as per requirements of law.
+                        </li>
+                        <li>
+                            The Customer hereby understands and agrees that all identity information provided by the Customer
+                            will only be used for on boarding me for the purpose of the transaction.
+                        </li>
+                        <li>
+                            The Customer hereby understands and agrees that Bank may disclose the identity information provided by the Customer
+                            to only CIDR for the purpose of authentication or authorization
+                        </li>
+                        <li>The Customer hereby understands and agrees that the biometric authentication may be treated as my signature</li>
+                        <li>
+                            The Customer hereby declare that the above information has been provided voluntarily out of his/her own discretion and volition.
+                            All information provided by the Customer or information/date retrieved from UIDAI in respect of the Customer is true, correct, updated and complete.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="CustomerTC" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg pdt-80">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="mdheader">
+                <h4 class="title1">Terms and Conditon</h4>
+                <button type="button" class="close btn-mod" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body pdt-0">
+                <div class="advisory-main">
+                    <ul>
+                        <li>
+                            I hereby confirm that the Customer has been explained (in a language know to the Customer) about the nature of information,
+                            sharing of such information upon authentication, aspects of the transaction and the terms and conditions applicable to
+                            this transaction and the Customer has understood and authorized ICIC BANK to fetch applicable data from UIDAI;
+                        </li>
+                        <li>
+                            I hereby confirm that the Customer has provided all the information voluntarily to the Bank and are true, correct and
+                            complete
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery-9.5.6.1.2.1.js"></script>
+<script src="~/Scripts/custom/ser/jquery.srvrgbundlefn.min.1.7.4.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("ul[id*=amounts] li a").click(function () {
+            var amt = ($(this).text());
+            //alert(amt);
+            $("#withAmount").val(amt);
+            $("#focusin1").addClass('focus-input100after'); amtspan
+            $("#focusin1").hide();
+            $("#amtspan").show();
+        });
+
+        $('#custamount').click(function () {
+            $("#focusin1").removeClass('focus-input100after');
+        });
+    });
+</script>
+
+

@@ -1,0 +1,146 @@
+﻿@using BusinessEntities;
+@{
+    ViewBag.Title = "ComplainReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    
+
+    <div class="row">
+        <div class="col-xl-12 stretch-card grid-margin">
+            <div class="card">
+                <div class="card-body pb-0">
+                  
+
+                    <div class="row">
+                        <div class="col-md-1">
+                            <img src="~/Content/Plugins/bbps/images/bbps/care.png" style="width:46px">
+                        </div>
+                        <div class="col-md-9 col-9">
+                            <h4 class="card-title1 text-center"> Complaint Report</h4>
+                            <p class="text-center">Our support team is always present to support you 24/7</p>
+                        </div>
+                        <div class="col-md-2 col-2">
+                            <img src="~/Content/Plugins/bbps/images/bbps/BBPS.png" style="width:73px" class="float-sm-right">
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-20">
+
+                            <form action="/BBPS/ComplainReport" method="post">
+                                <div class="row">
+                                    @Html.AntiForgeryToken()
+                                    <div class="col-md-2 col-sm-4 col-6">
+                                        <div class="form-group">
+                                            <label>From Date</label>
+                                            <div class="inputText">
+                                                <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="fromdate" id="fromDate" maxlength="15" required="" value="@Request.Form["fromdate"]" autocomplete="off">
+                                                <i class="icofont-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-4 col-6">
+                                        <div class="form-group">
+                                            <label>To Date</label>
+                                            <div class="inputText">
+                                                <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="todate" id="toDate" maxlength="15" required="" value="@Request.Form["todate"]" autocomplete="off">
+                                                <i class="icofont-calendar"></i>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-6">
+                                        <div class="form-group">
+                                            <label>Mobile No</label>
+                                            <div class="inputText">
+                                                <input type="text" class="form-control" placeholder="Enter mobile no" name="mobilenumber" maxlength="10" value="@Request.Form["mobilenumber"]" autocomplete="off" onkeypress="return ValidateNumber(event);" />
+                                                <i class="irotate icofont-smart-phone"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-6">
+                                        <div class="form-group">
+                                            <label>Transaction Id</label>
+                                            <div class="inputText">
+                                                <input type="text" class="form-control" placeholder="Enter Transaction Id" name="txnRefId" maxlength="9" value="@Request.Form["txnRefId"]" autocomplete="off" onkeypress="return ValidateNumber(event);" />
+                                                <i class="irotate icofont-listing-number"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-3 col-6">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary reptbtn" onclick="">Submit</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive Rmain-table">
+                                        <table class="table mt-2" id="report">
+                                            <thead>
+                                                <tr>
+                                                    <th>TranId</th>
+                                                    <th>Mobile No</th>
+                                                    <th>From Date</th>
+                                                    <th>To Date</th>
+                                                    <th>Complaint Type</th>
+                                                    <th>Disposition</th>
+                                                    <th>Description</th>
+                                                    <th>Status</th>
+                                                    <th>Date</th>
+                                                    <th>Remark</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (ViewBag.transaction != null)
+                                                {
+                                                    foreach (ComplaintsRegisterEntity row in ViewBag.transaction)
+                                                    {
+                                                        <tr>
+                                                            <td>@row.TransactionId</td>
+                                                            <td>@row.MobileNo</td>
+                                                            <td>@row.FromDate</td>
+                                                            <td>@row.ToDate</td>
+                                                            <td>@row.ComplaintType</td>
+                                                            <td>@row.Disposition</td>
+                                                            <td>@row.Description</td>
+                                                            @if (row.Status == clsVariables.TicketStatus.Pending)
+                                                            {
+                                                                <td class="pending">@row.Status</td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td class="fail">@row.Status</td>
+                                                            }
+                                                            <td>@row.AddDate</td>
+                                                            <td>@row.Remarks</td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr><td colspan="11">Data not found</td></tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <script src="~/Scripts/jquery-9.5.6.1.2.1.js"></script>
+        <link rel="stylesheet" media="all" type="text/css" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" />
+        <script src="~/Scripts/jquery.min.js"></script>
+        <script>
+
+            $(function () {
+                $("#fromDate").datepicker({ maxDate: 0 });
+                $("#toDate").datepicker({ maxDate: 0 });
+            });
+        </script>

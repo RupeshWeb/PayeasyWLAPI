@@ -1,0 +1,233 @@
+﻿@model BusinessEntities.BBPSReceiptReponseEntity
+@{
+    ViewBag.Title = "Receipt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.StatusCode == clsVariables.APIStatus.Success)
+{
+    <link href="~/Content/Plugins/css/receipt.css" rel="stylesheet" />
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="offset-xl-2 col-xl-8 offset-lg-1 col-lg-10 col-md-12 col-sm-12 col-12 ">
+
+                    <div class="mb-2 img-holder">
+                        <div class="row">
+                            <div class="col-xl-12 text-right mt-2 mb-2">
+
+                                <a class="print" href="#" id="btnPrint"><i class="icofont-print ml"></i>Print</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4 shadow">
+                        <div class="card-body sm-pd0">
+                            <div id="ReceiptContent">
+                                <div class="receipt-main">
+                                    <div class="row receipt-header ">
+                                        <div class="col-xs-6 col-sm-3 col-md-3" style="float:left;">
+                                            <div class="receipt-left">
+                                                <img src="@Session["RGRTRequestLogo"]" style="height: 40px;">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 col-md-3" style="float:left;">
+                                            <div class="receipt-left">
+                                               
+                                            </div>
+                                        </div>
+
+                                        <div class="Image-block"> 
+                                            <img src="~/Content/Plugins/bbps/images/bbps/bbps-logo/BBPS_logo.png" style="height:70px;" />
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                                            <div class="receipt-right">
+                                               
+                                                <h5>@Session["RGRTRequestCompany"]</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12 receipt-det pd-lr-0">
+                                                <p class="pull-left" style="float:left;"><b>Receipt : </b>R-DKP_@Model.Data.Number</p>
+                                                <p class="pull-right" style="float:right;"><b>Date &amp; time :</b> @Model.Data.TranDate</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 table-responsive">
+                                            <table class="table table-bordered table-receipt">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Description</th>
+                                                        <th>Value</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="tdback">Service Provider</td>
+                                                        <td class="tdback">@Model.Data.ProviderName</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">Transaction ID</td>
+                                                        <td class="">@Model.Data.TranRef</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="tdback">Operator Ref. No.</td>
+                                                        <td class="tdback">@Model.Data.OperatorRef</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Customer Number</td>
+                                                        <td>@Model.Data.Number</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="tdback">Mobile Number</td>
+                                                        <td class="tdback">@Model.Data.CustomerNo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Name</td>
+                                                        <td>@Model.Data.ConsumerName</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">Status</td>
+                                                        <td class="">
+                                                            <span class="txtsuccess">@Model.Data.Status</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="tdback">Amount</td>
+                                                        <td class="tdback"><span id="netAmount">@Model.Data.Amount</span>/-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="tdback">Due Date</td>
+                                                        <td class="tdback">@Model.Data.BillDueDate</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="tdback">Bill Date</td>
+                                                        <td class="tdback">@Model.Data.BillDate</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="tdback">Bill Number</td>
+                                                        <td class="tdback">@Model.Data.BillNumber</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p>
+                                                                Customer Convenience Fee
+                                                            </p>
+                                                        </td>
+                                                        <td>
+                                                            <input type="number" id="Conveniencefee" class="convenienceFee txtcustfee" placeholder="0" autocomplete="off" maxlength="2" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right tdback"><h4><strong>Total: </strong></h4></td>
+                                                        <td class="text-left text-danger tdback"><h4><strong><span id="grossAmount">@Model.Data.Amount</span>/-</strong></h4></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 receipt-header receipt-header-mid receipt-footer">
+                                            <div class="text-left">
+                                                <div class="receipt-right">
+                                                    <p><b>Amount in words : </b><span id="amtInWord">@Model.Data.AmountInWords</span></p>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <div class="receipt-right">
+                                                    <p>©Copyright @Session["RGRTRequestCopy"]</p>
+                                                    <p>This is system generated receipt.Hence no seals or signature is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        jQuery(function () {
+            jQuery('#Conveniencefee').keyup(function () {
+                var fee = jQuery('#Conveniencefee').val(); var amount = parseFloat(jQuery('#netAmount').html());
+                if (fee != '' && parseFloat(fee) > 0) {
+                    var netAmount = amount + parseFloat(fee); jQuery('#grossAmount').html(netAmount); jQuery('#Conveniencefee').attr('placeholder', fee); BindData(netAmount);
+                } else {
+                    jQuery('#grossAmount').html(amount); BindData(amount); jQuery('#Conveniencefee').attr('placeholder', '0');
+                }
+            });
+
+            jQuery("#btnPrint").click(function () {
+                var contents = $("#ReceiptContent").html();
+                var frame1 = $('<iframe />');
+                frame1[0].name = "frame1";
+                frame1.css({ "position": "absolute", "top": "-1000000px" });
+                $("body").append(frame1);
+                var frameDoc = frame1[0].contentWindow ? frame1[0].contentWindow : frame1[0].contentDocument.document ? frame1[0].contentDocument.document : frame1[0].contentDocument;
+                frameDoc.document.open();
+                //Create a new HTML document.
+                frameDoc.document.write('<html><head><title>Receipt</title>');
+                frameDoc.document.write('</head><body>');
+                //Append the external CSS file.
+                frameDoc.document.write('<link href="/Content/Plugins/css/receiptPrint.css" rel="stylesheet" />');
+                frameDoc.document.write('<link href = "" rel = "stylesheet" media="print" />');
+                frameDoc.document.write('<link href="" rel="stylesheet"  media="print" />');
+                //Append the DIV contents.
+                frameDoc.document.write(contents);
+                frameDoc.document.write('</body></html>');
+                frameDoc.document.close();
+                setTimeout(function () {
+                    window.frames["frame1"].focus();
+                    window.frames["frame1"].print();
+                    frame1.remove();
+                }, 500);
+            });
+        });
+
+        function BindData(amount) {
+            jQuery.post('/AEPS/ConvertValueToWords', { value: amount }, function (response) {
+                if (response.StatusCode == 1) {
+                    jQuery('#amtInWord').html(response.Data)
+                }
+            });
+        }
+    </script>
+}
+else
+{
+    <main>
+        <div class="container-fluid">
+            <div class="row mt-4">
+                <div class="offset-xl-2 col-xl-8 offset-lg-1 col-lg-10 col-md-12 col-sm-12 col-12 ">
+                    <div class="card mb-4 shadow">
+                        <div class="card-body sm-pd0">
+                            <div id="ReceiptContent">
+                                <div class="receipt-main">
+                                    <div class="row receipt-header mt-4">
+                                        <div class="col-xs-12 col-sm-12 col-md-12" style="float:left;">
+                                            <div class="receipt-left">
+                                                <h2>@Model.Message</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+}

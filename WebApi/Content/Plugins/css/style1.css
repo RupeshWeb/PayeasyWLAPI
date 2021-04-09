@@ -1,0 +1,180 @@
+﻿* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#Sessionexp {
+    position: relative;
+    height: 100vh;
+    background: #fff;
+}
+
+#Sessionexp .Sessionexp {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.Sessionexp {
+    max-width: 767px;
+    width: 100%;
+    line-height: 1.4;
+    padding: 40px 40px;
+    text-align: center;
+    background: #fff;
+}
+
+.Sessionexp .Sessionexp-404 {
+    position: relative;
+    /*height: 400px;*/
+}
+
+.Sessionexp .Sessionexp-404 h1 {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 165px;
+    font-weight: 700;
+    margin: 0px;
+    color: #262626;
+    text-transform: uppercase;
+}
+
+    .Sessionexp .Sessionexp-404 h1 > span {
+        color: #00b7ff;
+    }
+
+    .Sessionexp h2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #201791;
+        margin-top: 20px;
+        margin-bottom: 13px;
+        letter-spacing: 0.2rem;
+    }
+
+    .Sessionexp h6 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #f53411;
+        margin-top: 0px;
+        margin-bottom: 25px;
+        letter-spacing: 2px;
+    }
+
+    .Sessionexp .Sessionexp-search
+    {
+        position: relative;
+        max-width: 320px;
+        width: 100%;
+        margin: auto;
+    }
+
+.Sessionexp .Sessionexp-search > input {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 50px;
+    padding: 3px 65px 3px 30px;
+    color: #151515;
+    font-size: 16px;
+    background: transparent;
+    border: 2px solid #c5c5c5;
+    border-radius: 40px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+    .Sessionexp .Sessionexp-search > input:focus {
+        border-color: #00b7ff;
+    }
+
+.Sessionexp .Sessionexp-search > button {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.Sessionexp .Sessionexp-search > button > span {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    -ms-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    margin-left: -3px;
+}
+
+.Sessionexp .Sessionexp-search > button > span:after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    left: 0px;
+    top: 0px;
+    border-radius: 50%;
+    border: 4px solid #c5c5c5;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.Sessionexp-search > button > span:before {
+    position: absolute;
+    content: '';
+    width: 4px;
+    height: 10px;
+    left: 7px;
+    top: 17px;
+    border-radius: 2px;
+    background: #c5c5c5;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.Sessionexp .Sessionexp-search > button:hover > span:after {
+    border-color: #00b7ff;
+}
+
+.Sessionexp .Sessionexp-search > button:hover > span:before {
+    background-color: #00b7ff;
+}
+
+@media only screen and (max-width: 767px) {
+    .Sessionexp h2 {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .Sessionexp .Sessionexp-404 h1 {
+        font-size: 141px;
+    }
+
+    .Sessionexp .Sessionexp-404 img {
+        width: 350px !important;
+    }
+}

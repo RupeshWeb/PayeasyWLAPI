@@ -1,0 +1,158 @@
+﻿@using BusinessEntities;
+@{
+    ViewBag.Title = "Reports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title  text-center">
+                            Transaction Report
+                        </h4>
+
+                        <form action="/BBPS/Reports" method="post">
+                            <div class="row">
+                                @Html.AntiForgeryToken()
+                                <div class="col-md-3 col-sm-3 col-6">
+                                    <div class="form-group">
+                                        <label>From Date</label>
+                                        <div class="inputText">
+                                            <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="fromdate" id="fromDate" maxlength="15" required="" value="@Request.Form["fromdate"]" autocomplete="off">
+                                            <i class="icofont-calendar"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-6">
+                                    <div class="form-group">
+                                        <label>To Date</label>
+                                        <div class="inputText">
+                                            <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="todate" id="toDate" maxlength="15" required="" value="@Request.Form["todate"]" autocomplete="off">
+                                            <i class="icofont-calendar"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-6">
+                                    <div class="form-group">
+                                        <label>Mobile Number</label>
+                                        <div class="inputText">
+                                            <input type="text" class="form-control" placeholder="Enter Mobile Number" name="mobilenumber" maxlength="10" value="@Request.Form["mobilenumber"]" autocomplete="off" onkeypress="return ValidateNumber(event);" />
+                                            <i class="irotate icofont-smart-phone"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-6">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary reptbtn" onclick="">Submit</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table-responsive Rmain-table">
+                                    <table class="table mt-2" id="report">
+                                        <thead>
+                                            <tr>
+                                                <th>TranId</th>
+                                                <th>Operator</th>
+                                                <th>Number</th>
+                                                <th>Date</th>
+                                                <th>OPID</th>
+                                                <th>Amount</th>
+                                                <th>Status</th>
+                                                <th>Remark</th>
+                                                <th>Pan Type</th>
+                                                <th>Payment</th>
+                                                @*<th>Action</th>*@
+                                                <th>Print</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (ViewBag.transaction != null)
+                                            {
+                                                foreach (PANTransactionReportEntity row in ViewBag.transaction)
+                                                {
+                                                    <tr>
+                                                        <td>@row.TransRef</td>
+                                                        <td>@row.OperatorName</td>
+                                                        <td>@row.Number</td>
+                                                        <td>@row.TransactionDate</td>
+                                                        <td>@row.OperatorRef</td>
+                                                        <td>@row.Amount</td>
+                                                        @if (row.Status == clsVariables.RechargeStatus.Success)
+                                                        {
+                                                            <td class="sucess">@row.Status</td>
+                                                        }
+                                                        else if (row.Status == clsVariables.RechargeStatus.Pending)
+                                                        {
+                                                            <td class="pending">@row.Status</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td class="fail">@row.Status</td>
+                                                        }
+                                                        <td>@row.Reason</td>
+                                                        <td>@row.PancardType</td>
+                                                        <td>@row.Payment</td>
+                                                        @*<td>
+                                                @if (row.Status == clsVariables.RechargeStatus.Pending)
+                                                {<a href="#" onclick="dotransactionstatus(@row.TransRef)">Status Check</a>}
+                                            </td>*@
+                                                        <td class="text-center">
+                                                            @if (row.Status == clsVariables.RechargeStatus.Success)
+                                                            {
+                                                                <a href="Receipt/@row.TransRef">
+                                                                    <span class="myicon"><i class="icofont-printer"></i></span>
+                                                                </a>
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <tr><td colspan="11">Data not found</td></tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+<script src="~/Scripts/jquery-9.5.6.1.2.1.js"></script>
+<link rel="stylesheet" media="all" type="text/css" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" />
+<script src="~/Scripts/jquery.min.js"></script>
+<script>
+
+    $(function () {
+        $("#fromDate").datepicker({ maxDate: 0 });
+        $("#toDate").datepicker({ maxDate: 0 });
+    });
+    function dotransactionstatus(refNo) {
+        if (confirm('Do you want to the inquiry of this transaction')) {
+            swal({ title: "Processing", text: "Please wait..", imageUrl: "/Content/Image/main/Load/Processing.gif", showConfirmButton: false });
+            jQuery.post('/Pancard/TransactionInquiry', { txnRef: refNo }, function (response) {
+                if (response.StatusCode === 1) {
+                    alert(response.Message), location.reload();
+                } else if (response.StatusCode === 0) {
+                    alert(response.Message), location.reload();
+                } else {
+                    alert(response.Message), location.reload();
+                }
+            });
+        }
+    }
+</script>

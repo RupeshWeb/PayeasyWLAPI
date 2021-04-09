@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "BBPS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Plugins/css/bbps.css" rel="stylesheet" />
+    <div data-ng-app="myapp">
+        <div data-ng-controller="Mainctrl">
+            <div class="row">
+                <div class="col-xl-12 text-right">
+                    <img src="~/Content/Plugins/img/BBPS_Logo.png" style="height:30px;" />
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-12 sptabtop">
+                    <div class="card card-mini">
+                        <div class="card-content">
+                            <div class="card-body  pd-xs-10">
+                                <div class="widget-title">
+                                    <h5><b>BBPS Services</b></h5>
+                                </div>
+                                <ul class="mylist1" id="bbps_categories"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12 sptabtop">
+                    <div class="card card-mini">
+                        <div class="card-content">
+                            <div class="card-body pd-xs-10">
+                                <div class="widget-title" style="height: 28px;">
+                                    <h5 class="pull-left"><b>Basic List Group</b></h5>
+                                    <input type="text" placeholder="Search Here" class="opListSearch pull-right" id="txtsearchbbps" autocomplete="off" />
+                                </div>
+                                <div class="clearfix"></div>
+                                <div id="sub_category_view_tab" style="display:none;">
+                                    <ul class="mylist1" id="bbps_sub_categories"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body" style="padding: 15px;display:none;" id="prereq_category_view_tab">
+                                <div class="widget-title">
+                                    <h5 id="brl_request_head_view" style="font-weight:bold;"></h5>
+                                </div>
+
+                                <div class="card1-block box-list" style="max-height: 380px; overflow: auto; display:none;" id="blr_bill_fetch_view_tab">
+                                    <div class="clearfix">
+                                        <div class="col-xs-12 col-md-12 col-sm-12">
+                                            <div class="col-xs-12 col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <label id="blr_request_number_view">Consumer Number</label>
+                                                    <input type="text" class="form-control" required="required" placeholder="Consumer Number" maxlength="50" id="blr_request_number" name="blr_request_number" onkeypress="return ValidateNumber(event);" onkeyup="validatefetcheingbill(this);" />
+                                                    <input type="hidden" id="blr_request_blrnumber" name="blr_request_blrnumber" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-12 col-sm-12" id="blr_request_otherparam_view_tab" style="display:none;">
+                                                <div class="form-group">
+                                                    <label id="blr_request_otherparam_view">Bill Unit</label>
+                                                    <input type="text" class="form-control" required="required" placeholder="Bill Unit" maxlength="50" id="blr_request_otherparam" name="blr_request_otherparam" onkeypress="return ValidateNumber(event);" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-12 col-sm-12" id="blr_request_otherparam3_view_tab" style="display:none;">
+                                                <div class="form-group">
+                                                    <label id="blr_request_otherparam3_view">a b c</label>
+                                                    <input type="text" class="form-control" required="required" placeholder="Bill Unit" maxlength="50" id="blr_request_otherparam3" name="blr_request_otherparam3" onkeypress="return ValidateNumber(event);" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-12 col-sm-12" id="blr_request_otherparam4_view_tab" style="display:none;">
+                                                <div class="form-group">
+                                                    <label id="blr_request_otherparam4_view">a b c d </label>
+                                                    <input type="text" class="form-control" required="required" placeholder="Bill Unit" maxlength="50" id="blr_request_otherparam4" name="blr_request_otherparam4" onkeypress="return ValidateNumber(event);" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-12 col-sm-12" id="blr_request_otherparam5_view_tab" style="display:none;">
+                                                <div class="form-group">
+                                                    <label id="blr_request_otherparam5_view">a b c d e</label>
+                                                    <input type="text" class="form-control" required="required" placeholder="Bill Unit" maxlength="50" id="blr_request_otherparam5" name="blr_request_otherparam5" onkeypress="return ValidateNumber(event);" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Mobile Number For SMS</label>
+                                                    <input type="text" class="form-control" required="required" placeholder="Mobile Number For SMS" maxlength="10" id="blr_request_mobile_number" name="blr_request_mobile_number" onkeypress="return ValidateNumber(event);" onkeyup="validatefetcheingmbill(this);" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-12 col-sm-12" style="display:none;" id="blr_paymentr_amt_view_tab">
+                                                <div class="form-group">
+                                                    <label>Amount</label>
+                                                    <input type="text" class="form-control" required="required" placeholder="Amount(Rs.)" maxlength="5" id="blr_request_amount_of" name="blr_request_amount_of" onkeypress="return ValidateNumber(event);" onkeyup="validateofflineeingmbill(this);" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-12 col-sm-12" style="display:none;" id="blr_paymentr_mode_view_tab">
+                                                <div class="form-group">
+                                                    <label>Payment Mode</label>
+                                                    <select class="form-control"><option>Cash</option></select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 sptop">
+                                                <button class="btn-primary" type="submit" id="btn_request_blr" disabled="disabled">FETCH BILL</button>
+                                                <button class="btn-primary" type="submit" id="btn_request_blr_off" style="display:none;">PAY ₹ <span id="bl_pay_off_view"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card1-block box-list" style="max-height: 410px;  overflow: auto; display:none;" id="blr_bill_paymt_view_tab">
+                                    <div class="col-md-12">
+                                        <table class="table table-bordered dataTables-example dataTable dtr-inline collapsed" id="Fetch_bill_details_view"></table>
+                                    </div>
+                                    <div class="col-md-12 sptop">
+                                        <form action="/Finbbps/Billpayment" method="post">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" id="brlname" name="brlname" />
+                                            <input type="hidden" id="fin_tran_refid" name="tran_refid" />
+                                            <input type="hidden" id="fin_blr_amount" name="fin_blr_amount" />
+                                            <input type="hidden" id="number" name="number" />
+                                            <input type="hidden" id="mobileno" name="mobileno" />
+                                            <input type="hidden" id="billercode" name="billercode" />
+                                            <input type="hidden" id="param" name="param" />
+                                            <input type="hidden" id="operators" name="operators" value="10" />
+                                            <label id="lblTimer" style="color:red"></label>
+                                            <button type="submit" class="btn btn-primary" id="btn_payment_blr" disabled="disabled">PAY ₹ <span id="bl_pay_view"></span></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-9.5.6.1.2.1.js"></script>
+    <script src="~/Scripts/custom/Service/angular.9.5.1.7.1.js"></script>
+
+

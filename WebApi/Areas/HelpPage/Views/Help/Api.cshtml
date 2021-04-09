@@ -1,0 +1,50 @@
+@using System.Web.Http
+@using WebApi.Areas.HelpPage.Models
+@model HelpPageApiModel
+@section Scripts {
+    @Html.DisplayForModel("TestClientDialogs")
+    @Html.DisplayForModel("TestClientReferences")
+}
+
+@{
+    var description = Model.ApiDescription;
+    ViewBag.Title = description.HttpMethod.Method + " " + description.RelativePath;
+}
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $("#bannerdata").html('');
+	});
+</script>
+<style>
+    .banner {
+        height: 100px !important;
+        background: #14112c !important;
+    }
+</style>
+<div class="about" id="about">
+    <div class="container">
+        <div class="Sdit-heading" style="padding-top:20px;">
+            <h2 style="color:red; float:left;">@Html.ActionLink("Back to methods.", "Index")</h2>
+        </div>
+        <div class="agileits-about-grids">
+            <div class="col-md-12 agileits-about-grid">
+               @Html.DisplayForModel()
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+
+<link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+@*<div id="body" class="help-page">
+    <section class="featured" style="display:none;">
+        <div class="content-wrapper">
+            <p>
+                @Html.ActionLink("Help Page Home", "Index")
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        
+    </section>
+</div>*@

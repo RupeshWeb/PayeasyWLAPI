@@ -1,0 +1,1461 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+body
+{
+    background: #e8e9eb;
+    font-family: 'Open Sans', sans-serif;
+}
+.sb-topnav
+{
+	height:70px;
+	background-color:#fff;
+}
+
+.pd-6
+{
+    padding:6px !important;
+}
+
+
+.pl-2
+{
+    cursor:pointer !important;
+}
+
+.pl-2:hover 
+{
+    color: #061397 !important;
+    font-weight:600;
+}
+
+.pl-2:active 
+{
+    color: #061397 !important;
+    font-weight:600;
+}
+
+.operator 
+{
+    cursor: pointer !important;
+    padding:7px 5px;
+}
+
+    .operator:active {
+        color: #3019b4 !important;
+       /* font-weight: 600;*/
+    }
+
+    .operator:hover {
+        color: #3019b4 !important;
+       /* font-weight: 600;*/
+    }
+
+.imgblk
+{
+    display:block;  
+    margin-right:15px;
+}
+
+.operator-name
+{
+    font-size:15px;
+    line-height:22px;
+}
+
+.pt-20 
+{
+    padding-top: 20px;
+    border-top: solid 1px #edf1f9;
+}
+
+
+.bill-table {
+    border: solid 1px #ebe9e9 !important;
+}
+
+
+
+.card-title1 
+{
+    font-size: 13px;
+    margin-bottom: 5px !important;
+    color: #090879;
+}
+
+
+.highlight {
+    background: yellow;
+}
+
+#navheader {
+    font-weight: 600;
+    color: #fff;
+}
+
+.block1 
+{
+    display: block;
+    width: 100%;
+    cursor: pointer !important;
+}
+
+.block1:hover 
+{
+    background:#dad4ff;
+}
+
+    .block1.active
+    {
+        background: #dad4ff;
+    }
+
+#navheader div {
+    /*  margin-bottom: 5px;
+        font-size: 18px;
+        padding:10px;*/
+}
+
+.uti_Img
+{
+    width:230px;
+}
+
+.complain {
+    padding: 6px;
+}
+
+.mdbtn {
+    font-size: 14px;
+}
+
+
+
+.pdt-120 {
+    padding-top: 120px;
+}
+
+.pdt-80 
+{
+    padding-top:40px;
+}
+
+.brd {
+    border: solid 1px #e5eaf0;
+}
+
+.advisory-main 
+{
+    font-size: 14px;
+    line-height: 26px;
+    padding:5px;
+}
+
+.maindata
+{
+    height:480px;
+}
+
+#bankcomplain a {
+    color: #121313;
+}
+
+.pdt-0 
+{
+    padding-top:0px !important;
+}
+
+.smhead {
+    font-size: 10px;
+    color: #000;
+}
+
+.advisory-main ol
+{
+    list-style:disc !important;
+}
+
+.md-top {
+    border-bottom: solid 1px #e3e5ec;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+   
+}
+
+.ui-widget {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 0.9em !important;
+       
+}
+
+
+.reptbtn {
+    margin-top: 24px;
+    padding: 0.7rem 0.9rem !important;
+    font-size: 0.9rem !important;
+}
+
+.Rmain-table
+{
+   /* max-height:450px;
+    min-height:450px;*/
+   height:480px;
+}
+
+.producth 
+{
+    min-height: 350px;
+    max-height: 420px;
+    box-shadow: none !important;
+}
+
+
+.new-logo
+{
+    width: 82px;
+    padding-left: 20px;
+}
+
+ .navbar-dark .navbar-nav .nav-link
+{
+	color:rgba(32, 33, 36, 0.5);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover
+{
+	color:#333;
+}
+
+.bannerbox
+{
+	background:#fff;
+	padding:20px;
+
+}
+
+.smallImg
+{
+    width:130px;
+    float:right;
+    padding-right:10px;
+}
+
+.transaction-table {
+    border: solid 1px #ebe9e9 !important;
+}
+
+    .transaction-table th {
+        padding: 8px 4px !important;
+        background: #f9f6f6 !important;
+        border-top: 1px solid #ebe9e9 !important
+    }
+
+    .transaction-table td {
+        padding: 6px 4px !important;
+        font-size: 12px !important;
+    }
+
+.mdbtn
+{
+    position:absolute;
+    top:5px;
+    right:10px;
+}
+
+.mainb
+{
+    font-size:16px;
+}
+
+.modalImg {
+    width: 140px;
+}
+
+.modal-title1
+{
+    padding-top:15px;
+    padding-bottom:10px;
+}
+
+.smhead {
+    padding-right: 21px;
+    font-size: 14px;
+}
+
+.pdb-0
+{
+    padding-bottom:0px !important;
+}
+
+.banner-img {
+    height: 120px;
+}
+
+.pt-12
+{
+	padding-top:12px;
+}
+
+.main-table
+{
+	min-height:350px;
+	max-height:350px;	
+}
+
+.righth
+{
+    display:inline-block;
+    float:left;
+}
+
+.firm-name p
+{
+font-size:16px;
+line-height:24px;
+margin:0px 9px;
+}
+
+
+.firm-name  ul
+{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.firm-name ul li
+{
+    display: inline-block;
+}
+
+.logbtn
+{
+    color: #f61106;
+    font-size:20px;
+   /* padding: 1px 4px;*/
+    text-decoration: none;
+}
+
+.mb-30
+{
+    margin-bottom:50px;
+}
+
+.logbtn:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+
+/*------Icon Style----------*/
+.inputText {
+    position: relative;
+}
+
+    .inputText i 
+    {
+        position: absolute;
+        right: 0;
+        top: 12px;
+        padding: 0px 10px;
+        color: #aaa;
+        transition: 0.3s;
+        font-size: 16px;
+    }
+  
+
+    .inputText .fa-inr {
+        top: 12px;
+    }
+
+    .inputText .fa-edit {
+        top: 12px;
+    }
+
+    .inputText .fa-user {
+        top: 12px;
+    }
+
+    .inputText .fa-bank {
+        top: 10px;
+    }
+
+.form-control:focus {
+    border-color: #1150a3;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 4px rgba(17,80,163, 0.3);
+}
+
+
+input[type="text"]:focus + .irotate {
+    font-size: 19px;
+    top: 10px;
+    transform: rotate(360deg);
+    color:#41529d;
+ }
+
+input[type="text"]:focus + .fa-edit {
+    font-size: 19px;
+    top: 12px;
+    transform: rotate(360deg);
+
+}
+
+input[type="text"]:focus + .fa-user {
+    font-size: 19px;
+    top: 10px;
+    transform: rotate(360deg);
+}
+
+input[type="text"]:focus + .fa-bank {
+    font-size: 19px;
+    top: 8px;
+    transform: rotate(360deg);
+}
+
+
+/*------End of icon--------*/
+
+
+/* Tabs style */
+
+
+    /* Tabs*/
+section {
+    padding:0px;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#tabs
+{
+	
+    color:#151515;
+}
+#tabs h6.section-title{
+    color: #1c1a1a;
+}
+
+    #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+        color:#064393 !important;
+        background-color: #fff;
+        border-bottom : 2px solid #064393 !important;
+        font-weight:500;
+    }
+    #tabs .nav-tabs .nav-link 
+    {
+        border: 1px solid transparent;
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem;
+        color: #1c1a1a;
+        font-size:16px;
+    }
+
+
+
+.main-content{
+	position:relative;
+	display:block;
+}
+
+.img-holder
+{
+	background: transparent !important;
+	border:none !important;
+	
+}
+
+.leftCon
+{
+	padding-top:15px;
+}
+
+.pd-0
+{
+padding:0px;	
+}
+
+
+.fcapture {
+    background: #41529d !important;
+    border: solid 1px #41529d !important;
+    padding: 5px 25px;
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+ul.amounts {
+    display: inline-block;
+    padding-left: 0px;
+    margin-bottom: 10px;
+}
+
+    ul.amounts li {
+        float: left;
+        list-style-type: none;
+        margin-right: 10px;
+    }
+
+        ul.amounts li a {
+            /* border: 1px dashed #e4e7ed;*/
+            padding: 4px 5px;
+            color: #2407c3;
+        }
+      
+
+.shopname
+{
+   
+    padding: 15px 5px;
+    display: block;
+    width: 100%;
+   
+    
+}
+
+ .shopname p 
+ {
+        font-size: 16px;
+        font-weight:500;
+        line-height:30px;
+        margin-bottom:0px !important;
+        color:#fff;
+  }
+
+.bank-img
+{
+    width:120px;
+    margin-left:15px;
+}
+
+
+footer a {
+    color: #090979;
+    font-size: 13px;
+}
+
+footer {
+    font-size: 14px;
+    color: #090979;
+}
+
+/*--Checkbox---*/
+
+*----------------Insurance Css------------*/
+/*Check box */
+
+.innerp
+{
+padding:0px 15px; 	
+}
+
+.claimbox
+{
+	padding: 15px;
+    border: solid 1px red;
+    margin: 5px 0px 10px 0px;
+    border: solid 1px #dfdcdc;
+    border-radius: 6px;
+}
+
+/* The container */
+.Insurancebox 
+{
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    line-height: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size:13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+     color: #41529d;
+     font-weight:500;
+}
+
+/* Hide the browser's default checkbox */
+.Insurancebox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:20px;
+  width:20px;
+  background-color:#fff;
+  border:solid 1px #ccc9c9;
+}
+
+.Insurancebox {
+    display: block;
+    position: relative;
+    padding-left: 22px;
+    line-height: 23px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    color: #2407c3;
+    font-weight: 500;
+}
+
+    /* Hide the browser's default checkbox */
+    .Insurancebox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top:3px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: solid 1px #ccc9c9;
+}
+
+/* On mouse-over, add a grey background color */
+.Insurancebox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.Insurancebox input:checked ~ .checkmark {
+    background-color: #170483;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.Insurancebox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.Insurancebox .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.ml
+{
+	margin-right:10px;
+}
+
+.newicon
+{
+    font-size:18px;
+    margin-right:5px;
+}
+/*------------End of Insurance-----------*/
+.pending {
+    color: orange;
+    font-weight: 500;
+}
+
+.sucess {
+    color: #0bb40b;
+    font-weight: 500;  
+    padding: 1px 3px;
+    border-radius: 4px;
+    line-height: 20px;
+    text-align: center;
+    font-size:12px;
+ 
+}
+
+.fail {
+    color: #eb0a0a;
+    font-weight: 500;
+    padding: 1px 3px;
+    border-radius: 4px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.complain p
+{
+font-size:15px;
+padding:2px 20px;
+margin:6px !important;
+}
+
+.icost {
+    color: #2006b2;
+    padding-right: 7px;
+}
+
+.reverse {
+    color: #f98228;
+    font-weight: 500;
+    padding: 1px 3px;
+    border-radius: 4px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.myicon i
+{
+    font-size:18px;
+}
+
+.select2-container *:focus {
+    outline: none;
+}
+
+#advisory .modal-title
+{
+   
+    padding-top: 10px;
+    color: #41529d;
+}
+
+.advisory-main ol
+{
+  margin:0px;
+  padding:5px 15px;
+  text-align:justify;
+}
+
+
+#advisory .mobtn
+{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+advisory .mobtn:hover
+{
+   border:none !important;
+}
+
+#advisory .table-responsive 
+{
+    border: solid 1px #f4f4f4;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.minh {
+   /* min-height:548px;*/
+   min-height:580px;
+}
+
+.main-table td a {
+    color: #0056b3 !important;
+}
+
+.table td .subt {
+    font-size: 11px;
+}
+/*--------Responsive code----*/
+@media (max-width: 768px) {
+
+ .table thead th
+{
+	font-size:14px;
+    /* padding: 5px; */
+}
+
+.table td	
+{
+	font-size:14px;
+	/* padding:5px; */
+}
+
+.banner-img
+{
+	height:90px
+}
+
+ ul.amounts li a 
+ {
+     padding:7px;
+     font-size: 15px;
+ }
+
+}
+
+@media (max-width:568px) 
+{  
+ 
+ #tabs .nav-tabs .nav-link
+ {
+	 font-size:12px;
+ }
+
+ .pd-6
+ {
+    padding:6px !important;
+ }
+ 
+ .sm-pd0
+ {
+	 padding:0px !important;
+ }
+ 
+ .nav-link {
+    display: block;
+    padding: 0.5rem 0.2rem;
+}
+
+.banner-img
+{
+	height:45px;
+}
+
+.Insurancebox
+{
+	font-size:13px;
+}
+
+.form-check .form-check-label {
+    font-size: 0.7rem;
+    line-height:19px;
+}
+
+    .complain p {
+        font-size: 14px;
+    }
+
+ .table thead th
+ {
+  font-size: 12px;
+ }
+
+.table td 
+{
+        font-size: 12px;
+        /* padding:5px; */
+ }
+
+label
+{
+	font-size:12px;
+}
+
+.form-control
+{
+	font-size:0.9rem;
+}
+
+.card-header
+{
+	font-size:17px;
+    padding:10px; 
+}
+
+.fcapture
+{
+	padding: 8px 12px;
+    font-size:14px;
+    margin-left: 6px;
+    margin-top:5px;
+}
+
+
+
+
+.pd-x0
+{
+	padding:10px;
+}
+
+.dnone
+{
+	display:none;
+}
+
+p
+{
+padding:4px;
+}
+
+b
+{
+font-size:12px;
+}
+
+.sb-topnav.navbar-dark #sidebarToggle{
+    position:absolute;
+    right:20px;
+}
+
+}
+/*-------End of Code--------- */
+
+/*----------Thank you page--------------*/
+.thank-you-pop {
+    width: 100%;
+    /*   padding: 20px;*/
+    text-align: center;
+    border: solid 1px #ebeced;
+}
+
+    .thank-you-pop img
+    {
+        width: 25%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+.sbtn {
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    z-index: 1;
+}
+
+
+.thank-you-pop h1 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    color: #5C5C5C;
+}
+
+.thank-you-pop p {
+    font-size: 20px;
+    margin-bottom: 27px;
+    color: #5C5C5C;
+}
+
+.thank-you-pop h3.cupon-pop {
+    font-size: 25px;
+    margin-bottom: 40px;
+    color: #222;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    border: 2px dashed #222;
+    clear: both;
+    font-weight: normal;
+}
+
+    .thank-you-pop h3.cupon-pop span {
+        color: #03A9F4;
+    }
+
+
+
+    .thank-you-pop a i {
+        margin-right: 5px;
+        color: #fff;
+    }
+
+.successtable td {
+    text-align: left;
+    padding: 0.4rem;
+    border-top: solid 1px #f4f4f4;
+}
+
+
+#ignismyModal .modal-header {
+    border: 0px;
+}
+
+/*-------Download Page css----*/
+.dheader
+{
+	padding: 0.8rem 1.75rem;
+    margin-bottom: 0;
+    background-color: transperent;
+    border-bottom: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0d50ae;
+    border-bottom:solid 1px #dfd9d9;
+}
+
+.subheading
+{
+	color: #0e0d0d;
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 500;
+    line-height:24px;
+	margin-bottom:2px;
+}
+
+.sublink
+{
+	color:#172ab0;
+	font-size:14px;
+}
+
+.Imgcontainer
+{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.Imgcontainer img
+{
+ height:140px;	
+}
+
+.mlt
+{
+margin-right:5px;	
+}
+
+.downbtn
+{
+	background: #41529d !important;
+    border: solid 1px #41529d !important;
+    padding: 8px 18px;
+    font-size:14px;
+    margin-bottom: 10px;
+}
+
+/*-------End of Code----------*/
+
+@media (max-width: 575.98px) {
+    ul.amounts li a 
+    {
+        padding:8px;
+        font-size:13px;
+    }
+
+    .mb-3, .my-3
+    {
+        margin-bottom:0px !important;
+    }
+
+    .btn
+    {
+        line-height:1.2;
+    }
+
+    .card-header h4
+    {
+        font-size:17px;
+    }
+
+    .new-logo
+    {
+      padding-left:0px !important;
+    }
+
+    .restop 
+    {
+        position: absolute;
+        right: 59px;
+        top: 8px;
+    }
+
+    .firm-name p {
+        font-size: 13px;
+        line-height: 24px;
+        margin: 0px 9px;
+        padding: 0px !important;
+    }
+
+    .logbtn
+    {
+        font-size:15px;
+    }
+
+    ul.amounts li
+    {
+        margin-right:5px;
+    }
+    .sb-sidenav .sb-sidenav-menu .nav .nav-link
+    {
+        padding-left:28px;
+    }
+
+    .Insurancebox
+    {
+        margin-bottom:0px;
+    }
+
+    .container-fluid
+    {
+      padding-left:0.8rem;
+      padding-right:0.8rem; 
+    }
+
+}
+
+@media (max-width: 360px)
+{
+    ul.amounts li a
+    {
+        padding: 3px;
+        font-size:12px;
+    }
+
+    .Insurancebox
+    {
+        font-size:13px;
+    }
+
+    .fcapture {
+        padding: 6px 12px;
+        font-size: 13px;
+        margin-left: 6px;
+        margin-top: 13px;
+    }
+
+ 
+}
+
+@media (min-width:414px) and (max-width:823px)
+{
+    .vertical-tab .nav-tabs .nav-link 
+    {
+     
+        height:87px !important;
+        padding:8px !important;
+    }
+
+   
+
+    .nav-tabs .nav-link.active {
+        font-weight:200;
+    }
+
+    
+}
+
+@media(min-width:375px) and (max-width:812px) 
+{
+    .vertical-tab .nav-tabs .nav-link 
+    {
+        height:87px ;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1366px)
+{
+    .digit-group input
+    {
+        width:20px
+    }
+}
+
+@media(min-width:768px) and (max-width:1023px) 
+{
+    .digit-group input
+    {
+        width:37px;     
+    }
+}
+
+@media(min-width:450px) and (max-width:600px)
+{
+    .digit-group input
+    {
+        width:29px;
+    }
+}
+/*-----------------------Modal CSS Code-----------------------*/
+.mdheader 
+{
+    text-align: center;
+    border-bottom: solid 1px #f2eeee;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+    .btn-mod {
+        position: absolute;
+        top: 3px;
+        right: 8px;
+        color: #fff;
+    }
+
+        .btn-mod:hover {
+            color: #fff;
+        }
+
+.title1 {
+    font-size: 17px;
+    line-height: 28px;
+    padding: 10px;
+    margin-bottom: 0px;
+    color: #0e006a;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+    .advisory-main ul {
+        margin: 0px;
+        padding: 15px;
+    }
+
+        .advisory-main ul li {
+            font-size: 14px;
+            text-align: justify;
+            list-style: disc;
+            line-height: 26px;
+        }
+
+    .banktable {
+        margin-top: 0px;
+        border: 1px solid #e6e1e1;
+    }
+
+        .banktable thead th 
+        {
+            background-color: #41529d;
+            font-size: 14px;
+          
+            padding-left: 8px;
+        }
+
+        .banktable tbody td {
+            padding-left: 8px;
+            line-height: 23px !important;
+            white-space: normal !important;
+            padding: 6px !important;
+        }
+
+
+
+    .modalfixh {
+        height: 550px;
+        overflow-y: scroll;
+    }
+
+    .logo-block {
+        display: inline-block;
+    }
+
+        .logo-block img {
+            width: 60px;
+        }
+
+    .text-block {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+        .text-block h4 {
+            font-size: 1.2rem;
+            padding-top: 7px;
+            color: #1d07ac;
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+    .smallbox {
+        padding-left: 20px;
+        padding-right: 20px;
+        line-height: 26px;
+    }
+
+        .smallbox h6 
+        {
+            line-height: 25px;
+            text-align: center;
+            color: #ff9b64;
+            margin-bottom: 10px;
+            /*   background: #f7f7f8;*/
+            padding: 2px 5px;
+            font-size: 15px;
+            letter-spacing: 0.02em;
+        }
+
+    /*---------Mini-Statement Css---*/
+    .mini-details {
+        font-size: 13px;
+        line-height: 27px;
+        padding: 12px;
+        border: solid 2px #e5e6eb;
+    }
+
+    .small-font {
+        font-size: 1.1rem !important;
+        color: #061f89 !important;
+    }
+
+    .smallmodal {
+        max-width: 720px;
+    }
+
+    .clsbtn {
+        position: absolute;
+        top: 2px;
+        right: 6px;
+    }
+
+    .minit th, .minit td {
+        padding: 0.5rem !important;
+        font-size: 13px !important;
+        border-collapse: collapse;
+    }
+
+
+    .minit th {
+        background: #e5e6eb !important;
+    }
+
+    .print {
+        color: #fff;
+        font-size: 16px;
+        /* padding: 5px 12px;*/
+        background: #0056b3;
+        border-radius: 4px;
+    }
+
+    .prtbtn {
+        color: #fff;
+        text-decoration: none;
+    }
+
+        .prtbtn:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+
+    .print:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .print-block {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 17%;
+    }
+
+    .logo-block1 img {
+        width: 70px;
+    }
+
+    .thank-you-pop1 {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        border: solid 1px #dedede;
+    }
+
+    .mini-modal {
+        max-width: 420px !important;
+    }
+
+    .thank-you-pop1 h1 {
+        font-size: 26px;
+        margin-top: 30px;
+        margin-bottom: 25px;
+        color: #5C5C5C;
+    }
+
+    .thank-you-pop1 p {
+        font-size: 20px;
+        margin-bottom: 27px;
+        color: #5C5C5C;
+    }
+
+    .thank-you-pop1 h3.cupon-pop {
+        font-size: 25px;
+        margin-bottom: 40px;
+        color: #222;
+        display: inline-block;
+        text-align: center;
+        padding: 10px 20px;
+        border: 2px dashed #222;
+        clear: both;
+        font-weight: normal;
+    }
+
+        .thank-you-pop1 h3.cupon-pop span {
+            color: #03A9F4;
+        }
+
+    .thank-you-pop1 a {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 14px;
+        background-color: #8BC34A;
+        border: solid 1px #6bb615;
+    }
+
+        .thank-you-pop1 a i {
+            margin-right: 5px;
+            color: #fff;
+        }
+
+    .ministatement td {
+        text-align: left;
+        padding: 0.4rem;
+        border-top: solid 1px #f4f4f4;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .print-block {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 1%;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .table-borderless td {
+            display: block;
+        }
+
+        .small-font {
+            font-size: 0.9rem !important;
+        }
+
+        .vertical-tab .nav-tabs li {
+            float: left !important;
+            width: 33%;
+            margin: 0px !important;
+        }
+
+            .vertical-tab .nav-tabs li a {
+                padding: 0px !important;
+            }
+
+        .mtsmall {
+            margin-top: 15px;
+        }
+    }
+
+    /*-----------End of code--------*/

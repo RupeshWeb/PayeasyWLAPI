@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SESSION EXPIRED</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/Content/Plugins/css/style1.css" />
+</head>
+<body>
+    <div id="Sessionexp">
+        <div class="Sessionexp">
+            <div class="Sessionexp-404">
+                <img src="/Content/Plugins/img/bad-request.png" class="img-fluid" style="width:400px" />
+            </div>
+            <h2>Session Expired</h2>
+            <h6>Please Re-login</h6>
+            <p class="errmsg">
+                <b>This error has occured for one of following reasons:</b>
+            </p>
+            <h6>1) Someone has logged in with same credential on different browser or system.</h6>
+            <h6>2) You have used BackForwardRefresh button of your Browser.</h6>
+            <h6>3) You have double clicked on any options/buttons.</h6>
+            <h6>4) You have kept the browser window idle for long time.</h6>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function disableBackButtonAllBrowsers() {
+            window.history.forward()
+        };
+        window.onload = disableBackButtonAllBrowsers();
+        window.onpageshow = function (evts) {
+            if (evts.persisted) {
+                disableBackButtonAllBrowsers();
+            }
+        };
+        window.onunload = function () {
+            void (0)
+        };
+    </script>
+</body>
+</html>

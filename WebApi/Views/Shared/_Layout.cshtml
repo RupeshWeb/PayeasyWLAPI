@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content=" Limited India's Leading Multilevel Payment services provider like Payment Gateway API. Make a quick Mobile Recharge, DTH Recharge and Utility Payments.">
+    <meta name="keywords" content="payment gateway api, all recharge api, bill payment api, control panel api, mobile recharge api, white label api, white label telecom reseller, cheapest voip reseller provider, co branded service provider, bulk sms service provider company in india" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link rel="icon" href="@Session["RGRTRequestLogo"]">
+
+    <link href="~/Content/Plugins/bbps/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/bbps/vendors/mdi/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/new/mystyle.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/new/style.css" rel="stylesheet" />
+
+    @*<link href="~/Content/Plugins/new/stylenew.css" rel="stylesheet" />*@
+
+    <link href="~/Content/Plugins/css/icons.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/css/icofont.css" rel="stylesheet" />
+
+    <link href="~/Scripts/custom/ref.min/nofity/sweetalert.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            noBack();
+        }
+        function noBack() {
+            window.history.forward();
+        }
+    </script>
+
+</head>
+<body onpageshow="if (event.persisted) noBack();">
+    <div class="container-scroller">
+        <div class="horizontal-menu">
+
+            <nav class="navbar top-navbar col-lg-12 col-12 p-0">
+                <div class="container">
+                    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                        <a class="navbar-brand brand-logo" href="">
+                            <img src="@Session["RGRTRequestLogo"]" alt="logo" />
+                        </a>
+                        <a class="navbar-brand brand-logo-mini" href="index.html">
+                            <img src="@Session["RGRTRequestLogo"]" alt="logo" />
+                        </a>
+                    </div>
+                    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                      
+                        <ul class="navbar-nav navbar-nav-right">
+                            <li class="nav-item nav-profile">
+                            <div class="nav-profile-text">
+                                        <p class="m-0 bal">
+                                           Main Balance:
+                                            <span><i class="irotate icofont-rupee"></i></span>
+                                            <span id="showMainBalance">0.00</span>
+                                            <i class="irotate icofont-refresh" title="Click here for main balance check" onclick="showbltransaction();"></i>
+                                        </p>
+
+                                        <p class="m-0 bal">
+                                            AEPS Balance: 
+                                            <span><i class="irotate icofont-rupee"></i></span>
+                                            <span id="showBalance">0.00</span>
+                                            <i class="irotate icofont-refresh" title="Click here for aeps balance check" onclick="showbltransaction();"></i>
+                                        </p>
+
+                            </div>
+                            </li>
+                            <li class="nav-item">
+                            <form action="/Login/Logout" method="post">
+                                <button type="submit" class="logbtn" onclick="return confirm('Do you want to logout?')" style=" border: none; background: none; ">
+                                    <i class="icofont-power"></i> @*Logout*@
+                                </button>
+                            </form>
+                               
+                            </li>
+                        </ul>
+                        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="horizontal-menu-toggle">
+                            <span class="mdi mdi-menu"></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            
+            <nav class="bottom-navbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+                            <ul class="nav page-navigation">
+
+                                @*<li class="nav-item">
+                                <a class="text-white nav-link" href="index.html"><i class="mdi mdi-home-circle newicon"></i></a>
+                            </li>*@
+
+                                @*<li class="nav-item">
+                                <div class="text-center" id="navheader">
+                                    <div class="shopname">
+                                        <p>@Session["RGRTRequestCompany"]</p>
+                                    </div>
+                                </div>
+                            </li>*@
+
+                                @if (Session["RGRTRequestServices"].ToString() == "151")
+                                {
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/AEPS/AEPS">
+                                            <div class="sb-nav-link-icon">
+                                                <i class="icofont-institution newicon"></i>
+                                            </div>
+                                            AEPS
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/AEPS/Reports">
+                                            <div class="sb-nav-link-icon"><i class="icofont-papers newicon"></i></div>
+                                            Report
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/AEPS/Download">
+                                            <div class="sb-nav-link-icon">
+                                                <i class="icofont-download newicon"></i>
+                                            </div>
+                                            Download
+                                        </a>
+                                    </li>
+                                }
+                                else if (Session["RGRTRequestServices"].ToString() == "152")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/BBPS/BBPS/">
+                                            <div class="sb-nav-link-icon">
+                                            <i class="icofont-institution newicon"></i>
+                                            </div>
+                                            BBPS
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/BBPS/Reports">
+                                            <div class="sb-nav-link-icon">
+                                            <i class="icofont-papers newicon"></i>
+                                            </div>
+                                            Report
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/BBPS/Complain">
+                                            <div class="sb-nav-link-icon">
+                                                <i class="icofont-live-support newicon"></i>
+                                            </div>
+                                            Complain
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/BBPS/ComplainReport">
+                                            <div class="sb-nav-link-icon">
+                                                <i class="icofont-ebook newicon"></i>
+                                            </div>
+                                            Complain Report
+                                        </a>
+                                    </li>
+                                }
+                                else if (Session["RGRTRequestServices"].ToString() == "153")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/Pancard/Pancard/">
+                                            <div class="sb-nav-link-icon"><i class="icofont-institution newicon"></i></div>
+                                            Pancard
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/Pancard/Reports">
+                                            <div class="sb-nav-link-icon"><i class="icofont-papers newicon"></i></div>
+                                            Report
+                                        </a>
+                                    </li>
+                                }
+
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 text-right">
+                            <div class="shopname">
+                                <p>Firm Name : <span>@Session["RGRTRequestCompany"]</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        
+             <div class="container-fluid page-body-wrapper">
+                    <div class="main-panel">
+                        <div class="content-wrapper pb-0" id="layoutSidenav_content">
+                            @RenderBody()
+                        </div>
+
+                        <footer class="footer">
+                            <div class="container">
+                                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                                    <span class="text-center text-sm-left d-block d-sm-inline-block">Copyright &copy; @Session["RGRTRequestCopy"]</span>
+                                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                                        <a href="/Privacypolicy/Policy" target="_blank"> Privacy policy</a> |
+                                        <a href="/Termscondition/Terms" target="_blank">Terms &amp; Conditions</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+    </div>
+                    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+                    <script src="~/Content/Plugins/js/scripts.js"></script>
+                    <script src="~/Content/Plugins/bbps/js/settings.js"></script>
+                    <script src="~/Scripts/custom/ref.min/nofity/sweetalert.min.js"></script>
+
+                    <script src="~/Content/Plugins/assets/demo/datatables-demo.js"></script>
+                    @*<link href="~/Content/select2.min.css" rel="stylesheet" />*@
+                    <link href="~/Content/Plugins/new/select2.min.css" rel="stylesheet" />
+                    <script src="~/Content/select2.min.js"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+                    <script>
+                        jQuery("#withBankName,#InqBankName,#MiniBankName").select2({
+                            placeholder: "Select Bank Name",
+                            allowClear: true
+                        });
+                        function showbltransaction() { jQuery.post("/AEPS/CustomerBalanceInquiry", function (a) { 1 === a.StatusCode ? (jQuery("#showBalance").html(a.Data.Balance), jQuery("#showMainBalance").html(a.Data.MainBalance)) : swal("", a.Message, "error") }) };
+                    </script>
+                    <script>
+                        //window.oncontextmenu = function () {
+                        //    return false;
+                        //}
+                        //$(document).keydown(function (event) {
+                        //    if (event.keyCode == 123) {
+                        //        return false;
+                        //    }
+                        //    else if ((event.ctrlKey && event.shiftKey && event.keyCode == 73) || (event.ctrlKey && event.shiftKey && event.keyCode == 74)) {
+                        //        return false;
+                        //    }
+                        //});
+                    </script>
+                    <script>
+                        var time = new Date().getTime();
+                        $(document.body).bind("mousemove keypress", function (e) {
+                            time = new Date().getTime();
+                        });
+
+                        function refresh() {
+                            if (new Date().getTime() - time >= 1800000)
+                                window.location.reload(true);
+                            else
+                                setTimeout(refresh, 10000);
+                        }
+
+                        setTimeout(refresh, 10000);
+                    </script>
+                    @RenderSection("scripts", required: false)
+</body>
+</html>

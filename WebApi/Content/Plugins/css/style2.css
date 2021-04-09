@@ -1,0 +1,138 @@
+﻿* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#Badreq {
+    position: relative;
+    height: 100vh;
+    background-color: #fff;
+}
+
+#Badreq .Badreq 
+{
+    position:absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.Badreq {
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+}
+
+    .Badreq .Badreq-bg {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+
+    .Badreq .Badreq-bg > div {
+        width: 100%;
+        background: #fff;
+        border-radius: 90px;
+        height:144px;
+    }
+
+    .Badreq .Badreq-bg > div:nth-child(1) {
+        -webkit-box-shadow: 5px 5px 0px 0px #f3f3f3;
+        box-shadow: 5px 5px 0px 0px #f3f3f3;
+    }
+
+    .Badreq .Badreq-bg > div:nth-child(2) {
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+        -webkit-box-shadow: 5px 5px 0px 0px #f3f3f3;
+        box-shadow: 5px 5px 0px 0px #f3f3f3;
+        position: relative;
+        z-index: 10;
+    }
+
+    .Badreq .Badreq-bg > div:nth-child(3) {
+        -webkit-box-shadow: 5px 5px 0px 0px #f3f3f3;
+        box-shadow: 5px 5px 0px 0px #f3f3f3;
+        position: relative;
+        z-index: 90;
+    }
+
+    .Badreq h1
+    {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 75px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom:50px;
+        color: #151515;
+    }
+
+    .Badreq h2 {
+        font-family: 'Quicksand', sans-serif;
+        font-size:32px;
+        margin: 0;
+        font-weight: 700;
+        color: #151515;
+    }
+
+    .Badreq p 
+    {
+        margin-top:20px;
+        margin-bottom: 10px;
+        font-family: Roboto, sans-serif;
+    }
+
+    .Badreq a {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 14px;
+        text-decoration: none;
+        text-transform: uppercase;
+        background: #2f7bf4;
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 700;
+    }
+
+
+@media only screen and (max-width: 767px) {
+    .Badreq .Badreq-bg {
+        width: 287px;
+        margin: auto;
+    }
+
+        .Badreq .Badreq-bg > div {
+            height: 85px;
+        }
+}
+
+@media only screen and (max-width: 480px) {
+    .Badreq h1 {
+        font-size: 68px;
+    }
+
+    .Badreq h2 {
+        font-size: 27px;
+    }
+
+    .Badreq img
+    {
+        width:320px !important;
+
+    }
+}

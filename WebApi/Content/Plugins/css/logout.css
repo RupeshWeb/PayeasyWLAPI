@@ -1,0 +1,116 @@
+﻿* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#Logout {
+    position: relative;
+    height: 100vh;
+    background: #fff;
+}
+
+    #Logout .Logout {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+.Logout {
+    max-width: 767px;
+    width: 100%;
+    line-height: 1.4;
+    padding: 40px 40px;
+    text-align: center;
+    background: #fff;
+}
+
+    .Logout .notfound-404 {
+        position: relative;
+        /*height: 400px;*/
+    }
+
+        .Logout .notfound-404 h1 {
+            font-family: 'Roboto', sans-serif;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-size: 165px;
+            font-weight: 700;
+            margin: 0px;
+            color: #262626;
+            text-transform: uppercase;
+        }
+
+            .Logout .notfound-404 h1 > span {
+                color: #00b7ff;
+            }
+
+    .Logout h2 {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 30px;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 0px;
+        color: #dc3545;
+    }
+
+    .Logout h6 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #0d0976;
+        margin-top: 0px;
+        margin-bottom: 25px;
+        letter-spacing: 2px;
+    }
+
+    .Logout a {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 14px;
+        text-decoration: none;
+        text-transform: uppercase;
+        background: #dc3545;
+        display: inline-block;
+        padding: 8px 58px;
+        border-radius: 31px;
+        color: #fff;
+        font-weight: 400;
+        letter-spacing: 2px;
+    }
+
+
+@media only screen and (max-width: 767px) {
+    .Logout h2 {
+        font-size: 27px;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .Logout {
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .Logout .notfound-404 h1 {
+        font-size: 141px;
+    }
+
+    .Logout img
+    {
+        width:250px !important;
+    }
+}

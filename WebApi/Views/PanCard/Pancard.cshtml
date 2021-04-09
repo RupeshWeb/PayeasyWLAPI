@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Pancard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    
+        <div class="row">
+       
+                <div class="col-xl-12 col-lg-12 mg-t-20 pd-xs-0">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body pd-t-10">
+                                <div class="row">
+                                    @if (TempData["ErrorMessage"] != null)
+                                    {
+                                        <div class="col-md-12">
+                                            <h6>@TempData["ErrorMessage"]</h6>
+                                        </div>
+                                    }
+                                    <div class="col-md-5 col-sm-5 pd-l-0 pd-xs-lr-0">
+                                        <br />
+                                        <div class="col-md-12">
+                                            <div class="form-group text-center">
+                                                <form action="/PanCard/PancardRequest" method="post">
+                                                    @Html.AntiForgeryToken()
+                                                    <input type="submit" value="CLICK PROCCESS" class="btn btn-primary" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <img src="~/Content/Plugins/bbps/images/pancard.png" style="margin:0px auto;display:block; width:270px;" class="img-fluid" />
+                                            <br />
+                                        </div>
+                                        <div class="row pd-xs-10">
+                                            <br />
+                                            <div class="col-md-12 col-sm-8">
+                                                <div class="row">
+                                                    <div class="col-md-12" style="padding-left:15px;">
+                                                        <h5>Please Note : </h5>
+                                                        <span style="font-size: 13px;" class="pan-note">
+                                                            Income Tax officials may visit your outlet for inspection / verification pf process of acceptance /
+                                                            forwarding of PAN applications. Your cooperation is solicited in this regard, voilation may lead to heavy penalties.
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-md-12 text-right">
+                                                        <h5 style="margin-bottom:0px;">Powered By</h5>
+                                                        <img src="~/Content/Plugins/bbps/images/UTI.png" class="uti_Img" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7" style="overflow:auto;">
+                                        <table class="table table-bordered dataTable table-hover transaction-table" style="    margin-bottom: 0px;" id="fixTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>TXN ID</th>
+                                                    <th>AMOUNT</th>
+                                                    <th>STATUS</th>
+                                                    <th>RRN</th>
+                                                    <th>NUMBER</th>
+                                                    <th>NAME</th>
+                                                    <th>DATE</th>
+                                                    <th>RECEIPT</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="lastTransactionData">
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <script src="~/Scripts/jquery.min.js"></script>
+            <script>
+                BindData();
+                function BindData() {
+                    jQuery.ajax({
+                        method: 'POST',
+                        url: '/PanCard/SubLastTransaction',
+                        success: function (result) {
+                            var htmStr = '';
+                            if (result.StatusCode == 1) {
+                                jQuery.each(result.Data, function () {
+                                    var srtStatus = this.Status == 'Success' ? '<span style="color:green;">Success</span>' : this.Status == 'Pending' ? '<span style="color:orange;">Pending</span>' : '<span style="color:red;">' + this.Status + '</span>';
+                                    var receipt = this.Status == 'Success' ? '<a href="/PanCard/Receipt/' + this.TransRef + '" target="_blank" class="download" style="background: #094fa4;"><i class="fa fa-print"></i></a>' : '';
+                                    htmStr += '<tr><td>' + this.TransRef + '</td><td>' + this.Amount + '</td><td>' + srtStatus + '</td><td>' + this.OperatorRef + '</td><td>' + this.Number + '</td><td>' + this.PancardType + '</td><td>' + this.TransactionDate + '</td><td>' + receipt + '</td></tr>';
+                                });
+                            } else {
+                                htmStr = '<tr><td colspan="8">DATA NOT FOUND</td></tr>';
+                            }
+                            jQuery('#lastTransactionData').html(htmStr);
+                        }, error: function (result) {
+                            swal.close();
+                            alert(result.responseText);
+                            location.reload();
+                        }, async: true
+                    });
+                }
+            </script>

@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bad Request</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:700" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/Content/Plugins/css/style2.css" />
+</head>
+<body>
+    <div id="Badreq">
+        <div class="Badreq">
+            <img src="/Content/Plugins/img/Error.png" class="img-fluid" style="width:400px" />
+            <h2>BAD REQUEST</h2>
+            <p>PAGE NOT FOUND</p>
+            @{ 
+                System.Net.NetworkInformation.NetworkInterface[] nics = System.Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces();
+                String sMacAddress = string.Empty;
+                foreach (System.Net.NetworkInformation.NetworkInterface adapter in nics)
+                {
+                    if (sMacAddress == String.Empty)
+                    {
+                        sMacAddress = adapter.GetPhysicalAddress().ToString();//"1831BF272175";//
+                    }
+                }
+                <h2>@sMacAddress</h2>
+            }
+        </div>
+    </div>
+    <script type="text/javascript">
+        function disableBackButtonAllBrowsers() {
+            window.history.forward()
+        };
+        window.onload = disableBackButtonAllBrowsers();
+        window.onpageshow = function (evts) {
+            if (evts.persisted) {
+                disableBackButtonAllBrowsers();
+            }
+        };
+        window.onunload = function () {
+            void (0)
+        };
+    </script>
+</body>
+</html>

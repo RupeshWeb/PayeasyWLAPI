@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BEA5B812-5ECC-4938-9B69-1DA9C7F281D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataModel</RootNamespace>
+    <AssemblyName>DataModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\DataModel\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\DataModel\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityLog.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AEPSATMRequest.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AEPSFNOSession.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AEPSLastTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AEPSRequestLog.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AEPSWLTransactions_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllBankName.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AmountWiseSwitching.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APaymentTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Api.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APIAmountSwitching.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APIAmountSwitch_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APICommission.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APIDetail_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APIFailedReason.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APIReconciliation_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Balance.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BalanceSummary_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bank.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankWithdrawal.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BBPSCategory_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BBPSState.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BBPSSUBCategoryParameterGrouping_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BBPSSUBCategoryParameter_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BBPSSUBCategory_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BBPSSWLTransactions_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Brand.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChargeMoneyTran.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChildRechargeTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Circle.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CircleAPISetting.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CircleSery.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CirclewiseapiSettings_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientRequestLog.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Commission.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComplaintRegister.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomAPICommission.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerStatementRef_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerTransactionRef_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerTransactionupdatetEST_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoardSalesTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoardTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DependencyResolver.cs" />
+    <Compile Include="DmtBalance.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DmtStatementReport_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DmtTransactionLimitAPI_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DmtTransactionsLimitsAPI_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorTransaction.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FaildTransactionRetry.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FailSwitching.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FindBankDetailsBy_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GCTransaction.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GenericRepository\GenericRepository.cs" />
+    <Compile Include="getAdminChartRecharge_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getAdminDashboard_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getBalanceByID_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCustomerTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getDmtBalanceByID_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getOperatorByOperatorID_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getUsageByID_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getUserByID_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getUserByUserType_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LapuBalance.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LapuBalanceByID_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LapuMaster.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LapuMasterDetail.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginHistory.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterIFSCCode.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterValidate.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MerchantActivation.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MPOSTransaction.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyCommission_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NWalletOperatorCode.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Operator.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorReconciliationv2_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorReconciliation_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorSwitching.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorValidateParam.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OtherChargeSetting.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageAuthorization.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageName.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PANTransactionRequest.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PANWLTransactions_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentRequest.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomSwitch.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RechargeLastTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RechargeLazyTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RechargesPlan.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RechargeTransaction.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RechargeTransactionBy_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RechargeTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Recipient.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Recipientdetails_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReconciliationUserWise_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RefundLazyTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RefundTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Remitter.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Remitterdetails_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Remittervalidate.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequestLog.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResponsesLog.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Scheme.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SDKAuthRequestLog.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceAuthorization.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesbyTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMSApi.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SmsLog.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPUserNameByType_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionCommission_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionLastStatement_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionLazyStatement_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionProcessTime_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionQueue.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionStatement_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionSummary_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserBank.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserGSTTDSSummary_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserSession.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserToken.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserUsageDetails_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ValidateParameter.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ValidateParameterGrouping.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebplatDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebplatDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebplatDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebplatDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebplatDB.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="WebplatDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebplatDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="WebplatDB.edmx.diagram">
+      <DependentUpon>WebplatDB.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Resolver\Resolver.csproj">
+      <Project>{6CFC3977-2553-4C4E-A212-01F11C3F7543}</Project>
+      <Name>Resolver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WebplatDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebplatDB.edmx</DependentUpon>
+      <LastGenOutput>WebplatDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="WebplatDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebplatDB.edmx</DependentUpon>
+      <LastGenOutput>WebplatDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

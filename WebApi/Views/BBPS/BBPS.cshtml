@@ -1,0 +1,336 @@
+﻿@{
+    ViewBag.Title = "BBPS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .active {
+        color: red;
+    }
+</style>
+<link href="~/Content/Plugins/SimpleBar/simplebar.css" rel="stylesheet" />
+
+<link href="~/Content/Plugins/bbps/css/success.css" rel="stylesheet" />
+<div data-ng-app="rgapp">
+    <div data-ng-controller="MAINRGBS">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-3 stretch-card grid-margin">
+                    <div class="card">
+                        <div class="card-body minh">
+                            <h4 class="card-title bbps-title">
+                                BBPS Services
+                            </h4>
+                            <ul class="service-item" id="services">
+                                <li data-ng-repeat="item in categoriesdata">
+                                    <a data-ng-click="dobindopnamebycate(item)" class="link category" id="Temp{{item.CategoryID}}">
+
+                                        <div class="listservice">
+                                            <img src="{{item.ImageUrl}}" class="list-img mt-1">
+                                            <p class="m-0">{{item.CategoryName}}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 stretch-card grid-margin ">
+                    <div class="card">
+                        <div class="card-body minh">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <select class="form-control form-control-sm billerStateName" id="billerStateName" data-ng-model="searchStateName" data-ng-change="showSelectState()">
+                                            <option value="">Select</option>
+                                            <option value="{{state}}" data-ng-repeat="state in stateNameList">{{state}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched Search-icon search" placeholder="Search" data-ng-model="search.BillerName" maxlength="100" id="searchBillerName" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12" data-ng-show="subcategoriesdata.length">
+                                    <div class="form-group">
+                                        <div class="maindata demo" data-simplebar="init">
+                                            <div class="block1 borderbottom subcategory" data-ng-repeat="row in subcategoriesdata | filter:search" id="Temp{{row.BillerID}}">
+                                                <div class="d-flex operator" data-ng-click="dobindvalidateparam(row)">
+                                                    <div class="imgblk">
+                                                        <img src="{{row.ImageUrl}}" class="opr-img">
+                                                    </div>
+                                                    <div class="operator-name">
+                                                        {{row.BillerName}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-5 stretch-card grid-margin">
+                    <div class="card">
+                        <div class="card-body minh">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-6">
+                                    <img src="{{SelectedBillerImage}}" class="opr-img1 bank-details" style="display:none;">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-6">
+                                    <img src="~/Content/Plugins/bbps/images/bbps/BBPS.png" class="bbps-img pull-right">
+                                </div>
+                                <div class="col-md-12 pd-xs-lr-0 bank-details" style="display:none;">
+                                    <div class="col-xs-12 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <label>{{maintransnumber}}</label>
+                                            <input type="text" class="form-control formtext" id="MainNumber" data-ng-model="MainNumber" required="required" placeholder="{{maintransnumber}}" maxlength="{{maintransnumbermaxlen}}" minlength="{{maintransnumberminlen}}" onkeypress="return ValidateNumber(event);" pattern="{{maintransnumberregpattern}}" autocomplete="off" />
+                                            <input type="hidden" data-ng-model="Biller_Name" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <label>Mobile Number</label>
+                                            <div class="editor-field">
+                                                <input type="text" class="form-control fotmtxt" id="Retailer_MobileNumber" data-ng-model="Retailer_MobileNumber" required="required" placeholder="Enter Customer Mobile Number" maxlength="10" onkeypress="return ValidateNumber(event);" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-12 col-sm-12" data-ng-hide="accountnumverview">
+                                        <div class="form-group">
+                                            <label data-ng-bind="mainaccountlabel"></label>
+                                            <div class="editor-field">
+                                                <input type="text" id="MainAccount_Number" data-ng-model="MainAccount_Number" class="form-control" maxlength="20" placeholder="{{mainaccountlabel}}" required="required" onkeypress="return ValidateNumber(event);" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-12 col-sm-12" data-ng-hide="accountnumverviews">
+                                        <div class="form-group">
+                                            <label data-ng-bind="mainaccountlabels"></label>
+                                            <div class="editor-field">
+                                                <select id="MainAccount_NumberGroup" data-ng-model="MainAccount_NumberGroup" class="form-control billerStateName" required="">
+                                                    <option value="">Select</option>
+                                                    <option value="{{group.Value}}" data-ng-repeat="group in subParamterGroupdata">{{group.Name}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-12 col-sm-12" data-ng-hide="cyclenumbernumverview">
+                                        <div class="form-group">
+                                            <label data-ng-bind="maincyclelabel">Cycle</label>
+                                            <div class="editor-field">
+                                                <input type="text" id="MainCyclPay_Amounte_Number" data-ng-model="MainCycle_Number" class="form-control" maxlength="20" placeholder="{{maincyclelabel}}" required="required" onkeypress="return ValidateNumber(event);" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-12 col-sm-12" data-ng-hide="cyclenumbernumverviews">
+                                        <div class="form-group">
+                                            <label data-ng-bind="maincyclelabels"></label>
+                                            <div class="editor-field">
+                                                <select id="MainCycle_NumberGroup" data-ng-model="MainCycle_NumberGroup" class="form-control billerStateName" required="">
+                                                    <option value="">Select</option>
+                                                    <option value="{{group.Value}}" data-ng-repeat="group in subAuthenticatorGroupdata">{{group.Name}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-12 col-sm-12" data-ng-hide="pptypenumbernumverview">
+                                        <div class="form-group">
+                                            <label>Type</label>
+                                            <div class="editor-field">
+                                                <select class="form-control" id="PostpaidLand_Type" data-ng-model="PostpaidLand_Type">
+                                                    <option value="">Select</option>
+                                                    <option value="LLI">LLI</option>
+                                                    <option value="LLC">LLC</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-12 col-sm-12" data-ng-hide="payable_amount">
+                                        <div class="form-group">
+                                            <label>Amount</label>
+                                            <div class="editor-field">
+                                                <input type="text" class="form-control fotmtxt" id="Pay_Amount" data-ng-model="Pay_Amount" required="" placeholder="Enter Amount" maxlength="6" onkeypress="return ValidateNumber(event);" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-12 col-sm-12" style="display:none">
+                                        <div class="form-group">
+                                            <label>Net Payable Amount</label>
+                                            <div class="editor-field">
+                                                <input type="text" class="form-control fotmtxt" id="netpaymentamount" data-ng-model="netpaymentamount" readonly="readonly" placeholder="Enter Amount" value="{{Pay_Amount}}" autocomplete="off" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-12 col-sm-12  pd-xs-lr-0 bank-details" style="display:none;">
+                                    <div class="col-xs-12 col-md-12 col-sm-12">
+                                        <button class="btn btn-primary" type="submit" data-ng-hide="btnpaymentprocess" data-ng-click="dooutprocbillpay()">Pay</button>
+                                        <button class="btn btn-primary" data-ng-hide="btnfeachindvalidateinfo" type="submit" data-ng-click="doforfeachingbalfor()">Fetch Bill</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-xs-12 col-md-12 col-sm-12">
+                                        <p id="M_Message" style="color: red;">{{ErrorMessage}}</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <p class="note">
+                                            <b style="color:red;">Note:</b> <br />
+
+                                            1.Request you to check details before proceeding.<br />
+                                            2.Your service provider will take two working days to consider bill paid in their accounts.
+                                            You can check status of your payment on the Payment history page of your service provider's website
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" data-ng-hide="confirmBillPayment">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Consumer No.</label>
+                                        <input type="text" class="form-control form-control-sm" placeholder="Consumer No." value="{{shomainnumber}}" readonly="readonly" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <h6 class="card-title1">Consumer details</h6>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless bill-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="tdata">Name</td>
+                                                    <td>{{shopconsumername}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdata">Due Date</td>
+                                                    <td>{{shopduedate}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdata">Bill Date</td>
+                                                    <td>{{shopbilldate}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdata">Amount</td>
+                                                    <td>Rs.{{netpaymentamount}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdata">Bill Number</td>
+                                                    <td>{{shopbillnumbers}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdata">Mobile Number</td>
+                                                    <td>{{Retailer_MobileNumber}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdata">Partial</td>
+                                                    <td>{{shoppartial}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <div class="form-group mt1">
+                                        <label>Amount</label>
+                                        <input type="text" class="form-control form-control-sm" placeholder="Amount" value="{{netpaymentamount}}" id="netbillpayment" data-ng-model="Pay_Amount" />
+                                        <input type="hidden" name="BillerCode" value="{{BillerCodes}}" />
+                                        <input type="hidden" name="BillAmount" value="{{Pay_Amount}}" />
+                                        <input type="hidden" name="MobileNumber" value="{{Retailer_MobileNumber}}" />
+                                        <input type="hidden" name="AccountNumber" value="{{MainAccount_Number}}" />
+                                        <input type="hidden" name="Authenticator" value="{{authenticator}}" />
+                                        <input type="hidden" name="Payment" value="Cash" />
+                                        <input type="hidden" name="DueDate" value="{{shopduedate}}" />
+                                        <input type="hidden" name="BillDate" value="{{shopbilldate}}" />
+                                        <input type="hidden" name="ConsumerName" value="{{showbillername}}" />
+                                        <input type="hidden" name="BillerNumber" value="{{shopbillnumbers}}" />
+                                        <input type="hidden" name="RefNumber" value="{{refNumbers}}" />
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 text-right d-flex d-block">
+                                    <input type="button" class="btn btn-primary btn-sh" value="Pay Rs.{{netpaymentamount}}" data-ng-click="dooutprocbillpay()" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="modal fade" id="responseModal" role="dialog" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="thank-you-pop">
+                                <img src="" alt="Success Screens1" class="img-fluid" id="printStatusImages" />
+                                <img src="~/Content/Plugins/bbps/images/bbps/bbps-logo/BBPS_logo.png" class="bbps-logo" />
+
+                                <h6 id="printConsumerName"></h6>
+                                <div class="bbps-sec">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="border-bottom">
+                                                <p id="printMessage"></p>
+                                                <p id="printMessage1" class="mb-2"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <p id="printMessage2" class="mt-2"></p>
+                                            <p id="printMessage3" class="mb-2"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary mb-2">
+                                    <a href="#" id="btnPrint" class="prtbtn"><i class="mdi mdi-printer printer-w"></i>&nbsp;Print</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery-9.5.6.1.2.1.js"></script>
+
+<script>
+    var btns = document.querySelectorAll(".link");
+    Array.from(btns).forEach(item => {
+        item.addEventListener("click", () => {
+            var selected = document.getElementsByClassName("active");
+            selected[0].className = selected[0].className.replace(" active", "");
+            item.className += " active";
+        });
+    });
+</script>
+
+<script src="~/Content/Plugins/SimpleBar/simplebar.js"></script>
+<script src="~/Content/select2.min.js"></script>
+<link href="~/Content/Plugins/new/select2.min.css" rel="stylesheet" />
+<script>
+    jQuery(".billerStateName").select2({
+        placeholder: "State",
+        allowClear: true
+    });
+</script>
+
+
+
+
+
+
+
+
+<script src="~/Scripts/custom/System/angular.min.js"></script>
+<script src="~/Scripts/custom/Service/angular.routemember.rgpsmem.min.2.1.7.js"></script>

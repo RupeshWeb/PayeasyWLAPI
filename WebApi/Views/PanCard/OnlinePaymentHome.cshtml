@@ -1,0 +1,42 @@
+﻿@model BusinessEntities.UtiPaymentDeductionEntity
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>eWallet Gateway Process</title>
+</head>
+<body>
+    <div>
+        <h1>E-Wallet Gateway. Please do not press back or refresh button.</h1>
+        <form action="http://203.153.46.10:8080/panonlineservices/paymentProcess.jsp" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="transID" id="transID" value="@Model.transID" />
+            <input type="hidden" name="transStatus" id="transStatus" value="@Model.transStatus" />
+            <input type="hidden" name="applicationNo" id="applicationNo" value="@Model.applicationNo" />
+            <input type="hidden" name="UTITSLTransID" id="UTITSLTransID" value="@Model.UTITSLTransID" />
+            <input type="hidden" name="transAmt" id="transAmt" value="@Model.transAmt" />
+            <input type="submit" value="CONFIRM PROCCESS" />
+        </form>
+    </div>
+    <script>
+        window.oncontextmenu = function () {
+            return false;
+        }
+        $(document).keydown(function (event) {
+            if (event.keyCode == 123) {
+                return false;
+            }
+            else if ((event.ctrlKey && event.shiftKey && event.keyCode == 73) || (event.ctrlKey && event.shiftKey && event.keyCode == 74)) {
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>

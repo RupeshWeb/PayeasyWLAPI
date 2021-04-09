@@ -1,0 +1,1065 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E6C6F09-6206-4100-A2CF-C265625BDBD9}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebPlatApi</RootNamespace>
+    <AssemblyName>WebPlatApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AttributeRouting">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\AttributeRouting.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\AttributeRouting.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web.Http">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\AttributeRouting.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web.Http.WebHost">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\AttributeRouting.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="jose-jwt, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jose-jwt.2.4.0\lib\net40\jose-jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\..\..\WebplatProject\WebplatAPI\WebplatAPI\WebApi\bin\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\..\..\WebplatProject\WebplatAPI\WebplatAPI\WebApi\bin\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Unity.Mvc3">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\Unity.Mvc3.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.WebApi">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\webplat\WebApi\WebApi\WebApi\bin\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionFilters\AuthorizationRequiredAttribute.cs" />
+    <Compile Include="ActionFilters\GlobalExceptionAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ActionFilters\LoggingFilterAttribute.cs" />
+    <Compile Include="ActionFilters\SessionAuthorize.cs" />
+    <Compile Include="App_Start\AttributeRoutingHttpConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\CorsHandler.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controllers\AEPSController.cs" />
+    <Compile Include="Controllers\AuthenticateController.cs" />
+    <Compile Include="Controllers\AuthServicesController.cs" />
+    <Compile Include="Controllers\BBPSController.cs" />
+    <Compile Include="Controllers\PanCardController.cs" />
+    <Compile Include="Controllers\PrivacypolicyController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\TermsconditionController.cs" />
+    <Compile Include="Controllers\TransservicesController.cs" />
+    <Compile Include="ErrorHelper\ApiBusinessException.cs" />
+    <Compile Include="ErrorHelper\ApiDataException.cs" />
+    <Compile Include="ErrorHelper\ApiException.cs" />
+    <Compile Include="ErrorHelper\IApiExceptions.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\JSONHelper.cs" />
+    <Compile Include="Helpers\NLogger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\ServiceStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Areas\HelpPage\TestClient.css" />
+    <Content Include="Content\Images\Operator\AADHAR HOUSING FINANCE LTD.jpg" />
+    <Content Include="Content\Images\Operator\Aavantika Gas Ltd.jpg" />
+    <Content Include="Content\Images\Operator\AAVAS FIN LTD.jpg" />
+    <Content Include="Content\Images\Operator\ABHFL.jpg" />
+    <Content Include="Content\Images\Operator\Achiievers Gold Loan.jpg" />
+    <Content Include="Content\Images\Operator\ACT Broadband.jpg" />
+    <Content Include="Content\Images\Operator\ACTBroadband.jpg" />
+    <Content Include="Content\Images\Operator\ADANI CAPITAL PRIVATE LIMITED.jpg" />
+    <Content Include="Content\Images\Operator\Adani Electricity.jpg" />
+    <Content Include="Content\Images\Operator\Adani Gas Limited.jpg" />
+    <Content Include="Content\Images\Operator\Aditya Birla Capital.jpg" />
+    <Content Include="Content\Images\Operator\AEON Credit.jpg" />
+    <Content Include="Content\Images\Operator\AGCL.jpg" />
+    <Content Include="Content\Images\Operator\Airtel Digital TV.jpg" />
+    <Content Include="Content\Images\Operator\AIRTEL PAYMENT BANK.png" />
+    <Content Include="Content\Images\Operator\Airtel.jpg" />
+    <Content Include="Content\Images\Operator\AJMER VIDYUT.jpg" />
+    <Content Include="Content\Images\Operator\ALLAHABAD BANK.png" />
+    <Content Include="Content\Images\Operator\Alliance Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Altum Credo Home Finance.jpg" />
+    <Content Include="Content\Images\Operator\ANDHRA BANK.jpg" />
+    <Content Include="Content\Images\Operator\ANDHRA PRAGTHI GRAMEEN BANK.jpg" />
+    <Content Include="Content\Images\Operator\ANI Network.jpg" />
+    <Content Include="Content\Images\Operator\Annapurna Finance Private Limited-MFI.jpg" />
+    <Content Include="Content\Images\Operator\Annapurna Finance Private Limited-MSME.jpg" />
+    <Content Include="Content\Images\Operator\APEPDCL.jpg" />
+    <Content Include="Content\Images\Operator\APSPDCL.com.jpg" />
+    <Content Include="Content\Images\Operator\AROHAN.jpg" />
+    <Content Include="Content\Images\Operator\Asianet Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Aspire Home Finance.jpg" />
+    <Content Include="Content\Images\Operator\ASSAM GRAMIN VIKAS BANK.jpg" />
+    <Content Include="Content\Images\Operator\Assam Power Distribution Company Ltd. %28APDCL%29.jpg" />
+    <Content Include="Content\Images\Operator\AU Small Finance Bank Limited.jpg" />
+    <Content Include="Content\Images\Operator\AU SMALL FINANCE BANK.png" />
+    <Content Include="Content\Images\Operator\Avail.jpg" />
+    <Content Include="Content\Images\Operator\Avanse Financial Services Ltd.jpg" />
+    <Content Include="Content\Images\Operator\Axis Bank.jpg" />
+    <Content Include="Content\Images\Operator\AXIS BANK.png" />
+    <Content Include="Content\Images\Operator\Axis Finance Limited.jpg" />
+    <Content Include="Content\Images\Operator\Baid Leasing and Finance.jpg" />
+    <Content Include="Content\Images\Operator\Bajaj Auto Finance.jpg" />
+    <Content Include="Content\Images\Operator\Bajaj Finance Limited.jpg" />
+    <Content Include="Content\Images\Operator\Bajaj Housing Finance Ltd.jpg" />
+    <Content Include="Content\Images\Operator\BANGIYA GRAMIN VIKAS BANK.jpg" />
+    <Content Include="Content\Images\Operator\Bank of Baroda.jpg" />
+    <Content Include="Content\Images\Operator\BANK OF BARODA.png" />
+    <Content Include="Content\Images\Operator\BANK OF INDIA.png" />
+    <Content Include="Content\Images\Operator\BANK OF MAHARASHTRA.png" />
+    <Content Include="Content\Images\Operator\BANK.png" />
+    <Content Include="Content\Images\Operator\BARODA GUJRAT GRAMIN BANK.jpg" />
+    <Content Include="Content\Images\Operator\Baroda Rajasthan Kshetriya Gramin Bank.jpg" />
+    <Content Include="Content\Images\Operator\Baroda Uttar Pradesh Gramin Bank.jpg" />
+    <Content Include="Content\Images\Operator\BERAR Finance Limited.jpg" />
+    <Content Include="Content\Images\Operator\BESCOM.jpg" />
+    <Content Include="Content\Images\Operator\BEST.jpg" />
+    <Content Include="Content\Images\Operator\BGL.jpg" />
+    <Content Include="Content\Images\Operator\BHARATPUT.jpg" />
+    <Content Include="Content\Images\Operator\BhopalWater.jpg" />
+    <Content Include="Content\Images\Operator\Big Tv.jpg" />
+    <Content Include="Content\Images\Operator\BIKANER.jpg" />
+    <Content Include="Content\Images\Operator\BSES Rajdhani Delhi.jpg" />
+    <Content Include="Content\Images\Operator\BSES Yamuna Delhi.jpg" />
+    <Content Include="Content\Images\Operator\BSNL.jpg" />
+    <Content Include="Content\Images\Operator\Bussan Auto Finance.jpg" />
+    <Content Include="Content\Images\Operator\BWSSB.jpg" />
+    <Content Include="Content\Images\Operator\CANARA BANK.png" />
+    <Content Include="Content\Images\Operator\Capital Float.jpg" />
+    <Content Include="Content\Images\Operator\Cars24 Financial Services Private Limited.jpg" />
+    <Content Include="Content\Images\Operator\CATHOLIC SYRIAN BANK LIMITED.jpg" />
+    <Content Include="Content\Images\Operator\CENTRAL BANK OF INDIA.png" />
+    <Content Include="Content\Images\Operator\CESCMysore.jpg" />
+    <Content Include="Content\Images\Operator\CESU.jpg" />
+    <Content Include="Content\Images\Operator\CGCL.jpg" />
+    <Content Include="Content\Images\Operator\CGHF.jpg" />
+    <Content Include="Content\Images\Operator\CGSM.jpg" />
+    <Content Include="Content\Images\Operator\Chaitanya Godavari Grameena Bank.jpg" />
+    <Content Include="Content\Images\Operator\CHHATTISGARH RAJYA GRAMIN BANK.png" />
+    <Content Include="Content\Images\Operator\CHOLAMANDALAM.jpg" />
+    <Content Include="Content\Images\Operator\CITY UNION BANK LIMITED.png" />
+    <Content Include="Content\Images\Operator\Clix.jpg" />
+    <Content Include="Content\Images\Operator\Co-Operative Electric Supply Society Ltd.%28CESS Ltd%29,Sircilla.jpg" />
+    <Content Include="Content\Images\Operator\Comway Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Connect.jpg" />
+    <Content Include="Content\Images\Operator\CORPORATION BANK.png" />
+    <Content Include="Content\Images\Operator\Credit Fair.jpg" />
+    <Content Include="Content\Images\Operator\Credy.jpg" />
+    <Content Include="Content\Images\Operator\CSPDCL.jpg" />
+    <Content Include="Content\Images\Operator\CUGL.jpg" />
+    <Content Include="Content\Images\Operator\d2h.jpg" />
+    <Content Include="Content\Images\Operator\DDA Water.jpg" />
+    <Content Include="Content\Images\Operator\DDED.jpg" />
+    <Content Include="Content\Images\Operator\Delhi Jal Board %28DJB%29.jpg" />
+    <Content Include="Content\Images\Operator\Den Broadband.jpg" />
+    <Content Include="Content\Images\Operator\DENA BANK.jpg" />
+    <Content Include="Content\Images\Operator\DGVCL.jpg" />
+    <Content Include="Content\Images\Operator\DHBVN.jpg" />
+    <Content Include="Content\Images\Operator\Dish TV.jpg" />
+    <Content Include="Content\Images\Operator\DMI Finance.jpg" />
+    <Content Include="Content\Images\Operator\DMI Housing Finance.jpg" />
+    <Content Include="Content\Images\Operator\DNHPDCL.jpg" />
+    <Content Include="Content\Images\Operator\DOP Nagaland.jpg" />
+    <Content Include="Content\Images\Operator\DPGAP.jpg" />
+    <Content Include="Content\Images\Operator\Dreamtel Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Easy Home Finance Limited.jpg" />
+    <Content Include="Content\Images\Operator\EDC.jpg" />
+    <Content Include="Content\Images\Operator\Ellaquai Dehati Bank.png" />
+    <Content Include="Content\Images\Operator\EQUITAS SMALL FINANCE BANK LIMITED.png" />
+    <Content Include="Content\Images\Operator\Ess kay fincorp.jpg" />
+    <Content Include="Content\Images\Operator\Excell Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Faircent.jpg" />
+    <Content Include="Content\Images\Operator\FEDERAL BANK LTD.jpg" />
+    <Content Include="Content\Images\Operator\FINCARE SMALL FINANCE BANK LTD.png" />
+    <Content Include="Content\Images\Operator\Fincare Small Finance Bank.jpg" />
+    <Content Include="Content\Images\Operator\Fintree Finance.jpg" />
+    <Content Include="Content\Images\Operator\Flash Fibernet.jpg" />
+    <Content Include="Content\Images\Operator\FlexSalary.jpg" />
+    <Content Include="Content\Images\Operator\Foxtel Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Fullerton India Housing Finance Limited.jpg" />
+    <Content Include="Content\Images\Operator\Fullerton India.jpg" />
+    <Content Include="Content\Images\Operator\Fusionnet.jpg" />
+    <Content Include="Content\Images\Operator\Fusionnet.jpg.jpg" />
+    <Content Include="Content\Images\Operator\G U Financial Services Pvt Ltd.jpg" />
+    <Content Include="Content\Images\Operator\GBPS Broadband.jpg" />
+    <Content Include="Content\Images\Operator\GED.jpg" />
+    <Content Include="Content\Images\Operator\GESCOM.jpg" />
+    <Content Include="Content\Images\Operator\GGL.jpg" />
+    <Content Include="Content\Images\Operator\GMCW.jpg" />
+    <Content Include="Content\Images\Operator\GPED.jpg" />
+    <Content Include="Content\Images\Operator\Gramin Bank of Aryavart.jpg" />
+    <Content Include="Content\Images\Operator\Greater Warangal Water.jpg" />
+    <Content Include="Content\Images\Operator\GREEN GAS LIMITED.jpg" />
+    <Content Include="Content\Images\Operator\GTPL Broadband.jpg" />
+    <Content Include="Content\Images\Operator\gujarat gas limited.png" />
+    <Content Include="Content\Images\Operator\Haryana Urban Development Authority.jpg" />
+    <Content Include="Content\Images\Operator\Hathway Broadband.jpg" />
+    <Content Include="Content\Images\Operator\HCG.jpg" />
+    <Content Include="Content\Images\Operator\HDB Financial Services.jpg" />
+    <Content Include="Content\Images\Operator\HDFC Bank Ltd.jpg" />
+    <Content Include="Content\Images\Operator\HDFC Bank.jpg" />
+    <Content Include="Content\Images\Operator\HDFC BANK.png" />
+    <Content Include="Content\Images\Operator\HDFC Home Loan.jpg" />
+    <Content Include="Content\Images\Operator\Hero FinCorp.jpg" />
+    <Content Include="Content\Images\Operator\HESCOM.jpg" />
+    <Content Include="Content\Images\Operator\Himachal Pradesh Gramin Bank.png" />
+    <Content Include="Content\Images\Operator\HMWSSB.jpg" />
+    <Content Include="Content\Images\Operator\Home Credit.jpg" />
+    <Content Include="Content\Images\Operator\HPSEBL.jpg" />
+    <Content Include="Content\Images\Operator\HUDA.jpg" />
+    <Content Include="Content\Images\Operator\i2i Funding.jpg" />
+    <Content Include="Content\Images\Operator\IBCF.jpg" />
+    <Content Include="Content\Images\Operator\IBHF.png" />
+    <Content Include="Content\Images\Operator\ICICI BANK LIMITED.jpg" />
+    <Content Include="Content\Images\Operator\ICICI Bank Ltd - Loans.jpg" />
+    <Content Include="Content\Images\Operator\ICICI Bank.jpg" />
+    <Content Include="Content\Images\Operator\IDBI BANK.jpg" />
+    <Content Include="Content\Images\Operator\IDFC BANK LIMITED.jpg" />
+    <Content Include="Content\Images\Operator\IDFC First Bank.jpg" />
+    <Content Include="Content\Images\Operator\IDFC first.jpg" />
+    <Content Include="Content\Images\Operator\IGL.jpg" />
+    <Content Include="Content\Images\Operator\IHMC.JPG" />
+    <Content Include="Content\Images\Operator\IMC.jpg" />
+    <Content Include="Content\Images\Operator\INDIA POST PAYMENT BANK.jpg" />
+    <Content Include="Content\Images\Operator\India Power Corporation Ltd. %28Asansol%29.jpg" />
+    <Content Include="Content\Images\Operator\INDIAN BANK.jpg" />
+    <Content Include="Content\Images\Operator\INDIAN OVERSEAS BANK.jpg" />
+    <Content Include="Content\Images\Operator\Indiashelter Housing Finance.jpg" />
+    <Content Include="Content\Images\Operator\INDUSIND BANK LTD.jpg" />
+    <Content Include="Content\Images\Operator\IndusInd Bank.jpg" />
+    <Content Include="Content\Images\Operator\INSTALINKS.jpg" />
+    <Content Include="Content\Images\Operator\Instanet Broadband.jpg" />
+    <Content Include="Content\Images\Operator\IOAG.jpg" />
+    <Content Include="Content\Images\Operator\ION.jpg" />
+    <Content Include="Content\Images\Operator\IRMEPL.jpg" />
+    <Content Include="Content\Images\Operator\J AND K GRAMEEN BANK.jpg" />
+    <Content Include="Content\Images\Operator\Jain Autofin.jpg" />
+    <Content Include="Content\Images\Operator\JAMMU AND KASHMIR BANK LIMITED.jpg" />
+    <Content Include="Content\Images\Operator\JBVNL.jpg" />
+    <Content Include="Content\Images\Operator\JDVVNL.jpg" />
+    <Content Include="Content\Images\Operator\JMC.jpg" />
+    <Content Include="Content\Images\Operator\JSFB.jpg" />
+    <Content Include="Content\Images\Operator\JUSCO.jpg" />
+    <Content Include="Content\Images\Operator\JVVNL.jpg" />
+    <Content Include="Content\Images\Operator\Kanakadurga Finance Limited.jpg" />
+    <Content Include="Content\Images\Operator\KARNATAKA BANK LIMITED.png" />
+    <Content Include="Content\Images\Operator\KARNATAKA VIKAS GRAMEENA BANK.png" />
+    <Content Include="Content\Images\Operator\KARUR VYSYA BANK LTD.jpg" />
+    <Content Include="Content\Images\Operator\Kashi Gomti Samyut Grameen Bank.jpg" />
+    <Content Include="Content\Images\Operator\KEDL.jpg" />
+    <Content Include="Content\Images\Operator\KESC.jpg" />
+    <Content Include="Content\Images\Operator\Kinara Capital.jpg" />
+    <Content Include="Content\Images\Operator\Kissht.jpg" />
+    <Content Include="Content\Images\Operator\Kosamattam Finance.jpg" />
+    <Content Include="Content\Images\Operator\KOTAK MAHINDRA BANK LIMITED.jpg" />
+    <Content Include="Content\Images\Operator\Kotak Mahindra Bank.jpg" />
+    <Content Include="Content\Images\Operator\KSEB.jpg" />
+    <Content Include="Content\Images\Operator\KWA.jpg" />
+    <Content Include="Content\Images\Operator\L&amp;T Finance Limited.jpg" />
+    <Content Include="Content\Images\Operator\LAXMI VILAS BANK.jpg" />
+    <Content Include="Content\Images\Operator\LenDenClub.jpg" />
+    <Content Include="Content\Images\Operator\Loan through Paytm.jpg" />
+    <Content Include="Content\Images\Operator\LoanTAP.jpg" />
+    <Content Include="Content\Images\Operator\LokSuvidha.jpg" />
+    <Content Include="Content\Images\Operator\Ludhiana water board.jpg" />
+    <Content Include="Content\Images\Operator\Mach1 Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Madhya Bihar Gramin Bank.jpg" />
+    <Content Include="Content\Images\Operator\Madhya Pradesh Urban %28e-Nagarpalika%29 - Water.jpg" />
+    <Content Include="Content\Images\Operator\MADHYANCHAL GRAMIN BANK - Copy.jpg" />
+    <Content Include="Content\Images\Operator\Magma Fincorp Ltd.jpg" />
+    <Content Include="Content\Images\Operator\Mahanagar Gas- Mumbai.jpg" />
+    <Content Include="Content\Images\Operator\Maharashtra Gramin Bank.png" />
+    <Content Include="Content\Images\Operator\Maharashtra Natural Gas Limited %28MNGL%29.jpg" />
+    <Content Include="Content\Images\Operator\MAHESH URBAN BANK - Copy.jpg" />
+    <Content Include="Content\Images\Operator\Mahindra Rural Housing Finance Ltd.jpg" />
+    <Content Include="Content\Images\Operator\Manappuram Finance Limited-Vehicle Loan.jpg" />
+    <Content Include="Content\Images\Operator\Manappuram.jpg" />
+    <Content Include="Content\Images\Operator\Manba Finance Limited.jpg" />
+    <Content Include="Content\Images\Operator\Manipur Rural Bank.jpg" />
+    <Content Include="Content\Images\Operator\Manipur State Power Distribution Company Ltd. %28MSPDCL%29.jpg" />
+    <Content Include="Content\Images\Operator\MAS Financial Services Limited.jpg" />
+    <Content Include="Content\Images\Operator\MAS Rural Housing &amp; Mortgage Finance Ltd.jpg" />
+    <Content Include="Content\Images\Operator\Maxvalue Credits And Investments Ltd.jpg" />
+    <Content Include="Content\Images\Operator\MC-Jalandhar.jpg" />
+    <Content Include="Content\Images\Operator\MCChandigarh.jpg" />
+    <Content Include="Content\Images\Operator\MCCORPORATION.jpg" />
+    <Content Include="Content\Images\Operator\MCG-Water.jpg" />
+    <Content Include="Content\Images\Operator\MCORPORATION-AMRITSAR.jpg" />
+    <Content Include="Content\Images\Operator\MEGHALAYA RURAL BANK.jpg" />
+    <Content Include="Content\Images\Operator\Meghbela.jpg" />
+    <Content Include="Content\Images\Operator\MESCOM.jpg" />
+    <Content Include="Content\Images\Operator\MGVCL.jpg" />
+    <Content Include="Content\Images\Operator\Microscan.jpg" />
+    <Content Include="Content\Images\Operator\Mintifi Finserve Private Limited.jpg" />
+    <Content Include="Content\Images\Operator\MIZORAM RURAL BANK.png" />
+    <Content Include="Content\Images\Operator\Mizoram Water.jpg" />
+    <Content Include="Content\Images\Operator\Mnet Broadband.jpg" />
+    <Content Include="Content\Images\Operator\MPCZ.jpg" />
+    <Content Include="Content\Images\Operator\MPDC.png" />
+    <Content Include="Content\Images\Operator\MPPKVVCL.jpg" />
+    <Content Include="Content\Images\Operator\MPPVV-Jabalpur.jpg" />
+    <Content Include="Content\Images\Operator\MSEDCL.jpg" />
+    <Content Include="Content\Images\Operator\MTNL Delhi.jpg" />
+    <Content Include="Content\Images\Operator\MTNL Mumbai.jpg" />
+    <Content Include="Content\Images\Operator\Municipal Corporation of Faridabad -Water.jpg" />
+    <Content Include="Content\Images\Operator\Muthoot Capital Service Ltd.jpg" />
+    <Content Include="Content\Images\Operator\Muthoot Finance Ltd.jpg" />
+    <Content Include="Content\Images\Operator\Muthoot Fincorp Ltd.jpg" />
+    <Content Include="Content\Images\Operator\Muthoot Microfin Limited.jpg" />
+    <Content Include="Content\Images\Operator\Nagpur Municipal Corporation- Orange City Water Nagpur.jpg" />
+    <Content Include="Content\Images\Operator\Nanded Waghala City Municipal Corporation -Water.jpg" />
+    <Content Include="Content\Images\Operator\Narmada Jhabua Gramin Bank - Copy.jpg" />
+    <Content Include="Content\Images\Operator\NBPDCL.jpg" />
+    <Content Include="Content\Images\Operator\NDMC-Water.jpg" />
+    <Content Include="Content\Images\Operator\NDMC.jpg" />
+    <Content Include="Content\Images\Operator\Neev Finance.jpg" />
+    <Content Include="Content\Images\Operator\NESCO UTILITY.jpg" />
+    <Content Include="Content\Images\Operator\Netplus Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Nextra Broadband.jpg" />
+    <Content Include="Content\Images\Operator\NGL.jpg" />
+    <Content Include="Content\Images\Operator\Nikon.jpg" />
+    <Content Include="Content\Images\Operator\Northern Power Distribution Company Of Telangana Limited %28TSNPDCL%29.jpg" />
+    <Content Include="Content\Images\Operator\NPCL.jpg" />
+    <Content Include="Content\Images\Operator\ODISHA GRAMYA BANK.jpg" />
+    <Content Include="Content\Images\Operator\OHMYLOAN.jpg" />
+    <Content Include="Content\Images\Operator\ONE Broadband.jpg" />
+    <Content Include="Content\Images\Operator\operator1.jpg" />
+    <Content Include="Content\Images\Operator\Orange Retail Finance India Pvt Ltd.jpg" />
+    <Content Include="Content\Images\Operator\ORIENTAL BANK OF COMMERCE - Copy.png" />
+    <Content Include="Content\Images\Operator\Oxyzo Financial Services Pvt Ltd.jpg" />
+    <Content Include="Content\Images\Operator\PaisaDukan.jpg" />
+    <Content Include="Content\Images\Operator\Pallavan Grama Bank - Copy.jpg" />
+    <Content Include="Content\Images\Operator\Paschim Banga Gramin Bank - Copy.jpg" />
+    <Content Include="Content\Images\Operator\Patna Municipal Corporation - GCC Tax.jpg" />
+    <Content Include="Content\Images\Operator\PAYTM PAYMENTS BANK LTD - Copy.jpg" />
+    <Content Include="Content\Images\Operator\PED-Mizoram.jpg" />
+    <Content Include="Content\Images\Operator\Perfect Finance.jpg" />
+    <Content Include="Content\Images\Operator\PGVCL.jpg" />
+    <Content Include="Content\Images\Operator\PMC Council.jpg" />
+    <Content Include="Content\Images\Operator\PMC-Water.jpg" />
+    <Content Include="Content\Images\Operator\PNB Housing Finance Ltd.jpg" />
+    <Content Include="Content\Images\Operator\Praction Network.jpg" />
+    <Content Include="Content\Images\Operator\Pragathi Krishna Gramin Bank.jpg" />
+    <Content Include="Content\Images\Operator\PSPCL.jpg" />
+    <Content Include="Content\Images\Operator\PUDUVAI BHARATHIAR GRAMA BANK.png" />
+    <Content Include="Content\Images\Operator\PUNJAB AND SIND BANK - Copy.jpg" />
+    <Content Include="Content\Images\Operator\PUNJAB NATIONAL BANK.jpg" />
+    <Content Include="Content\Images\Operator\Purvanchal Gramin Bank.jpg" />
+    <Content Include="Content\Images\Operator\Rajasthan Marudhara Gramin Bank.jpg" />
+    <Content Include="Content\Images\Operator\RBL Bank Limited.png" />
+    <Content Include="Content\Images\Operator\RBL Bank Ltd.jpg" />
+    <Content Include="Content\Images\Operator\RMC.jpg" />
+    <Content Include="Content\Images\Operator\Sanwariya Gas Limited.jpg" />
+    <Content Include="Content\Images\Operator\Saptagiri Grameena bank.jpg" />
+    <Content Include="Content\Images\Operator\SARASWAT COOPERATIVE BANK LIMITED.jpg" />
+    <Content Include="Content\Images\Operator\Sarva Haryana Gramin Bank.jpg" />
+    <Content Include="Content\Images\Operator\Sarva UP Gramin Bank.png" />
+    <Content Include="Content\Images\Operator\SBFC Finance Pvt Ltd.jpg" />
+    <Content Include="Content\Images\Operator\SCUFL.jpg" />
+    <Content Include="Content\Images\Operator\SGL.jpg" />
+    <Content Include="Content\Images\Operator\Shriram Housing Finance.jpg" />
+    <Content Include="Content\Images\Operator\Shriram Transport Finance.jpg" />
+    <Content Include="Content\Images\Operator\Sikka Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Sikkim Power.jpg" />
+    <Content Include="Content\Images\Operator\Siti Broadband.jpg" />
+    <Content Include="Content\Images\Operator\smc-water.jpg" />
+    <Content Include="Content\Images\Operator\SMC.jpg" />
+    <Content Include="Content\Images\Operator\SMEcorner.jpg" />
+    <Content Include="Content\Images\Operator\Snapmint.jpg" />
+    <Content Include="Content\Images\Operator\SOUTH BIHAR POWER.jpg" />
+    <Content Include="Content\Images\Operator\SOUTH INDIAN BANK.png" />
+    <Content Include="Content\Images\Operator\SOUTHCO Utility.jpg" />
+    <Content Include="Content\Images\Operator\SPECTRA.jpg" />
+    <Content Include="Content\Images\Operator\STATE BANK OF INDIA.jpg" />
+    <Content Include="Content\Images\Operator\StuCred.jpg" />
+    <Content Include="Content\Images\Operator\Sun Direct.jpg" />
+    <Content Include="Content\Images\Operator\Suryoday Small Finance Bank.jpg" />
+    <Content Include="Content\Images\Operator\Svatantra Microfin Private Limited.jpg" />
+    <Content Include="Content\Images\Operator\SYNDICATE BANK.jpg" />
+    <Content Include="Content\Images\Operator\SYNDICATE BANK.png" />
+    <Content Include="Content\Images\Operator\TAMILNAD MERCANTILE BANK LIMITED.jpg" />
+    <Content Include="Content\Images\Operator\TAMILNADU STATE APEX COOP BANK.jpg" />
+    <Content Include="Content\Images\Operator\TATA CAPITAL.jpg" />
+    <Content Include="Content\Images\Operator\Tata Power DDL.jpg" />
+    <Content Include="Content\Images\Operator\Tata Power Mumbai.jpg" />
+    <Content Include="Content\Images\Operator\Tata Sky Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Tata Sky.jpg" />
+    <Content Include="Content\Images\Operator\Tata Tele Broadband.jpg" />
+    <Content Include="Content\Images\Operator\TECL.jpg" />
+    <Content Include="Content\Images\Operator\TELANGANA GRAMEENA BANK.jpg" />
+    <Content Include="Content\Images\Operator\Telangana State Southern Power Distribution Company Ltd. %28TSSPDCL%29.jpg" />
+    <Content Include="Content\Images\Operator\TGML.jpg" />
+    <Content Include="Content\Images\Operator\Tikona Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Timbl Broadband.jpg" />
+    <Content Include="Content\Images\Operator\TNEB.jpg" />
+    <Content Include="Content\Images\Operator\TNGCL.png" />
+    <Content Include="Content\Images\Operator\Torrent Power Ltd.jpg" />
+    <Content Include="Content\Images\Operator\Toyota Financial Services.jpg" />
+    <Content Include="Content\Images\Operator\TP Ajmer Distribution Ltd. %28TPADL%29.jpg" />
+    <Content Include="Content\Images\Operator\TP Central Odisha Distribution Ltd.jpg" />
+    <Content Include="Content\Images\Operator\Tribe3.jpg" />
+    <Content Include="Content\Images\Operator\Tripura Gramin Bank.jpg" />
+    <Content Include="Content\Images\Operator\Tsspdcl- Prepaid Meter Recharge.jpg" />
+    <Content Include="Content\Images\Operator\TTN Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Tumkur City Corporation-Water and UGD.jpg" />
+    <Content Include="Content\Images\Operator\TVS Credit Services Limited.jpg" />
+    <Content Include="Content\Images\Operator\UCN Broadband.jpg" />
+    <Content Include="Content\Images\Operator\UCO BANK.jpg" />
+    <Content Include="Content\Images\Operator\UCPGPL.jpg" />
+    <Content Include="Content\Images\Operator\UGVCL.jpg" />
+    <Content Include="Content\Images\Operator\UHBVN.jpg" />
+    <Content Include="Content\Images\Operator\UIT-Bhiwadi.jpg" />
+    <Content Include="Content\Images\Operator\Ujjivan Small Finance Bank.jpg" />
+    <Content Include="Content\Images\Operator\Ujjivan Small Finance Bank.png" />
+    <Content Include="Content\Images\Operator\UJS.jpg" />
+    <Content Include="Content\Images\Operator\UNION BANK OF INDIA.png" />
+    <Content Include="Content\Images\Operator\UNITED BANK OF INDIA.png" />
+    <Content Include="Content\Images\Operator\UPCL.jpg" />
+    <Content Include="Content\Images\Operator\UPPCL.jpg" />
+    <Content Include="Content\Images\Operator\Uttar Bihar Gramin Bank.jpg" />
+    <Content Include="Content\Images\Operator\Uttarbanga Kshteriya Gramin Bank.png" />
+    <Content Include="Content\Images\Operator\Vadodara Gas Limited %28VGL%29.jpg" />
+    <Content Include="Content\Images\Operator\VANANCHAL GRAMIN BANK.jpg" />
+    <Content Include="Content\Images\Operator\Varthana.jpg" />
+    <Content Include="Content\Images\Operator\Vastu Housing Finance Corporation Limited.jpg" />
+    <Content Include="Content\Images\Operator\Vfibernet Broadband.jpg" />
+    <Content Include="Content\Images\Operator\Vidharbha Konkan Gramin Bank.png" />
+    <Content Include="Content\Images\Operator\VIJAYA BANK.png" />
+    <Content Include="Content\Images\Operator\voda-fone.jpg" />
+    <Content Include="Content\Images\Operator\Volkswagen Finance.jpg" />
+    <Content Include="Content\Images\Operator\WBSEDCL.jpg" />
+    <Content Include="Content\Images\Operator\WESCO UTILITY.jpg" />
+    <Content Include="Content\Images\Operator\WheelsEMI.jpg" />
+    <Content Include="Content\Images\Operator\Wonder Home Finance Ltd.jpg" />
+    <Content Include="Content\Images\Operator\YES BANK.png" />
+    <Content Include="Content\Images\Operator\YOU Broadband.jpg" />
+    <Content Include="Content\Images\Operator\ZestMoney.jpg" />
+    <Content Include="Content\Images\Operator\Ziploan.jpg" />
+    <Content Include="Content\Images\Services\AEPS.png" />
+    <Content Include="Content\Images\Services\ATM.png" />
+    <Content Include="Content\Images\Services\broadband.png" />
+    <Content Include="Content\Images\Services\bulb-3.png" />
+    <Content Include="Content\Images\Services\drop.png" />
+    <Content Include="Content\Images\Services\DTH.png" />
+    <Content Include="Content\Images\Services\electricity.png" />
+    <Content Include="Content\Images\Services\fastTag.png" />
+    <Content Include="Content\Images\Services\gas.png" />
+    <Content Include="Content\Images\Services\gift-card.png" />
+    <Content Include="Content\Images\Services\insurance.png" />
+    <Content Include="Content\Images\Services\land.png" />
+    <Content Include="Content\Images\Services\landline.png" />
+    <Content Include="Content\Images\Services\loan.png" />
+    <Content Include="Content\Images\Services\mobile.png" />
+    <Content Include="Content\Images\Services\money.png" />
+    <Content Include="Content\Images\Services\mpos.png" />
+    <Content Include="Content\Images\Services\pancard.png" />
+    <Content Include="Content\Images\Services\payout.png" />
+    <Content Include="Content\Images\Services\postpaid.png" />
+    <Content Include="Content\Images\Services\wallet.png" />
+    <Content Include="Content\Images\Services\water.png" />
+    <Content Include="Content\Plugins\assets\demo\chart-area-demo.js" />
+    <Content Include="Content\Plugins\assets\demo\chart-bar-demo.js" />
+    <Content Include="Content\Plugins\assets\demo\chart-pie-demo.js" />
+    <Content Include="Content\Plugins\assets\demo\datatables-demo.js" />
+    <Content Include="Content\Plugins\assets\img\banner1.png" />
+    <Content Include="Content\Plugins\assets\img\error-404-monochrome.svg" />
+    <Content Include="Content\Plugins\bbps\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\Plugins\bbps\css\bootstrap.min.css" />
+    <Content Include="Content\Plugins\bbps\css\receipt.css" />
+    <Content Include="Content\Plugins\bbps\css\receiptPrint.css" />
+    <Content Include="Content\Plugins\bbps\css\success-screen.css" />
+    <Content Include="Content\Plugins\bbps\css\success.css" />
+    <Content Include="Content\Plugins\bbps\css\SuccessPrint.css" />
+    <Content Include="Content\Plugins\bbps\images\1.jpg" />
+    <Content Include="Content\Plugins\bbps\images\2.jpg" />
+    <Content Include="Content\Plugins\bbps\images\bank1.jpg" />
+    <Content Include="Content\Plugins\bbps\images\bank10.png" />
+    <Content Include="Content\Plugins\bbps\images\Bank3.jpg" />
+    <Content Include="Content\Plugins\bbps\images\Bank4.jpg" />
+    <Content Include="Content\Plugins\bbps\images\bank5.jpg" />
+    <Content Include="Content\Plugins\bbps\images\bank6.jpg" />
+    <Content Include="Content\Plugins\bbps\images\bank7.png" />
+    <Content Include="Content\Plugins\bbps\images\bank8.jpg" />
+    <Content Include="Content\Plugins\bbps\images\bank9.jpg" />
+    <Content Include="Content\Plugins\bbps\images\Bank_logo.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps1.svg" />
+    <Content Include="Content\Plugins\bbps\images\bbps2.svg" />
+    <Content Include="Content\Plugins\bbps\images\bbps\B-logo.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\bbps-logo\B-logo.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\bbps-logo\BBPS.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\bbps-logo\BBPS_logo.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\bbps-logo\like.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\bbps-logo\otp.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\BBPS.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\BBPS_logo.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\bg-content.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\billpay.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\call.svg" />
+    <Content Include="Content\Plugins\bbps\images\bbps\care.jpg" />
+    <Content Include="Content\Plugins\bbps\images\bbps\care.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\cust.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\failure.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\icici.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\img1.jpg" />
+    <Content Include="Content\Plugins\bbps\images\bbps\img1.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\img2.jpg" />
+    <Content Include="Content\Plugins\bbps\images\bbps\logo2.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\logo3.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\logo4.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\Pending.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\success-blue.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\Success-screen\failure.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\Success-screen\Pending.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps\Success-screen\success-blue.png" />
+    <Content Include="Content\Plugins\bbps\images\bbps_banner.jpg" />
+    <Content Include="Content\Plugins\bbps\images\boi.png" />
+    <Content Include="Content\Plugins\bbps\images\bulb-1.png" />
+    <Content Include="Content\Plugins\bbps\images\bulb-2.png" />
+    <Content Include="Content\Plugins\bbps\images\bulb-3.png" />
+    <Content Include="Content\Plugins\bbps\images\bulb.png" />
+    <Content Include="Content\Plugins\bbps\images\compl.png" />
+    <Content Include="Content\Plugins\bbps\images\download.png" />
+    <Content Include="Content\Plugins\bbps\images\download1.png" />
+    <Content Include="Content\Plugins\bbps\images\download2.jpg" />
+    <Content Include="Content\Plugins\bbps\images\download3.jpg" />
+    <Content Include="Content\Plugins\bbps\images\edu.png" />
+    <Content Include="Content\Plugins\bbps\images\elec.png" />
+    <Content Include="Content\Plugins\bbps\images\face1.jpg" />
+    <Content Include="Content\Plugins\bbps\images\fast.png" />
+    <Content Include="Content\Plugins\bbps\images\favicon.png" />
+    <Content Include="Content\Plugins\bbps\images\gas.png" />
+    <Content Include="Content\Plugins\bbps\images\health.png" />
+    <Content Include="Content\Plugins\bbps\images\ico-download.png" />
+    <Content Include="Content\Plugins\bbps\images\ico1.png" />
+    <Content Include="Content\Plugins\bbps\images\ico2.png" />
+    <Content Include="Content\Plugins\bbps\images\ico3.png" />
+    <Content Include="Content\Plugins\bbps\images\icon-1.png" />
+    <Content Include="Content\Plugins\bbps\images\icon-finger.png" />
+    <Content Include="Content\Plugins\bbps\images\icon.png" />
+    <Content Include="Content\Plugins\bbps\images\Image1.png" />
+    <Content Include="Content\Plugins\bbps\images\indus.png" />
+    <Content Include="Content\Plugins\bbps\images\ins.png" />
+    <Content Include="Content\Plugins\bbps\images\insurance.png" />
+    <Content Include="Content\Plugins\bbps\images\land.png" />
+    <Content Include="Content\Plugins\bbps\images\light.png" />
+    <Content Include="Content\Plugins\bbps\images\lins.png" />
+    <Content Include="Content\Plugins\bbps\images\loan-p.png" />
+    <Content Include="Content\Plugins\bbps\images\logo.png" />
+    <Content Include="Content\Plugins\bbps\images\logo4.png" />
+    <Content Include="Content\Plugins\bbps\images\lpg.png" />
+    <Content Include="Content\Plugins\bbps\images\message.svg" />
+    <Content Include="Content\Plugins\bbps\images\money.png" />
+    <Content Include="Content\Plugins\bbps\images\pancard.png" />
+    <Content Include="Content\Plugins\bbps\images\postpaid.png" />
+    <Content Include="Content\Plugins\bbps\images\sbi.png" />
+    <Content Include="Content\Plugins\bbps\images\society.png" />
+    <Content Include="Content\Plugins\bbps\images\taxes.png" />
+    <Content Include="Content\Plugins\bbps\images\tv.png" />
+    <Content Include="Content\Plugins\bbps\images\UTI.png" />
+    <Content Include="Content\Plugins\bbps\images\voda-fone.jpg" />
+    <Content Include="Content\Plugins\bbps\images\water.png" />
+    <Content Include="Content\Plugins\bbps\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\Plugins\bbps\js\bootstrap-table.js" />
+    <Content Include="Content\Plugins\bbps\js\calendar.js" />
+    <Content Include="Content\Plugins\bbps\js\dashboard.js" />
+    <Content Include="Content\Plugins\bbps\js\formpickers.js" />
+    <Content Include="Content\Plugins\bbps\js\hoverable-collapse.js" />
+    <Content Include="Content\Plugins\bbps\js\js-grid.js" />
+    <Content Include="Content\Plugins\bbps\js\misc.js" />
+    <Content Include="Content\Plugins\bbps\js\modal-demo.js" />
+    <Content Include="Content\Plugins\bbps\js\moment.min.js" />
+    <Content Include="Content\Plugins\bbps\js\off-canvas.js" />
+    <Content Include="Content\Plugins\bbps\js\owl-carousel.js" />
+    <Content Include="Content\Plugins\bbps\js\popover.js" />
+    <Content Include="Content\Plugins\bbps\js\rickshaw.js" />
+    <Content Include="Content\Plugins\bbps\js\scripts.js" />
+    <Content Include="Content\Plugins\bbps\js\select2.js" />
+    <Content Include="Content\Plugins\bbps\js\select2.min.js" />
+    <Content Include="Content\Plugins\bbps\js\settings.js" />
+    <Content Include="Content\Plugins\bbps\js\todo.js" />
+    <Content Include="Content\Plugins\bbps\js\todolist.js" />
+    <Content Include="Content\Plugins\bbps\js\vendor.bundle.base.js" />
+    <Content Include="Content\Plugins\bbps\vendors\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Plugins\bbps\vendors\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Plugins\bbps\vendors\mdi\css\materialdesignicons.min.css" />
+    <Content Include="Content\Plugins\css\bbps.css" />
+    <Content Include="Content\Plugins\css\icofont.css" />
+    <Content Include="Content\Plugins\css\icons.css" />
+    <Content Include="Content\Plugins\css\jquery-ui.css" />
+    <Content Include="Content\Plugins\css\logout.css" />
+    <Content Include="Content\Plugins\css\receipt.css" />
+    <Content Include="Content\Plugins\css\receipt1.css" />
+    <Content Include="Content\Plugins\css\receiptPrint.css" />
+    <Content Include="Content\Plugins\css\simplebar.css" />
+    <Content Include="Content\Plugins\css\style1.css" />
+    <Content Include="Content\Plugins\css\style2.css" />
+    <Content Include="Content\Plugins\css\styles.css" />
+    <Content Include="Content\Plugins\css\sweetalert.css" />
+    <Content Include="Content\Plugins\fonts\flaticon.css" />
+    <Content Include="Content\Plugins\fonts\Flaticon.svg" />
+    <Content Include="Content\Plugins\fonts\fontawesome-webfont5b62-2.html" />
+    <Content Include="Content\Plugins\fonts\fontawesome-webfont5b62-3.html" />
+    <Content Include="Content\Plugins\fonts\fontawesome-webfont5b62-4.html" />
+    <Content Include="Content\Plugins\fonts\fontawesome-webfont5b62-5.html" />
+    <Content Include="Content\Plugins\fonts\fontawesome-webfont5b62.html" />
+    <Content Include="Content\Plugins\fonts\fontawesome-webfontd41d.html" />
+    <Content Include="Content\Plugins\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="Content\Plugins\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="Content\Plugins\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="Content\Plugins\fonts\glyphicons-halflings-regular-5.html" />
+    <Content Include="Content\Plugins\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Content\Plugins\fonts\glyphicons-halflings-regulard41dd41d.html" />
+    <Content Include="Content\Plugins\fonts\iconsmindca27.svg" />
+    <Content Include="Content\Plugins\fonts\simple-line-iconsc05f-2.html" />
+    <Content Include="Content\Plugins\fonts\simple-line-iconsc05f.html" />
+    <Content Include="Content\Plugins\img\AEPS-Logo.png" />
+    <Content Include="Content\Plugins\img\aeps1.png" />
+    <Content Include="Content\Plugins\img\aeps_banner.png" />
+    <Content Include="Content\Plugins\img\bad-request.png" />
+    <Content Include="Content\Plugins\img\banner1.jpg" />
+    <Content Include="Content\Plugins\img\banner1.png" />
+    <Content Include="Content\Plugins\img\banner2.jpg" />
+    <Content Include="Content\Plugins\img\BBPS_Logo.png" />
+    <Content Include="Content\Plugins\img\coming-soon.png" />
+    <Content Include="Content\Plugins\img\download.jpg" />
+    <Content Include="Content\Plugins\img\download2.jpg" />
+    <Content Include="Content\Plugins\img\download3.jpg" />
+    <Content Include="Content\Plugins\img\Error.png" />
+    <Content Include="Content\Plugins\img\fail.png" />
+    <Content Include="Content\Plugins\img\fingerprint.gif" />
+    <Content Include="Content\Plugins\img\images.jpg" />
+    <Content Include="Content\Plugins\img\Logout2.png" />
+    <Content Include="Content\Plugins\img\pending.png" />
+    <Content Include="Content\Plugins\img\Processing.gif" />
+    <Content Include="Content\Plugins\img\SideImage.png" />
+    <Content Include="Content\Plugins\img\statement.png" />
+    <Content Include="Content\Plugins\img\success.png" />
+    <Content Include="Content\Plugins\img\UploadImg.png" />
+    <Content Include="Content\Plugins\js\datatables-demo.js" />
+    <Content Include="Content\Plugins\js\jquery.min.1.8.3.js" />
+    <Content Include="Content\Plugins\js\scripts.js" />
+    <Content Include="Content\Plugins\js\select2.min.js" />
+    <Content Include="Content\Plugins\js\sweetalert.min.js" />
+    <Content Include="Content\Plugins\new\mystyle.css" />
+    <Content Include="Content\Plugins\new\registraion-form.css" />
+    <Content Include="Content\Plugins\new\select2.min.css" />
+    <Content Include="Content\Plugins\new\style.css" />
+    <Content Include="Content\Plugins\SimpleBar\simplebar.css" />
+    <Content Include="Content\Plugins\SimpleBar\simplebar.js" />
+    <Content Include="Content\select2.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\custom\ref.min\nofity\sweetalert.css" />
+    <Content Include="Scripts\custom\ref.min\nofity\sweetalert.min.js" />
+    <Content Include="Scripts\custom\Service\angular.9.5.1.7.1.js" />
+    <Content Include="Scripts\custom\Service\angular.routemember.rgpsmem.min.2.1.7.js" />
+    <Content Include="Scripts\custom\ser\jquery.srvrgbundlefn.min.1.7.4.js" />
+    <Content Include="Scripts\custom\System\angular.min.js" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-9.5.6.1.2.1.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.1.debug.js" />
+    <Content Include="Scripts\knockout-2.2.1.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\WebApiTestClient.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\Merchant\POA\" />
+    <Folder Include="Content\Images\Merchant\POI\" />
+    <Folder Include="ErrorLog\" />
+    <Folder Include="Filters\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
+      <Project>{5BA9654C-E5D5-4704-9E2C-6C2487B0B087}</Project>
+      <Name>BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessServices\BusinessServices.csproj">
+      <Project>{B06E2E77-903F-4443-83C5-FAAF9C1E3CA3}</Project>
+      <Name>BusinessServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resolver\Resolver.csproj">
+      <Project>{6CFC3977-2553-4C4E-A212-01F11C3F7543}</Project>
+      <Name>Resolver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TestClientDialogs.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TestClientReferences.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Plugins\fonts\Flaticon.eot" />
+    <Content Include="Content\Plugins\fonts\Flaticon.ttf" />
+    <Content Include="Content\Plugins\fonts\Flaticon.woff" />
+    <Content Include="Content\Plugins\fonts\Flaticon.woff2" />
+    <Content Include="Content\Plugins\fonts\Flaticond41d.eot" />
+    <Content Include="Content\Plugins\fonts\icofont.woff" />
+    <Content Include="Content\Plugins\fonts\icofont.woff2" />
+    <Content Include="Content\Plugins\fonts\iconsmindca27.eot" />
+    <Content Include="Content\Plugins\fonts\iconsmindca27.ttf" />
+    <Content Include="Content\Plugins\fonts\iconsmindca27.woff" />
+    <Content Include="Content\Plugins\fonts\iconsmindd41d.eot" />
+    <Content Include="Content\Plugins\fonts\Simple-Line-Iconsc05f.ttf" />
+    <Content Include="Content\Plugins\fonts\Simple-Line-Iconsc05f.woff" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\.DS_Store" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Bold.eot" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Bold.ttf" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Bold.woff" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Bold.woff2" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-BoldItalic.eot" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-BoldItalic.ttf" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-BoldItalic.woff" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-BoldItalic.woff2" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-ExtraBold.eot" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-ExtraBold.ttf" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-ExtraBold.woff" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-ExtraBold.woff2" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-ExtraBoldItalic.eot" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-ExtraBoldItalic.woff" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-ExtraBoldItalic.woff2" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Italic.eot" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Italic.ttf" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Italic.woff" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Italic.woff2" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Light.eot" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Light.ttf" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Light.woff" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Light.woff2" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-LightItalic.eot" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-LightItalic.ttf" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-LightItalic.woff" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-LightItalic.woff2" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Regular.eot" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Regular.ttf" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Regular.woff" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-Regular.woff2" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-SemiBold.eot" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-SemiBold.ttf" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-SemiBold.woff" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-SemiBold.woff2" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-SemiBoldItalic.eot" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-SemiBoldItalic.ttf" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-SemiBoldItalic.woff" />
+    <Content Include="Content\Plugins\bbps\fonts\Opensans\OpenSans-SemiBoldItalic.woff2" />
+    <Content Include="Content\Plugins\bbps\images\bbps\Success-screen.zip" />
+    <Content Include="Content\Plugins\bbps\vendors\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Plugins\bbps\vendors\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Plugins\bbps\vendors\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Plugins\bbps\vendors\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Plugins\bbps\vendors\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\Plugins\bbps\vendors\mdi\css\materialdesignicons.min.css.map" />
+    <Content Include="Content\Plugins\bbps\vendors\mdi\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Content\Plugins\bbps\vendors\mdi\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Content\Plugins\bbps\vendors\mdi\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Content\Plugins\bbps\vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Content\Images\Operator\ALL BANK.xlsx" />
+    <Content Include="Content\Images\Operator\Muthoot Microfin Limited.zip" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Views\Errors\Error.cshtml" />
+    <Content Include="Views\AEPS\AEPS.cshtml" />
+    <Content Include="Views\AEPS\Reports.cshtml" />
+    <Content Include="Views\Errors\SessionExpire.cshtml" />
+    <Content Include="Views\AEPS\Receipt.cshtml" />
+    <Content Include="Views\AEPS\Download.cshtml" />
+    <Content Include="Views\Login\Logout.cshtml" />
+    <Content Include="Views\Shared\_AEPS.cshtml" />
+    <Content Include="Views\Services\BBPS.cshtml" />
+    <Content Include="Views\AEPS\Statement.cshtml" />
+    <Content Include="Views\Termscondition\Terms.cshtml" />
+    <Content Include="Views\Privacypolicy\Policy.cshtml" />
+    <Content Include="Views\BBPS\BBPS.cshtml" />
+    <Content Include="Views\BBPS\Reports.cshtml" />
+    <Content Include="Views\BBPS\Receipt.cshtml" />
+    <Content Include="Views\PanCard\Pancard.cshtml" />
+    <Content Include="Views\PanCard\Reports.cshtml" />
+    <Content Include="Views\PanCard\OnlinePaymentHome.cshtml" />
+    <Content Include="Views\Services\MerchantRegistration.cshtml" />
+    <Content Include="Views\Services\MerchantRegistrationStatus.cshtml" />
+    <Content Include="Views\Services\MerchantRevision.cshtml" />
+    <Content Include="Views\BBPS\Complain.cshtml" />
+    <Content Include="Views\BBPS\ComplainReport.cshtml" />
+    <None Include="Web.config.install.xdt" />
+    <None Include="Web.config.uninstall.xdt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50875</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

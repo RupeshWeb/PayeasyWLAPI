@@ -1,0 +1,331 @@
+﻿@model BusinessEntities.MerchantActivationEntity
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>MerchantRegistration</title>
+    <link href="~/Content/Plugins/new/mystyle.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/new/style.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/new/registraion-form.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/css/icons.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/css/icofont.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="inner shadow">
+
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-4 col-12 back1">
+                    <img src="~/Content/Plugins/img/SideImage.png" class="img-fluid" />
+                </div>
+
+                <div class="col-md-8 col-lg-8 col-sm-8 col-12 py-20">
+                    <div class="row">
+
+                        <div class="col-md-12 col-lg-12 col-sm-8">
+                            <h3>Merchant Registration</h3>
+                        </div>
+                        <div class="col-md-12 color-green">
+                            @if (ViewBag.ErrorMessage != null)
+                            {
+                                <h3>@Html.Raw(ViewBag.ErrorMessage)</h3>
+                            }
+                        </div>
+
+                        <form autocomplete="off" action="/Services/MerchantRegistration" method="post" enctype="multipart/form-data">
+                            <div class="col-md-12">
+                                @Html.AntiForgeryToken()
+                                <div class="row">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                    <div class="col-md-4 col-lg-4 col-sm-4">
+                                        <div class="form-group">
+                                            <label>First Name</label>
+                                            <div class="inputText">
+                                                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder = "Enter first name", autocomplete = "off", required = "", maxlength = "40" })
+                                                <i class="irotate icofont-ui-user"></i>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4 col-sm-4">
+                                        <div class="form-group">
+                                            <label for="">Middle Name</label>
+                                            <div class="inputText">
+                                                @Html.TextBoxFor(model => model.MiddleName, new { @class = "form-control", placeholder = "Enter middle name", autocomplete = "off", maxlength = "40" })
+                                                <i class="irotate icofont-ui-user"></i>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4 col-sm-4">
+                                        <div class="form-group">
+                                            <label for="">Last Name</label>
+                                            <div class="inputText">
+                                                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", placeholder = "Enter last name", autocomplete = "off", required = "", maxlength = "40" })
+                                                <i class="irotate icofont-ui-user"></i>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4 col-sm-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.MobileNo, htmlAttributes: new { @class = "" })
+                                            <div class="inputText">
+
+                                                @Html.TextBoxFor(model => model.MobileNo, new { @class = "form-control", placeholder = "Enter mobile number", autocomplete = "off", required = "", maxlength = "10" })
+                                                <i class="irotate icofont-smart-phone"></i>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4 col-sm-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.PanNumber, htmlAttributes: new { @class = "" })
+                                            <div class="inputText">
+                                                @Html.TextBoxFor(model => model.PanNumber, new { @class = "form-control", placeholder = "Enter pan number", autocomplete = "off", required = "", maxlength = "11" })
+                                                <i class="irotate icofont-id"></i>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.PanNumber, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4 col-sm-4">
+                                        <div class="form-group">
+                                            <label for="">Aadhar Number</label>
+                                            <div class="inputText">
+                                                @Html.TextBoxFor(model => model.AadharNo, new { @class = "form-control", placeholder = "Enter aadhar no", autocomplete = "off", required = "", maxlength = "12" })
+                                                <i class="irotate icofont-tasks-alt"></i>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.AadharNo, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4 col-sm-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.PinCode, htmlAttributes: new { @class = "" })
+
+                                            @Html.TextBoxFor(model => model.PinCode, new { @class = "form-control", placeholder = "Enter pincode", autocomplete = "off", required = "", maxlength = "6", onchange = "BindZipData();" })
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.PinCode, "", new { @class = "text-danger" })
+
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4 col-xs-12 sptop">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.StateName, htmlAttributes: new { @class = "" })
+
+                                            @Html.DropDownListFor(x => x.StateName, Enumerable.Empty<SelectListItem>(), "Select", new { @class = "form-control select-list", required = "" })
+                                            @Html.ValidationMessageFor(model => model.StateName, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4 col-xs-12 sptop">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.District, htmlAttributes: new { @class = "" })
+
+                                            @Html.DropDownListFor(x => x.District, Enumerable.Empty<SelectListItem>(), "Select", new { @class = "form-control select-list", required = "" })
+                                            @Html.ValidationMessageFor(model => model.District, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4 col-sm-4 imgUp">
+                                        <div class="form-group">
+
+                                            <div class="imagePreview">
+                                            </div>
+
+                                            <div class="upload-btn-wrapper">
+                                                <button class="upbtn">Upload Pancard</button>
+                                                @Html.TextBoxFor(model => model.Document1, new { @class = "uploadFile img", type = "file", required = "" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Document1, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4 col-sm-4 imgUp">
+                                        <div class="form-group">
+                                            <div class="imagePreview">
+                                            </div>
+
+                                            <div class="upload-btn-wrapper">
+                                                <button class="upbtn">Aadhaar Card Front</button>
+                                                @Html.TextBoxFor(model => model.Document2, new { @class = "uploadFile img", type = "file", required = "" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Document2, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4 col-sm-4 imgUp">
+                                        <div class="form-group">
+                                            <div class="imagePreview">
+                                            </div>
+
+                                            <div class="upload-btn-wrapper">
+                                                <button class="upbtn">Aadhaar Card Back</button>
+                                                @Html.TextBoxFor(model => model.Document3, new { @class = "uploadFile img", type = "file", required = "" })
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Document3, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-12 col-sm-12  col-xs-12 sptop">
+                                        <button type="submit" class="btn btn-primary pull-right"><span>Submit</span></button>
+                                        <br />
+                                        <label style="color:red;"></label>
+                                    </div>
+
+                                    <div class="col-md-12 Authorisation">
+
+                                        <h4 class="noteheading">Authorisation Process</h4>
+
+                                        <p>
+                                            Dear Partner as per guide line from Bank,
+                                            your account is not authorised to use service of AEPS. Please follow below process to get quick approval
+                                            from Bank.
+                                        </p>
+                                        <ul>
+                                            <li>Fill the below form.</li>
+                                            <li>Submit the Form along with KYC Documents</li>
+                                            <li>Our team will review and submit the form for approval</li>
+                                            <li>Approval process from Bank will take 24Hr to 72Hr. (Working Hours)</li>
+                                            <li>After receiving Approval of Authentication your service request to use APES will be enabled.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script>
+        BindState();
+        jQuery(function () {
+            jQuery('#StateName').change(function () { var state = jQuery('#StateName').val(); if (state !== '') BindCities(); });
+
+            jQuery('#PinCode').change(function () { var usrzip = jQuery('#PinCode').val(); if (usrzip !== '' && usrzip.length === 6) BindZipData(); });
+        });
+
+        function BindState() {
+            jQuery.ajax({
+                url: '/Services/StatenameList',
+                type: 'POST',
+                success: function (response) {
+                    var textHtml = '<option value="">Select</option>';
+                    if (response !== '') {
+                        var jsonObj = JSON.parse(response);
+                        jQuery.each(jsonObj, function () { textHtml += '<option>' + this + '</option>'; });
+                    }
+                    jQuery('#StateName').html(textHtml);
+                }, error: function (response) {
+                    alert('Something went wrong, try later.' + response.responseText); //location.reload();
+                }, async: true
+            });
+        }
+
+        function BindCities() {
+            var stateNm = jQuery('#StateName').val(); stateNm === '' ? stateNm = jQuery('#StatesName').val() : stateNm;
+            jQuery.ajax({
+                url: '/Services/CitynameList',
+                type: 'POST',
+                cache: false,
+                contentType: "application/json;",
+                data: "{ 'stateName': '" + stateNm + "'}",
+                success: function (response) {
+                    var textHtml = '<option value="">Select</option>';
+                    if (response !== '') {
+                        var jsonObj = JSON.parse(response);
+                        jQuery.each(jsonObj, function () { textHtml += '<option>' + this + '</option>'; });
+                        jQuery('#District').html(textHtml);
+                    }
+                }, error: function (response) {
+                    alert('Something went wrong, try later.'); //location.reload();
+                }, async: true
+            });
+        }
+
+        function BindZipData() {
+            var usrzip = jQuery('#PinCode').val();
+            jQuery.ajax({
+                url: '/Services/FindPinCodeDetails',
+                type: 'POST',
+                cache: false,
+                contentType: "application/json;",
+                data: "{ 'pinCode': '" + usrzip + "'}",
+                success: function (response) {
+                    var jsonObj = JSON.parse(response);
+                    if (jsonObj.StatusCode === 1) {
+                        jQuery('#StateName').val(jsonObj.State);
+                        jQuery('#select2-StateName-container').html('<span class="select2-selection__clear">×</span>' + jsonObj.State);
+                        jQuery('#District').html('<option>' + jsonObj.City + '</option>');
+                        jQuery('#select2-District-container').html('<span class="select2-selection__clear">×</span>' + jsonObj.City);
+                    } else {
+                        swal('', jsonObj.Message, 'error');
+                    }
+                }, error: function (response) {
+                    alert('Something went wrong, try later.'); //location.reload();
+                }, async: true
+            });
+        }
+    </script>
+
+
+    <script src="~/Content/select2.min.js"></script>
+    <link href="~/Content/Plugins/new/select2.min.css" rel="stylesheet" />
+    <script>
+        jQuery(".select-list").select2({
+            placeholder: "Select",
+            allowClear: true
+        });
+    </script>
+
+    <script>
+        //$(".imgAdd").click(function(){test
+        //$(this).closest(".row").find('.imgAdd').before('<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
+        //});
+        $(document).on("click", "i.del", function () {
+            $(this).parent().remove();
+        });
+        $(function () {
+            $(document).on("change", ".uploadFile", function () {
+                var uploadFile = $(this);
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+                if (/^image/.test(files[0].type)) { // only image file
+                    var reader = new FileReader(); // instance of the FileReader
+                    reader.readAsDataURL(files[0]); // read the local file
+
+                    reader.onloadend = function () { // set image data as background of div
+                        //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+                        uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(" + this.result + ")");
+                    }
+                }
+
+            });
+        });
+    </script>
+</body>
+</html>

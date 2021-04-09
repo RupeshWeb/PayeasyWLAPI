@@ -1,0 +1,255 @@
+﻿@model BusinessEntities.TransactionComplainRequestEntity
+@{
+    ViewBag.Title = "Complain";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-sm-12 col-md-12 col-lg-12 stretch-card grid-margin">
+                <div class="card mb-30">
+                    <div class="card-body">
+                        <div class="row border-b">
+                            <div class="col-md-1">
+                                <img src="~/Content/Plugins/bbps/images/bbps/care.png" style="width:60px">
+                            </div>
+                            <div class="col-md-10">
+                                <h3 class="txt-blue text-center">
+                                    @Session["RGRTRequestCompany"] !!!
+
+                                </h3>
+                                <p class="text-center">Our support team is always present to support you 24/7. Please help us understand your issue.<br> Our team will reach out to you within 24hrs.</p>
+                            </div>
+                            <div class="col-md-1">
+                                <img src="~/Content/Plugins/bbps/images/bbps/BBPS.png" style="width:80px" class="float-sm-right">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row mt-1">
+                            <div class="col-md-12 mt-1">
+                                <h5 class="txt-blue mt-1">Raise a complaint:</h5>
+                            </div>
+                        </div>
+                        @if (TempData["ErrorMessage"] != null)
+                        {
+                            <div class="alert alert-danger">
+                                @TempData["ErrorMessage"]
+                            </div>
+                        }
+                        else if (TempData["SuccessMessage"] != null)
+                        {
+                            <div class="alert alert-success">
+                                @TempData["SuccessMessage"]
+                            </div>
+                        }
+                        <div class="col-md-12">
+                            <form action="/BBPS/Complain" method="post">
+                                @Html.AntiForgeryToken()
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Mobile No:</label>
+                                            @Html.TextBoxFor(model => model.MobileNumber, new { @class = "form-control", placeholder = "Mobile Number", maxlength = "10", title = "Mobile Number", required = "", onkeypress = "return ValidateNumber(event);", autocomplete = "off" })
+                                            @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>From Date:</label>
+                                            @Html.TextBoxFor(model => model.FromDate, new { @class = "form-control", placeholder = "From Date", maxlength = "15", title = "From Date", required = "", autocomplete = "off" })
+                                            @Html.ValidationMessageFor(model => model.FromDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-6 col-12 col-lg-4 col-sm-5 pd-xs-0">
+                                        <div class="form-group">
+                                            <label for="sel1">Complaint type:</label>
+                                            <select class="form-control" id="ComplaintType" name="ComplaintType" required="">
+                                                <option>Transaction</option>
+                                            </select>
+                                            @Html.ValidationMessageFor(model => model.ComplaintType, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 col-lg-4 col-sm-5 pd-xs-0">
+                                        <div class="form-group">
+                                            <label>To Date:</label>
+                                            @Html.TextBoxFor(model => model.ToDate, new { @class = "form-control", placeholder = "To Date", maxlength = "15", title = "To Date", required = "", autocomplete = "off" })
+                                            @Html.ValidationMessageFor(model => model.ToDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-6 col-12 col-lg-4 col-sm-5 pd-xs-0">
+                                        <div class="form-group">
+                                            <label for="sel1">Disposition:</label>
+                                            <select class="form-control" id="Disposition" name="Disposition" required="">
+                                                <option>Transaction Successful, account not updated</option>
+                                                <option>Amount deducted, biller account credited but transaction ID not received</option>
+                                                <option>Amount deducted, biller account not credited & transaction ID not received</option>
+                                                <option>Amount deducted multiple times</option>
+                                                <option>Double payment updated</option>
+                                                <option>Errorneously paid in wrong account</option>
+                                                <option>Others, provide details in description</option>
+                                            </select>
+                                            @Html.ValidationMessageFor(model => model.Disposition, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 col-lg-4 col-sm-5 pd-xs-0">
+                                        <div class="form-group">
+                                            <label>Transaction reference Id:</label>
+                                            @Html.TextBoxFor(model => model.TransactionRef, new { @class = "form-control", placeholder = "Transaction Id", maxlength = "9", title = "Transaction Id", required = "", onkeypress = "return ValidateNumber(event);", autocomplete = "off" })
+                                            @Html.ValidationMessageFor(model => model.TransactionRef, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-8 col-12 col-lg-8 col-sm-5 pd-xs-0">
+                                        <div class="form-group">
+                                            <label>Description:</label>
+                                            @Html.TextAreaFor(model => model.Descriptions, new { @class = "form-control", placeholder = "Description", maxlength = "1050", title = "Description", required = "", row = "4", autocomplete = "off" })
+                                            @Html.ValidationMessageFor(model => model.Descriptions, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="clearfix"></div>
+                                    <div class="col-md-12 col-12 col-lg-12 col-sm-12 pd-xs-0">
+                                        <div class="form-group">
+                                            <button class="btn btn-primary" type="button" id="btnSubmit" onclick="dotransactionsData();">Submit </button>
+                                            <label id="errorMesage" style="color:red"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal fade" id="responseModal" role="dialog" data-backdrop="static" data-keyboard="false">
+                            <div class="modal-dialog modal-centered">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="thank-you-pop">
+                                            <div class="row">
+                                                <div class="offset-md-2 col-md-7">
+                                                    <img src="~/Content/Plugins/bbps/images/bbps/img1.png" alt="Success Screens1" class="img-fluid" style="width:400px" />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="~/Content/Plugins/bbps/images/bbps/bbps-logo/BBPS.png" class="bbpsimg">
+                                                </div>
+                                            </div>
+                                            <h6 class="mt-2" id="printConsumerName"></h6>
+                                            <div class="bbps-sec">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div>
+                                                            <p class="lt" id="printMessage"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="table" id="responseContent">
+                                                            <table class="table-borderless">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Complaint Type:</td>
+                                                                        <td>Transaction</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Customer Name: </td>
+                                                                        <td id="printCustomerName"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Transaction Id:</td>
+                                                                        <td id="printTransactionId"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Complanit ID:</td>
+                                                                        <td id="printComplaintId"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Date:</td>
+                                                                        <td id="printDate"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+
+                                                        <input type="button" class="btn btn-danger" value="Ok" data-dismiss="modal" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+<script src="~/Scripts/jquery.min.js"></script>
+<link rel="stylesheet" media="all" type="text/css" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" />
+<script>
+    $(function () {
+        $("#FromDate,#ToDate").datepicker({ maxDate: 0 });
+        $("#cpt_hist_from_date, #cpt_hist_to_date").datepicker({ maxDate: 0, dateFormat: 'yy-mm-dd' });
+    });
+
+    function dotransactionsData() {
+        jQuery('#errorMesage').html("");
+        var MobileNumber = jQuery('#MobileNumber').val();
+        var FromDate = jQuery('#FromDate').val();
+        var ToDate = jQuery('#ToDate').val();
+        var ComplaintType = jQuery('#ComplaintType').val();
+        var Disposition = jQuery('#Disposition').val();
+        var TransactionRef = jQuery('#TransactionRef').val();
+        var Descriptions = jQuery('#Descriptions').val();
+        if (MobileNumber != '' && FromDate != '' && ToDate != '' && ComplaintType != '' && Disposition != '' && TransactionRef != '' && Descriptions != '') {
+            swal({ title: "Processing", text: "Please wait..", imageUrl: "/Content/Image/main/Load/Processing.gif", showConfirmButton: false });
+            jQuery.post('/BBPS/Complain', { MobileNumber: MobileNumber, FromDate: FromDate, ToDate: ToDate, ComplaintType: ComplaintType, Disposition: Disposition, TransactionRef: TransactionRef, Descriptions: Descriptions }, function (response) {
+                if (response.StatusCode === 1) {
+                    jQuery('#responseModal').modal('show');
+                    jQuery('#printConsumerName').html('Hey, ' + response.ConsumnerName);
+                    jQuery('#printMessage').html('Your complaint is registered<span class="text-primary"> Successfully</span>');
+                    jQuery('#printCustomerName').html(response.ConsumnerName);
+                    jQuery('#printTransactionId').html(response.TransactionId);
+                    jQuery('#printComplaintId').html(response.ComplaintId);
+                    jQuery('#printDate').html(response.TxnDate);
+                    jQuery('#responseContent').show();
+                } else if (response.StatusCode === 0) {
+                    jQuery('#responseModal').modal('show');
+                    jQuery('#printConsumerName').html('');
+                    jQuery('#printMessage').html('<span class="text-danger">' + response.Message + '</span>');
+                    jQuery('#printCustomerName').html(response.ConsumnerName);
+                    jQuery('#printTransactionId').html(response.TransactionId);
+                    jQuery('#printComplaintId').html(response.ComplaintId);
+                    jQuery('#printDate').html(response.TxnDate);
+                    jQuery('#responseContent').hide();
+                } else {
+                    jQuery('#responseModal').modal('show');
+                    jQuery('#printConsumerName').html('Hey, ' + response.ConsumnerName);
+                    jQuery('#printMessage').html('<span class="text-primary">' + response.Message + '</span>');
+                    jQuery('#printCustomerName').html(response.ConsumnerName);
+                    jQuery('#printTransactionId').html(response.TransactionId);
+                    jQuery('#printComplaintId').html(response.ComplaintId);
+                    jQuery('#printDate').html(response.TxnDate);
+                    jQuery('#responseContent').show();
+                }
+                jQuery('#MobileNumber').val('');
+                jQuery('#FromDate').val('');
+                jQuery('#ToDate').val('');
+                jQuery('#TransactionRef').val('');
+                jQuery('#Descriptions').val('');
+                swal.close();
+            });
+        } else {
+            jQuery('#errorMesage').html("All field's are required.");
+        }
+    }
+</script>
+<script src="~/Scripts/jquery-9.5.6.1.2.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>

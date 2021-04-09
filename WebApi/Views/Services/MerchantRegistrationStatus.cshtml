@@ -1,0 +1,173 @@
+﻿@model BusinessEntities.MerchantActivationResponseEntity
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="~/Content/Plugins/css/styles.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/css/mystyle.css" rel="stylesheet" />
+    <title>MerchantRegistrationStatus</title>
+    <link href="~/Content/Plugins/new/mystyle.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/new/style.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/new/registraion-form.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/css/icons.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/css/icofont.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper mt-30">
+        <div class="inner shadow">
+
+            <div class="row">
+
+                <div class="col-md-4 col-lg-4 col-sm-4 col-12 back1">
+                    <img src="~/Content/Plugins/img/SideImage.png" class="img-fluid" />
+                </div>
+
+                <div class="col-md-8 col-lg-8 col-sm-8 col-12">
+                    @if (Model.StatusCode == clsVariables.APIStatus.Success)
+                    {
+                        <div class="card-body lrpadding">
+                            <div class="col-md-12">Remarks: @Model.Data.Remarks</div>
+                            <div class="col-md-12 text-right">
+                                <h4>STATUS: @Model.Data.Status</h4>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-4 col-lg-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label for="">First Name</label>
+                                        <div class="inputText">
+                                            @Html.TextBoxFor(model => model.Data.FirstName, new { @class = "form-control" })
+                                            <i class="irotate icofont-ui-user"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label for="">Middle Name</label>
+                                        <div class="inputText">
+                                            @Html.TextBoxFor(model => model.Data.MiddleName, new { @class = "form-control" })
+                                            <i class="irotate icofont-ui-user"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label for="">Last Name</label>
+                                        <div class="inputText">
+                                            @Html.TextBoxFor(model => model.Data.LastName, new { @class = "form-control" })
+                                            <i class="irotate icofont-ui-user"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-3 sptop">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Data.MobileNo, htmlAttributes: new { @class = "" })
+                                        <div class="inputText">
+                                            @Html.TextBoxFor(model => model.Data.MobileNo, new { @class = "form-control" })
+                                            <i class="irotate icofont-smart-phone"></i>
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.Data.MobileNo, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-4 col-sm-4 col-xs-12 sptop">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Data.PanNumber, htmlAttributes: new { @class = "" })
+
+                                        <div class="inputText">
+                                            @Html.TextBoxFor(model => model.Data.PanNumber, new { @class = "form-control" })
+                                            <i class="irotate icofont-id"></i>
+                                        </div>
+                                        @Html.ValidationMessageFor(model => model.Data.PanNumber, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-4 col-lg-4 col-sm-4">
+                                    <div class="form-group">
+                                        <label for="">Aadhar Number</label>
+                                        <div class="inputText">
+                                            @Html.TextBoxFor(model => model.Data.AadharNo, new { @class = "form-control" })
+                                            <i class="irotate icofont-tasks-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-4 col-sm-4 col-xs-12 sptop">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Data.StateName, htmlAttributes: new { @class = "" })
+
+                                        @Html.TextBoxFor(model => model.Data.StateName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Data.StateName, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-12 sptop">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Data.District, htmlAttributes: new { @class = "" })
+
+                                        @Html.TextBoxFor(model => model.Data.District, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Data.District, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-12 sptop">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Data.PinCode)
+
+                                        @Html.TextBoxFor(model => model.Data.PinCode, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Data.PinCode, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-12 sptop">
+                                    <div class="form-group">
+                                        <label>Pancard</label>
+                                        <img src="@Model.Data.Document1" style="width:200px;height:130px;" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-12 sptop">
+                                    <div class="form-group">
+                                        <label>Aadharcard Front</label>
+                                        <img src="@Model.Data.Document2" style="width:200px;height:130px;" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-12 sptop">
+                                    <div class="form-group">
+                                        <label>Aadharcard Back</label>
+                                        <img src="@Model.Data.Document3" style="width:200px;height:130px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <h2>@Model.Message</h2>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
