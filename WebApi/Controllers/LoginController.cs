@@ -43,10 +43,6 @@ namespace WebPlatApi.Controllers
                         Session["RGRTReferrerUrl"] = referrerUrl;
                         if (Session["RGRTRequestServices"].ToString() == "151")
                             return RedirectToAction("AEPS", "AEPS");
-                        else if (Session["RGRTRequestServices"].ToString() == "152")
-                            return RedirectToAction("BBPS", "BBPS");
-                        else if (Session["RGRTRequestServices"].ToString() == "153")
-                            return RedirectToAction("PanCard", "PanCard");
                         else
                             return RedirectToAction("Error", "Errors");
                     }

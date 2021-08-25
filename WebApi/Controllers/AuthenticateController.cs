@@ -44,7 +44,7 @@ namespace WebApi.Controllers
                     model.ServiceID = "151";
                 if (ModelState.IsValid)
                 {
-                    if (new[] { "151", "152", "153" }.Contains(model.ServiceID))
+                    if (new[] { "151" }.Contains(model.ServiceID))
                     {
                         if (model.ServiceID == "151")
                         {
@@ -55,18 +55,6 @@ namespace WebApi.Controllers
                             {
                                 _response.StatusCode = clsVariables.APIStatus.Failed;
                                 _response.Message = "Merchant ID should be 10 digits.";
-                                return Request.CreateResponse(HttpStatusCode.OK, _response);
-                            }
-                        }
-                        else if (model.ServiceID == "153")
-                        {
-                            if (Regex.IsMatch(model.MerchantId, @"(\d*-)?\d{10}", RegexOptions.IgnoreCase))
-                            {
-                            }
-                            else
-                            {
-                                _response.StatusCode = clsVariables.APIStatus.Failed;
-                                _response.Message = "Merchant ID should be pass mobile no 10 digits.";
                                 return Request.CreateResponse(HttpStatusCode.OK, _response);
                             }
                         }

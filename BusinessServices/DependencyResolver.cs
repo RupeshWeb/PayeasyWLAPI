@@ -10,8 +10,6 @@ namespace BusinessServices
         {
             registerComponent.RegisterType<ITokenServices, TokenServices>();
             registerComponent.RegisterType<IAEPSServices, AEPSServices>();
-            registerComponent.RegisterType<IBBPSServices, BBPSServices>();
-            registerComponent.RegisterType<IPancardServices, PancardServices>();
             registerComponent.RegisterType<ISupportServices, SupportServices>();
         }
     }

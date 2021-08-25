@@ -87,13 +87,6 @@
     <Compile Include="Aeps\DoTransactions.cs" />
     <Compile Include="Aeps\FinoAepsAPI.cs" />
     <Compile Include="Aeps\IAEPSServices.cs" />
-    <Compile Include="BBPS\AvenueAPI.cs" />
-    <Compile Include="BBPS\BBPSServices.cs" />
-    <Compile Include="BBPS\CyberpletAPIServices.cs" />
-    <Compile Include="BBPS\DoTransactions.cs" />
-    <Compile Include="BBPS\EzypayServices.cs" />
-    <Compile Include="BBPS\IBBPSServices.cs" />
-    <Compile Include="BBPS\PaymtBillPaymentAPI.cs" />
     <Compile Include="DependencyResolver.cs" />
     <Compile Include="Helpers\ClsMethods.cs" />
     <Compile Include="Helpers\ClsNotify.cs" />
@@ -101,10 +94,6 @@
     <Compile Include="Helpers\ClsVariables.cs" />
     <Compile Include="Helpers\FinoEncryption.cs" />
     <Compile Include="Helpers\StringTokenizer.cs" />
-    <Compile Include="Pancard\IPancardServices.cs" />
-    <Compile Include="Pancard\PancardServices.cs" />
-    <Compile Include="Pancard\UTIAPIServices.cs" />
-    <Compile Include="Pancard\UTIEncryptions.cs" />
     <Compile Include="Resource\Message.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

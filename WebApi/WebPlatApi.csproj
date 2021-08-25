@@ -15,7 +15,7 @@
     <AssemblyName>WebPlatApi</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -212,15 +212,11 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\AEPSController.cs" />
     <Compile Include="Controllers\AuthenticateController.cs" />
-    <Compile Include="Controllers\AuthServicesController.cs" />
-    <Compile Include="Controllers\BBPSController.cs" />
-    <Compile Include="Controllers\PanCardController.cs" />
     <Compile Include="Controllers\PrivacypolicyController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TermsconditionController.cs" />
-    <Compile Include="Controllers\TransservicesController.cs" />
     <Compile Include="ErrorHelper\ApiBusinessException.cs" />
     <Compile Include="ErrorHelper\ApiDataException.cs" />
     <Compile Include="ErrorHelper\ApiException.cs" />
@@ -1041,12 +1037,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50875</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:50876/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

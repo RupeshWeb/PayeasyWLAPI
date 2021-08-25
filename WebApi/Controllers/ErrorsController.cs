@@ -28,11 +28,11 @@ namespace WebPlatApi.Controllers
         {
             //TokenRequestEntity _request = new TokenRequestEntity()
             //{
-            //    Token = "f021b1d7-036f-41a7-ba39-6bc003cb105c",
+            //    Token = "b9368c50-6df8-4a28-8bb8-4073b40d111",
             //    RetailerID = "12",
-            //    MerchantId = "7249630125",//7249630125//9561352874
-            //    Copyright = "Moneyart",
-            //    LogoUrl = "https://moneyart.in/Content/Images/logo.png",
+            //    MerchantId = "9561352874",
+            //    Copyright = "Payeassy",
+            //    LogoUrl = "https://payeassy.co.in/assets/img/logo/logo6.png",
             //    FirmName = "Webplat in",
             //    ServiceID = "151"
             //};
