@@ -52,7 +52,7 @@ namespace BusinessServices.Aeps
                 }
                 else
                 {
-                    var result = _apiServices.EncryptionRequestKey(fnoSession.ID);
+                    var result = _apiServices.EncryptionRequestKey(0);
                     if (result.StatusCode == clsVariables.APIStatus.Success)
                     {
                         AEPSFNOSession _add = new AEPSFNOSession()

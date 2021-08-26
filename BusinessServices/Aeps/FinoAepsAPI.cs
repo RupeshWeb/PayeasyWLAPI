@@ -19,13 +19,6 @@ namespace BusinessServices.Aeps
         private string Fino_Request_Key = ConfigurationManager.AppSettings["V1Fino_Request_Key_AEPS"];
         private string Fino_Url_Status = ConfigurationManager.AppSettings["V1Fino_URL_AEPS_Status"];
         private string Fino_Url = ConfigurationManager.AppSettings["V1Fino_URL_AEPS"];
-
-        private readonly string UATFino_ClientID = ConfigurationManager.AppSettings["UATFino_Client_ID_AEPS"];
-        private readonly string UATFino_AuthKey = ConfigurationManager.AppSettings["UATFino_Auth_Key_AEPS"];
-        private readonly string UATFino_Header_Key = ConfigurationManager.AppSettings["UATFino_Header_Key_AEPS"];
-        private readonly string UATFino_Request_Key = ConfigurationManager.AppSettings["UATFino_Request_Key_AEPS"];
-        private readonly string UATFino_Url_Status = ConfigurationManager.AppSettings["UATFino_URL_AEPS_Status"];
-        private readonly string UATFino_Url = ConfigurationManager.AppSettings["UATFino_URL_AEPS"];
         #endregion
 
         public APIReponseEntity EncryptionRequestKey(int sessionID)
@@ -34,16 +27,7 @@ namespace BusinessServices.Aeps
             try
             {
                 FNOAPIResponseEntity apiResponse = new FNOAPIResponseEntity();
-                if (sessionID == 2)
-                {
-                    Fino_Url = UATFino_Url;
-                    Fino_Request_Key = UATFino_Request_Key;
-                    apiResponse = UATAPIConsume(Fino_Url + "ProcessRequest/GetEncKey", "", Fino_Request_Key);
-                }
-                else
-                {
-                    apiResponse = APIConsume(Fino_Url + "ProcessRequest/GetEncKey", "", Fino_Request_Key);
-                }
+                apiResponse = APIConsume(Fino_Url + "ProcessRequest/GetEncKey", "", Fino_Request_Key);
                 ClsMethods.AEPSRequestLogs(1, "EncKey", clsVariables.ServiceType.AEPS, apiResponse.ApiUrl, apiResponse.ApiRequest, apiResponse.ApiResponse, 0, string.Empty, string.Empty);
                 var apiResult = new JavaScriptSerializer().Deserialize<FNOEncryptionKeyResponseEntity>(apiResponse.ApiResponse);
                 if (apiResult.ResponseCode == 0)
@@ -561,7 +545,7 @@ namespace BusinessServices.Aeps
                     CheckSum = checkSum
                 };
 
-                _response.ApiResponse = APIConsumeStatement(UATFino_Url + "ProcessRequest/AEPSMiniStatement", _request, encKey);
+                _response.ApiResponse = APIConsumeStatement(Fino_Url + "ProcessRequest/AEPSMiniStatement", _request, encKey);
                 if (_response.ApiResponse.StatusCode == clsVariables.APIStatus.Success)
                 {
                     #region Decryption Method
@@ -799,7 +783,7 @@ namespace BusinessServices.Aeps
                 requestobj.AadharNo = "XXXXXXXX" + requestobj.AadharNo.Substring(8, 4);
                 _response.ApiUrl = endPoint;
                 _response.ApiRequest = new JavaScriptSerializer().Serialize(requestobj);
-                _response.HeaderEncryption = UATAPIHeader();
+                _response.HeaderEncryption = APIHeader();
                 if (!string.IsNullOrEmpty(requestBody))
                     _response.BodyEncryption = "\"" + FinoEncryption.OpenSSLEncrypt(requestBody, encKey) + "\"";
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(endPoint);
@@ -838,10 +822,10 @@ namespace BusinessServices.Aeps
         private string UATAPIHeader()
         {
             Dictionary<string, string> innerHeader = new Dictionary<string, string>();
-            innerHeader.Add("ClientId", UATFino_ClientID);
-            innerHeader.Add("AuthKey", UATFino_AuthKey);
+            innerHeader.Add("ClientId", Fino_ClientID);
+            innerHeader.Add("AuthKey", Fino_AuthKey);
             String Header_json = new JavaScriptSerializer().Serialize(innerHeader);
-            Header_json = FinoEncryption.OpenSSLEncrypt(Header_json, UATFino_Header_Key);
+            Header_json = FinoEncryption.OpenSSLEncrypt(Header_json, Fino_Header_Key);
             return Header_json;
         }
 

@@ -30,7 +30,7 @@ namespace WebPlatApi.Controllers
             //{
             //    Token = "b9368c50-6df8-4a28-8bb8-4073b40d111",
             //    RetailerID = "12",
-            //    MerchantId = "9561352874",
+            //    MerchantId = "9892393804",
             //    Copyright = "Payeassy",
             //    LogoUrl = "https://payeassy.co.in/assets/img/logo/logo6.png",
             //    FirmName = "Webplat in",
