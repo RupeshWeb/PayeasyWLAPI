@@ -73,9 +73,14 @@ body
 }
 
 
-
-.card-title1 
+.proceedbtn
 {
+    padding:12px 60px !important;
+    border-radius:22px !important;
+}
+
+
+.card-title1 {
     font-size: 13px;
     margin-bottom: 5px !important;
     color: #090879;
@@ -328,10 +333,10 @@ margin:0px 9px;
 
 .logbtn
 {
-    color: #f61106;
-    font-size:20px;
-   /* padding: 1px 4px;*/
-    text-decoration: none;
+    color: #ffffff;
+    border: solid 1px #eb1549;
+    background: #eb1549;
+    border-radius: 4px;
 }
 
 .mb-30
@@ -498,9 +503,10 @@ ul.amounts {
     }
 
         ul.amounts li a {
-            /* border: 1px dashed #e4e7ed;*/
-            padding: 4px 5px;
-            color: #2407c3;
+            border: 1px dashed #492c9d;
+            padding: 4px 9px;
+            color: #492c9d;
+            border-radius: 22px;
         }
       
 
@@ -607,7 +613,7 @@ padding:0px 15px;
     font-size: 14px;
     -webkit-user-select: none;
     -moz-user-select: none;
-    color: #2407c3;
+    color: #555555;
     font-weight: 500;
 }
 
@@ -638,7 +644,8 @@ padding:0px 15px;
 
 /* When the checkbox is checked, add a blue background */
 .Insurancebox input:checked ~ .checkmark {
-    background-color: #170483;
+    background-color: #eb1549;
+    border: solid 1px #eb1549;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -712,7 +719,7 @@ margin:6px !important;
 }
 
 .icost {
-    color: #2006b2;
+    color:#eb1549;
     padding-right: 7px;
 }
 
@@ -991,15 +998,14 @@ font-size:12px;
 }
 
 /*-------Download Page css----*/
-.dheader
-{
-	padding: 0.8rem 1.75rem;
+.dheader {
+    padding: 0.8rem 1.75rem;
     margin-bottom: 0;
     background-color: transperent;
     border-bottom: none;
     font-size: 16px;
     font-weight: 600;
-    color: #0d50ae;
+    color:#28292a;
     border-bottom:solid 1px #dfd9d9;
 }
 
@@ -1035,12 +1041,11 @@ font-size:12px;
 margin-right:5px;	
 }
 
-.downbtn
-{
-	background: #41529d !important;
-    border: solid 1px #41529d !important;
+.downbtn {
+    background: #eb1549 !important;
+    border: solid 1px #eb1549 !important;
     padding: 8px 18px;
-    font-size:14px;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
@@ -1211,7 +1216,7 @@ margin-right:5px;
     line-height: 28px;
     padding: 10px;
     margin-bottom: 0px;
-    color: #0e006a;
+    color: #472f9b;
     font-weight: 500;
     font-family: 'Poppins', sans-serif !important;
 }
@@ -1260,7 +1265,7 @@ margin-right:5px;
     }
 
         .logo-block img {
-            width: 60px;
+            width:106px;
         }
 
     .text-block {
@@ -1272,7 +1277,7 @@ margin-right:5px;
         .text-block h4 {
             font-size: 1.2rem;
             padding-top: 7px;
-            color: #1d07ac;
+            color: #eb1449;
             font-family: 'Poppins', sans-serif !important;
         }
 
@@ -1282,11 +1287,10 @@ margin-right:5px;
         line-height: 26px;
     }
 
-        .smallbox h6 
-        {
+        .smallbox h6 {
             line-height: 25px;
             text-align: center;
-            color: #ff9b64;
+            color:#555352;
             margin-bottom: 10px;
             /*   background: #f7f7f8;*/
             padding: 2px 5px;
