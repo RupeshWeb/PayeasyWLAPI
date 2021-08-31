@@ -4,9 +4,9 @@
 
 <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-6 stretch-card grid-margin pd-6">
-        <div class="card shadow-sm">
+        <div class="card shadow-sm roundcorner">
             <div class="card-body">
-                <h4 class="card-title">
+                <h4 class="card-title text-center">
                     AEPS Services
                 </h4>
 
@@ -157,8 +157,8 @@
                                                 </label>
                                             </div>
 
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-2 text-right">
-                                                <button type="button" class="btn btn-primary mtsmall" onclick="ValidateCustomerv2Request()">Proceed</button><br />
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-2 text-center">
+                                                <button type="button" class="btn btn-primary mtsmall proceedbtn" onclick="ValidateCustomerv2Request()">Proceed</button><br />
                                                 <label id="withErrorMessage" style="color:red;"></label>
                                             </div>
 
@@ -444,9 +444,9 @@
 
     <div class="col-sm-12 col-md-12 col-lg-6 stretch-card grid-margin pd-6">
 
-        <div class="card shadow-sm">
+        <div class="card shadow-sm roundcorner">
             <div class="card-body">
-                <h4 class="card-title">
+                <h4 class="card-title text-center">
                     Branchless Banking Platform
                 </h4>
                 <div class="pad-10">
@@ -458,8 +458,8 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pd-6">
-        <div class="card mb-4 shadow-sm">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pd-6 ">
+        <div class="card mb-4 shadow-sm roundcorner">
             <div class="row">
                 <div class="complain">
                     <p><i class="icofont-exclamation-tringle icost"></i>Raise complain to issue Bank <a href="#" data-toggle="modal" data-target="#bankcomplain">Click here </a></p>
@@ -793,7 +793,8 @@
             <!-- Modal Header -->
             <div class="modal-header">
                 <div class="logo-block">
-                    <img src="https://moneyart.in/assets/images/logo.png" class="img-fluid" />
+                    @*<img src="https://moneyart.in/assets/images/logo.png" class="img-fluid" />*@
+                    <img src="@Session["RGRTRequestLogo"]" alt="logo" />
                 </div>
 
                 <div class="text-block">
@@ -912,7 +913,8 @@
             <!-- Modal Header -->
             <div class="modal-header md-top">
                 <div class="logo-block">
-                    <img src="https://moneyart.in/assets/images/logo.png" class="img-fluid" />
+                    @*<img src="https://moneyart.in/assets/images/logo.png" class="img-fluid" />*@
+                    <img src="@Session["RGRTRequestLogo"]" alt="logo" />
                 </div>
                 <div class="text-block">
                     <h4>ADVISORY</h4>

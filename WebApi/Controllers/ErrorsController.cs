@@ -28,7 +28,7 @@ namespace WebPlatApi.Controllers
         {
             TokenRequestEntity _request = new TokenRequestEntity()
             {
-                Token = "b9368c50-6df8-4a28-8bb8-4073b40d111",
+                Token = "49cf4ec6-94c3-45d2-8688-bd9c3ef58111",
                 RetailerID = "12",
                 MerchantId = "9892393804",
                 Copyright = "Payeassy",
