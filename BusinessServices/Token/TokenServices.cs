@@ -45,9 +45,9 @@ namespace BusinessServices
                     {
                         if (user.Status)
                         {
-                            if (new[] { token.IPAddress, token.IPAddressOne, token.IPAddressTwo }.Contains(requestIP))
+                            if (new[] { token.IPAddress, token.IPAddressOne, token.IPAddressTwo }.Contains(requestIP) || (token.IPAddress == null && token.IPAddressOne == null && token.IPAddressTwo == null))
                             {
-                                short[] serviceID = { 10, 14, 2, 5, 6, 8, 11, 13 };
+                                short[] serviceID = { 10 };// { 10, 14, 2, 5, 6, 8, 11, 13 };
                                 var service = _unitOfWork.ServiceRepository.Get(x => serviceID.Contains(x.ID) && x.IsActive);
                                 if (service != null)
                                 {
