@@ -25,5 +25,6 @@ namespace DataModel
         public System.DateTime AddDate { get; set; }
         public int SchemeID { get; set; }
         public bool IsActive { get; set; }
+        public bool IsSlab { get; set; }
     }
 }

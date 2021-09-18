@@ -29,5 +29,6 @@ namespace DataModel
         public bool Status { get; set; }
         public decimal DayLimit { get; set; }
         public decimal DayUsage { get; set; }
+        public bool IsCircleSwitching { get; set; }
     }
 }

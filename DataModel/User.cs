@@ -53,5 +53,23 @@ namespace DataModel
         public string PanTransactionURL { get; set; }
         public string PanVerificationURL { get; set; }
         public string PaymentURL { get; set; }
+        public string VirtualAccountNo { get; set; }
+        public bool IsAllowVirtualCredit { get; set; }
+        public string MATMTransactionURL { get; set; }
+        public bool IsCircleSwitching { get; set; }
+        public int AffiliateUserID { get; set; }
+        public string AvenuesAgentID { get; set; }
+        public string AffiliateType { get; set; }
+        public Nullable<decimal> AffiliateValue { get; set; }
+        public string ReferralCode { get; set; }
+        public string PancardNo { get; set; }
+        public string AadharNo { get; set; }
+        public string PinCode { get; set; }
+        public string StateName { get; set; }
+        public string CityName { get; set; }
+        public string WebsiteUrl { get; set; }
+        public string ProfileImageUrl { get; set; }
+        public string CINNo { get; set; }
+        public string CompanyType { get; set; }
     }
 }

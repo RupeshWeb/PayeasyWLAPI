@@ -24,5 +24,7 @@ namespace DataModel
         public System.DateTime AddDate { get; set; }
         public System.DateTime EditDate { get; set; }
         public bool Status { get; set; }
+        public bool IsSlab { get; set; }
+        public bool IsCircleSlab { get; set; }
     }
 }

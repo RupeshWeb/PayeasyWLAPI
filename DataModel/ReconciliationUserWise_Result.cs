@@ -17,13 +17,17 @@ namespace DataModel
         public int UserId { get; set; }
         public decimal OpeningBalance { get; set; }
         public decimal Usage { get; set; }
+        public decimal PayoutUsage { get; set; }
         public decimal Commission { get; set; }
         public decimal Surcharge { get; set; }
+        public decimal PayoutSurcharge { get; set; }
         public decimal Credit { get; set; }
         public decimal AEPSCredit { get; set; }
         public decimal Debit { get; set; }
         public decimal OldReversal { get; set; }
         public decimal LetReversal { get; set; }
+        public decimal GST { get; set; }
+        public decimal TDS { get; set; }
         public decimal ClosingBalance { get; set; }
     }
 }

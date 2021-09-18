@@ -23,5 +23,13 @@ namespace DataModel
         public System.DateTime EditDate { get; set; }
         public bool IsCircle { get; set; }
         public bool IsAPIAmount { get; set; }
+        public bool IsPending { get; set; }
+        public bool IsPendings { get; set; }
+        public bool IsSpeed { get; set; }
+        public bool IsRetry { get; set; }
+        public bool IsValidate { get; set; }
+        public bool IsAPIWiseAmount { get; set; }
+        public bool IsComplaintAPI { get; set; }
+        public bool IsOPIDBlank { get; set; }
     }
 }

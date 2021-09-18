@@ -27,5 +27,7 @@ namespace DataModel
         public short Sort { get; set; }
         public string Pattern { get; set; }
         public bool HasGrouping { get; set; }
+        public string AvenuesName { get; set; }
+        public string APIName { get; set; }
     }
 }

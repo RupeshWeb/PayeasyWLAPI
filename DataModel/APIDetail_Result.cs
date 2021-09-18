@@ -20,6 +20,8 @@ namespace DataModel
         public decimal CommVal { get; set; }
         public decimal ServiceChargePer { get; set; }
         public decimal ServiceChargeVal { get; set; }
+        public int CommissionID { get; set; }
+        public bool IsSlab { get; set; }
         public string APIName { get; set; }
         public string APICode { get; set; }
         public string Username { get; set; }
@@ -30,6 +32,11 @@ namespace DataModel
         public string OperatorApiCode { get; set; }
         public string APIOperatorCode { get; set; }
         public string OperatorType { get; set; }
+        public decimal MinAmount { get; set; }
+        public decimal MaxAmount { get; set; }
+        public int MainMinLength { get; set; }
+        public int MainMaxLength { get; set; }
+        public bool IsValidate { get; set; }
         public string APIOperatorCode1 { get; set; }
         public string APIOperatorCode2 { get; set; }
         public string APIOperatorCode3 { get; set; }
@@ -57,5 +64,20 @@ namespace DataModel
         public string APIOperatorCode24 { get; set; }
         public string APIOperatorCode25 { get; set; }
         public string BBPSCode { get; set; }
+        public string APIOperatorCode26 { get; set; }
+        public string APIOperatorCode27 { get; set; }
+        public string APIOperatorCode28 { get; set; }
+        public string APIOperatorCode29 { get; set; }
+        public string APIOperatorCode30 { get; set; }
+        public string APIOperatorCode31 { get; set; }
+        public string APIOperatorCode32 { get; set; }
+        public string APIOperatorCode33 { get; set; }
+        public string APIOperatorCode34 { get; set; }
+        public string APIOperatorCode35 { get; set; }
+        public string APIOperatorCode36 { get; set; }
+        public string APIOperatorCode37 { get; set; }
+        public string APIOperatorCode38 { get; set; }
+        public string APIOperatorCode39 { get; set; }
+        public string APIOperatorCode40 { get; set; }
     }
 }

@@ -78,10 +78,28 @@
     <Compile Include="AEPSWLTransactions_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="AFDashBoard_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AffiliateMerchant.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AFTransactionDetails_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AFTransactionOperatorDetails_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AFTransactionsDetails_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="AllBankName.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="AmountWiseSwitching.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AmountWiseTransactionCount_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="APaymentTransaction_Result.cs">
@@ -96,7 +114,22 @@
     <Compile Include="APIAmountSwitch_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="APIBalanceRequestLog.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APIBlankOPIDSwitch_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APICircleWiseDetails_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="APICommission.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APICommissionCircleSlab.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APICommissionSlab.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="APIDetail_Result.cs">
@@ -105,7 +138,19 @@
     <Compile Include="APIFailedReason.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="APIPendingSwitch_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="APIReconciliation_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APISession.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APIWiseAmountSwitching.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APIWiseAmountSwitch_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Balance.cs">
@@ -118,6 +163,9 @@
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="BankWithdrawal.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Banner.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="BBPSCategory_Result.cs">
@@ -139,6 +187,9 @@
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Brand.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ChargeMoneyTran.cs">
@@ -165,7 +216,16 @@
     <Compile Include="Commission.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="CommissionSlab.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommissionSlabDetails_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="ComplaintRegister.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsentLog.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="CustomAPICommission.cs">
@@ -180,7 +240,22 @@
     <Compile Include="CustomerTransactionupdatetEST_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DashBoardOverView_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="DashBoardSalesTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoardServiceSales_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoardStatistic_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoardTransactionModeSummary_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoardTransactionMode_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="DashBoardTransaction_Result.cs">
@@ -197,6 +272,15 @@
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="DmtTransactionsLimitsAPI_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EcollationRequestLog.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailApi.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailTemplate.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ErrorTransaction.cs">
@@ -230,6 +314,9 @@
     <Compile Include="getDmtBalanceByID_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="getLatestRechargeForSameRequest_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="getOperatorByOperatorID_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
@@ -240,6 +327,9 @@
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="getUserByUserType_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceRequest.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="LapuBalance.cs">
@@ -257,13 +347,34 @@
     <Compile Include="LoginHistory.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="LowBalanceNotify.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LowBalanceNotifyLog.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManualAPICommission.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="MasterIFSCCode.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="MasterValidate.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="MATMTransactions_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="MerchantActivation.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MerchantBalanceAccounting.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MerchantOnBoarding.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MerchantOnBoardingDocument.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="MPOSTransaction.cs">
@@ -272,10 +383,22 @@
     <Compile Include="MyCommission_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="NoManualAPIProfitLossDetail_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NSMSApi.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="NWalletOperatorCode.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Operator.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorIdBlankSwitching.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorReconciliationManual_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="OperatorReconciliationv2_Result.cs">
@@ -288,9 +411,6 @@
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="OperatorValidateParam.cs">
-      <DependentUpon>WebplatDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OtherChargeSetting.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="PageAuthorization.cs">
@@ -306,6 +426,24 @@
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="PaymentRequest.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayoutLazyTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayoutRecipient.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayoutsTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PendingsSwitching.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PendingSwitching.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PinCode.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -328,6 +466,9 @@
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="RechargeTransaction_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RechargeValidateSwitch.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Recipient.cs">
@@ -357,6 +498,9 @@
     <Compile Include="RequestLog.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="RequestLogDetails_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="ResponsesLog.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
@@ -384,7 +528,25 @@
     <Compile Include="SmsLog.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="SMSTemplate.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpeedController.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpeedControlSwitch_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="SPUserNameByType_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserETLMapping.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TemplatesParameter.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TerminalOnBoarding.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Ticket.cs">
@@ -393,10 +555,16 @@
     <Compile Include="TransactionCommission_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="TransactionCreditStatement_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="TransactionLastStatement_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="TransactionLazyStatement_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionLimitCircleOPWise_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="TransactionProcessTime_Result.cs">
@@ -405,10 +573,16 @@
     <Compile Include="TransactionQueue.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="TransactionsProcessTime_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="TransactionStatement_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="TransactionSummary_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionTotalAverage_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
@@ -419,7 +593,16 @@
     <Compile Include="UserBank.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserDocument.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserGSTTDSSummary_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsersCurrentLiabilityAuto_Result.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsersCurrentLiability_Result.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="UserSession.cs">

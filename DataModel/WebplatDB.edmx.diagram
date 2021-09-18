@@ -4,87 +4,121 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4026536066a44ce7a25ea00e66f9c17d" Name="Diagram1">
-        <EntityTypeShape EntityType="WebplatDB.OtherChargeSetting" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.Scheme" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.ActivityLog" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.AEPSATMRequest" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.AEPSFNOSession" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.AEPSRequestLog" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.AllBankName" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.AmountWiseSwitching" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.Api" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.APIAmountSwitching" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.APICommission" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.APIFailedReason" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.Balance" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+      <Diagram DiagramId="d93f9edc175a4f4cb38bb7c2a310d07a" Name="Diagram1">
+        <EntityTypeShape EntityType="WebplatDB.ActivityLog" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.AEPSATMRequest" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.AEPSFNOSession" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.AEPSRequestLog" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.AffiliateMerchant" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.AllBankName" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.AmountWiseSwitching" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Api" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.APIAmountSwitching" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.APIBalanceRequestLog" Width="1.5" PointX="7.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.APICommission" Width="1.5" PointX="9.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.APICommissionCircleSlab" Width="1.5" PointX="11.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.APICommissionSlab" Width="1.5" PointX="13.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.APIFailedReason" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.APISession" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.APIWiseAmountSwitching" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Balance" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="WebplatDB.Bank" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.BankWithdrawal" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.BBPSState" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.Brand" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.ChargeMoneyTran" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.Circle" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.CircleAPISetting" Width="1.5" PointX="16.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.CircleSery" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.ClientRequestLog" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.Commission" Width="1.5" PointX="8.25" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.ComplaintRegister" Width="1.5" PointX="10.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.CustomAPICommission" Width="1.5" PointX="12.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.DmtBalance" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.ErrorTransaction" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.FaildTransactionRetry" Width="1.5" PointX="18.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.FailSwitching" Width="1.5" PointX="18.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.GCTransaction" Width="1.5" PointX="7.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.LapuBalance" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.LapuMaster" Width="1.5" PointX="14.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.LapuMasterDetail" Width="1.5" PointX="18.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.LoginHistory" Width="1.5" PointX="5.25" PointY="20.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.MasterIFSCCode" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.MasterValidate" Width="1.5" PointX="20.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.MerchantActivation" Width="1.5" PointX="20.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.MPOSTransaction" Width="1.5" PointX="20.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.NWalletOperatorCode" Width="1.5" PointX="16.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.Operator" Width="1.5" PointX="6" PointY="29.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.OperatorSwitching" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.OperatorValidateParam" Width="1.5" PointX="12.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.PageAuthorization" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.PageName" Width="1.5" PointX="22.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.PANTransactionRequest" Width="1.5" PointX="22.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.BankWithdrawal" Width="1.5" PointX="15.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Banner" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.BBPSState" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Brand" Width="1.5" PointX="16.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Category" Width="1.5" PointX="17.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.ChargeMoneyTran" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Circle" Width="1.5" PointX="11.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.CircleAPISetting" Width="1.5" PointX="17.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.CircleSery" Width="1.5" PointX="13.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.ClientRequestLog" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Commission" Width="1.5" PointX="8.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.CommissionSlab" Width="1.5" PointX="18.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.ComplaintRegister" Width="1.5" PointX="15.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.ConsentLog" Width="1.5" PointX="17.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.CustomAPICommission" Width="1.5" PointX="19.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.DmtBalance" Width="1.5" PointX="5.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.EcollationRequestLog" Width="1.5" PointX="19.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.EmailApi" Width="1.5" PointX="19.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.EmailTemplate" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.ErrorTransaction" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.FaildTransactionRetry" Width="1.5" PointX="20.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.FailSwitching" Width="1.5" PointX="10.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.GCTransaction" Width="1.5" PointX="12.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.InvoiceRequest" Width="1.5" PointX="21.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.LapuBalance" Width="1.5" PointX="21.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.LapuMaster" Width="1.5" PointX="21.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.LapuMasterDetail" Width="1.5" PointX="21.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.LoginHistory" Width="1.5" PointX="5.25" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.LowBalanceNotify" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.LowBalanceNotifyLog" Width="1.5" PointX="22.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.ManualAPICommission" Width="1.5" PointX="17.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.MasterIFSCCode" Width="1.5" PointX="23.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.MasterValidate" Width="1.5" PointX="23.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.MerchantActivation" Width="1.5" PointX="23.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.MerchantBalanceAccounting" Width="1.5" PointX="14.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.MerchantOnBoarding" Width="1.5" PointX="23.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.MerchantOnBoardingDocument" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.MPOSTransaction" Width="1.5" PointX="7.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.NSMSApi" Width="1.5" PointX="9.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.NWalletOperatorCode" Width="1.5" PointX="19.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.OperatorIdBlankSwitching" Width="1.5" PointX="25.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Operator" Width="1.5" PointX="6" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.OperatorSwitching" Width="1.5" PointX="25.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.OperatorValidateParam" Width="1.5" PointX="25.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.PageAuthorization" Width="1.5" PointX="25.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.PageName" Width="1.5" PointX="25.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.PANTransactionRequest" Width="1.5" PointX="25.75" PointY="25.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WebplatDB.PaymentRequest" Width="1.5" PointX="10" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.RandomSwitch" Width="1.5" PointX="9.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.RechargesPlan" Width="1.5" PointX="22.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.RechargeTransaction" Width="1.5" PointX="22.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.PayoutRecipient" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.PendingsSwitching" Width="1.5" PointX="11.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.PendingSwitching" Width="1.5" PointX="16.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.PinCode" Width="1.5" PointX="27.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.RandomSwitch" Width="1.5" PointX="27.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.RechargesPlan" Width="1.5" PointX="27.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.RechargeTransaction" Width="1.5" PointX="13.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.RechargeValidateSwitch" Width="1.5" PointX="27.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WebplatDB.Recipient" Width="1.5" PointX="8" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="WebplatDB.Remitter" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.Remittervalidate" Width="1.5" PointX="18.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.RequestLog" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.ResponsesLog" Width="1.5" PointX="24.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.SDKAuthRequestLog" Width="1.5" PointX="24.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.Service" Width="1.5" PointX="3.75" PointY="33.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.ServiceAuthorization" Width="1.5" PointX="14.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.Setting" Width="1.5" PointX="24.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.SMSApi" Width="1.5" PointX="24.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.SmsLog" Width="1.5" PointX="20.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.Ticket" Width="1.5" PointX="24.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.TransactionQueue" Width="1.5" PointX="5.25" PointY="22.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.UserBank" Width="1.5" PointX="7.75" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.User" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.UserSession" Width="1.5" PointX="5.25" PointY="26.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.UserToken" Width="1.5" PointX="9.75" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.ValidateParameter" Width="1.5" PointX="16.75" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebplatDB.ValidateParameterGrouping" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="WebplatDB.FK__ChargeMon__Schem__67A95F59" ManuallyRouted="false" />
-        <AssociationConnector Association="WebplatDB.FK__Users__SchemeID__6991A7CB" ManuallyRouted="false" />
-        <AssociationConnector Association="WebplatDB.FK_SchemeCommission" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WebplatDB.Remittervalidate" Width="1.5" PointX="27.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.RequestLog" Width="1.5" PointX="27.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.ResponsesLog" Width="1.5" PointX="27.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Scheme" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.SDKAuthRequestLog" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Service" Width="1.5" PointX="3.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.ServiceAuthorization" Width="1.5" PointX="18.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Setting" Width="1.5" PointX="20.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.SMSApi" Width="1.5" PointX="29.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.SmsLog" Width="1.5" PointX="29.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.SMSTemplate" Width="1.5" PointX="29.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.SpeedController" Width="1.5" PointX="29.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.tblUserETLMapping" Width="1.5" PointX="29.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.TemplatesParameter" Width="1.5" PointX="29.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.TerminalOnBoarding" Width="1.5" PointX="29.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.Ticket" Width="1.5" PointX="30.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.TransactionQueue" Width="1.5" PointX="5.25" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.UserBank" Width="1.5" PointX="9.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.UserDocument" Width="1.5" PointX="5.25" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.User" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.UserSession" Width="1.5" PointX="5.25" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.UserToken" Width="1.5" PointX="15.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.ValidateParameter" Width="1.5" PointX="22.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebplatDB.ValidateParameterGrouping" Width="1.5" PointX="24.75" PointY="30.75" IsExpanded="true" />
         <AssociationConnector Association="WebplatDB.FK_Balance_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="WebplatDB.FK__PaymentRe__BankI__7993056A" ManuallyRouted="false" />
+        <AssociationConnector Association="WebplatDB.FK__PaymentRe__BankI__373B3228" ManuallyRouted="false" />
+        <AssociationConnector Association="WebplatDB.FK__ChargeMon__Schem__67A95F59" ManuallyRouted="false" />
+        <AssociationConnector Association="WebplatDB.FK_SchemeCommission" ManuallyRouted="false" />
         <AssociationConnector Association="WebplatDB.FK_tblCommission_tblOperators" ManuallyRouted="false" />
         <AssociationConnector Association="WebplatDB.FK_tblCommission_tblScheme" ManuallyRouted="false" />
         <AssociationConnector Association="WebplatDB.FK_DmtBalance_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="WebplatDB.FK_EmailTemplate_EmailTemplate" ManuallyRouted="false" />
         <AssociationConnector Association="WebplatDB.FK_LoginHistory_Users" ManuallyRouted="false" />
         <AssociationConnector Association="WebplatDB.FK_tblOperators_tblService" ManuallyRouted="false" />
-        <AssociationConnector Association="WebplatDB.FK__Recipients__RTID__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="WebplatDB.FK__Recipients__RTID__382F5661" ManuallyRouted="false" />
+        <AssociationConnector Association="WebplatDB.FK__Users__SchemeID__3B0BC30C" ManuallyRouted="false" />
         <AssociationConnector Association="WebplatDB.FK_RechargeQueue_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="WebplatDB.FK_UserDocuments_Users" ManuallyRouted="false" />
         <AssociationConnector Association="WebplatDB.FK_UserSession_Users" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

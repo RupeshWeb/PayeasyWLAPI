@@ -21,6 +21,7 @@ namespace DataModel
         public System.DateTime UpdateOnDate { get; set; }
         public string CustomerNumber { get; set; }
         public string IfscCode { get; set; }
+        public string BeneName { get; set; }
         public string AccountNo { get; set; }
         public string PayMode { get; set; }
         public decimal OpeningBalance { get; set; }
@@ -45,5 +46,6 @@ namespace DataModel
         public string TransactionID { get; set; }
         public Nullable<decimal> ProfitLoss { get; set; }
         public string OPType { get; set; }
+        public string TXNMode { get; set; }
     }
 }

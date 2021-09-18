@@ -25,5 +25,8 @@ namespace DataModel
         public System.DateTime AddDate { get; set; }
         public bool IsDelete { get; set; }
         public bool IsBlock { get; set; }
+        public string Status { get; set; }
+        public Nullable<System.DateTime> ReplyDate { get; set; }
+        public string Reply { get; set; }
     }
 }

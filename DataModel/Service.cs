@@ -20,5 +20,6 @@ namespace DataModel
         public bool IsBBPS { get; set; }
         public bool IsAuth { get; set; }
         public string ImageUrl { get; set; }
+        public short CategoryID { get; set; }
     }
 }

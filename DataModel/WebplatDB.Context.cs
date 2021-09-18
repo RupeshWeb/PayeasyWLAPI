@@ -27,45 +27,65 @@ namespace DataModel
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<OtherChargeSetting> OtherChargeSettings { get; set; }
-        public virtual DbSet<Scheme> Schemes { get; set; }
         public virtual DbSet<ActivityLog> ActivityLogs { get; set; }
         public virtual DbSet<AEPSATMRequest> AEPSATMRequests { get; set; }
         public virtual DbSet<AEPSFNOSession> AEPSFNOSessions { get; set; }
         public virtual DbSet<AEPSRequestLog> AEPSRequestLogs { get; set; }
+        public virtual DbSet<AffiliateMerchant> AffiliateMerchants { get; set; }
         public virtual DbSet<AllBankName> AllBankNames { get; set; }
         public virtual DbSet<AmountWiseSwitching> AmountWiseSwitchings { get; set; }
         public virtual DbSet<Api> Apis { get; set; }
         public virtual DbSet<APIAmountSwitching> APIAmountSwitchings { get; set; }
+        public virtual DbSet<APIBalanceRequestLog> APIBalanceRequestLogs { get; set; }
         public virtual DbSet<APICommission> APICommissions { get; set; }
+        public virtual DbSet<APICommissionCircleSlab> APICommissionCircleSlabs { get; set; }
+        public virtual DbSet<APICommissionSlab> APICommissionSlabs { get; set; }
         public virtual DbSet<APIFailedReason> APIFailedReasons { get; set; }
+        public virtual DbSet<APISession> APISessions { get; set; }
+        public virtual DbSet<APIWiseAmountSwitching> APIWiseAmountSwitchings { get; set; }
         public virtual DbSet<Balance> Balances { get; set; }
         public virtual DbSet<Bank> Banks { get; set; }
         public virtual DbSet<BankWithdrawal> BankWithdrawals { get; set; }
+        public virtual DbSet<Banner> Banners { get; set; }
         public virtual DbSet<BBPSState> BBPSStates { get; set; }
         public virtual DbSet<Brand> Brands { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<ChargeMoneyTran> ChargeMoneyTrans { get; set; }
         public virtual DbSet<Circle> Circles { get; set; }
         public virtual DbSet<CircleAPISetting> CircleAPISettings { get; set; }
         public virtual DbSet<CircleSery> CircleSeries { get; set; }
         public virtual DbSet<ClientRequestLog> ClientRequestLogs { get; set; }
         public virtual DbSet<Commission> Commissions { get; set; }
+        public virtual DbSet<CommissionSlab> CommissionSlabs { get; set; }
         public virtual DbSet<ComplaintRegister> ComplaintRegisters { get; set; }
+        public virtual DbSet<ConsentLog> ConsentLogs { get; set; }
         public virtual DbSet<CustomAPICommission> CustomAPICommissions { get; set; }
         public virtual DbSet<DmtBalance> DmtBalances { get; set; }
+        public virtual DbSet<EcollationRequestLog> EcollationRequestLogs { get; set; }
+        public virtual DbSet<EmailApi> EmailApis { get; set; }
+        public virtual DbSet<EmailTemplate> EmailTemplates { get; set; }
         public virtual DbSet<ErrorTransaction> ErrorTransactions { get; set; }
         public virtual DbSet<FaildTransactionRetry> FaildTransactionRetries { get; set; }
         public virtual DbSet<FailSwitching> FailSwitchings { get; set; }
         public virtual DbSet<GCTransaction> GCTransactions { get; set; }
+        public virtual DbSet<InvoiceRequest> InvoiceRequests { get; set; }
         public virtual DbSet<LapuBalance> LapuBalances { get; set; }
         public virtual DbSet<LapuMaster> LapuMasters { get; set; }
         public virtual DbSet<LapuMasterDetail> LapuMasterDetails { get; set; }
         public virtual DbSet<LoginHistory> LoginHistories { get; set; }
+        public virtual DbSet<LowBalanceNotify> LowBalanceNotifies { get; set; }
+        public virtual DbSet<LowBalanceNotifyLog> LowBalanceNotifyLogs { get; set; }
+        public virtual DbSet<ManualAPICommission> ManualAPICommissions { get; set; }
         public virtual DbSet<MasterIFSCCode> MasterIFSCCodes { get; set; }
         public virtual DbSet<MasterValidate> MasterValidates { get; set; }
         public virtual DbSet<MerchantActivation> MerchantActivations { get; set; }
+        public virtual DbSet<MerchantBalanceAccounting> MerchantBalanceAccountings { get; set; }
+        public virtual DbSet<MerchantOnBoarding> MerchantOnBoardings { get; set; }
+        public virtual DbSet<MerchantOnBoardingDocument> MerchantOnBoardingDocuments { get; set; }
         public virtual DbSet<MPOSTransaction> MPOSTransactions { get; set; }
+        public virtual DbSet<NSMSApi> NSMSApis { get; set; }
         public virtual DbSet<NWalletOperatorCode> NWalletOperatorCodes { get; set; }
+        public virtual DbSet<OperatorIdBlankSwitching> OperatorIdBlankSwitchings { get; set; }
         public virtual DbSet<Operator> Operators { get; set; }
         public virtual DbSet<OperatorSwitching> OperatorSwitchings { get; set; }
         public virtual DbSet<OperatorValidateParam> OperatorValidateParams { get; set; }
@@ -73,23 +93,35 @@ namespace DataModel
         public virtual DbSet<PageName> PageNames { get; set; }
         public virtual DbSet<PANTransactionRequest> PANTransactionRequests { get; set; }
         public virtual DbSet<PaymentRequest> PaymentRequests { get; set; }
+        public virtual DbSet<PayoutRecipient> PayoutRecipients { get; set; }
+        public virtual DbSet<PendingsSwitching> PendingsSwitchings { get; set; }
+        public virtual DbSet<PendingSwitching> PendingSwitchings { get; set; }
+        public virtual DbSet<PinCode> PinCodes { get; set; }
         public virtual DbSet<RandomSwitch> RandomSwitches { get; set; }
         public virtual DbSet<RechargesPlan> RechargesPlans { get; set; }
         public virtual DbSet<RechargeTransaction> RechargeTransactions { get; set; }
+        public virtual DbSet<RechargeValidateSwitch> RechargeValidateSwitches { get; set; }
         public virtual DbSet<Recipient> Recipients { get; set; }
         public virtual DbSet<Remitter> Remitters { get; set; }
         public virtual DbSet<Remittervalidate> Remittervalidates { get; set; }
         public virtual DbSet<RequestLog> RequestLogs { get; set; }
         public virtual DbSet<ResponsesLog> ResponsesLogs { get; set; }
+        public virtual DbSet<Scheme> Schemes { get; set; }
         public virtual DbSet<SDKAuthRequestLog> SDKAuthRequestLogs { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<ServiceAuthorization> ServiceAuthorizations { get; set; }
         public virtual DbSet<Setting> Settings { get; set; }
         public virtual DbSet<SMSApi> SMSApis { get; set; }
         public virtual DbSet<SmsLog> SmsLogs { get; set; }
+        public virtual DbSet<SMSTemplate> SMSTemplates { get; set; }
+        public virtual DbSet<SpeedController> SpeedControllers { get; set; }
+        public virtual DbSet<tblUserETLMapping> tblUserETLMappings { get; set; }
+        public virtual DbSet<TemplatesParameter> TemplatesParameters { get; set; }
+        public virtual DbSet<TerminalOnBoarding> TerminalOnBoardings { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<TransactionQueue> TransactionQueues { get; set; }
         public virtual DbSet<UserBank> UserBanks { get; set; }
+        public virtual DbSet<UserDocument> UserDocuments { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserSession> UserSessions { get; set; }
         public virtual DbSet<UserToken> UserTokens { get; set; }
@@ -175,6 +207,115 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AEPSWLTransactions_Result>("AEPSWLTransactions", userIDParameter, agentIDParameter, fromDateParameter, toDateParameter, numberParameter, txnIDParameter, flagParameter);
         }
     
+        public virtual ObjectResult<AFDashBoard_Result> AFDashBoard(Nullable<int> userID, Nullable<short> flag)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AFDashBoard_Result>("AFDashBoard", userIDParameter, flagParameter);
+        }
+    
+        public virtual ObjectResult<AFTransactionDetails_Result> AFTransactionDetails(Nullable<int> aFUserID, Nullable<System.DateTime> fromDATE, Nullable<System.DateTime> toDATE, Nullable<int> userID, Nullable<short> flag)
+        {
+            var aFUserIDParameter = aFUserID.HasValue ?
+                new ObjectParameter("AFUserID", aFUserID) :
+                new ObjectParameter("AFUserID", typeof(int));
+    
+            var fromDATEParameter = fromDATE.HasValue ?
+                new ObjectParameter("FromDATE", fromDATE) :
+                new ObjectParameter("FromDATE", typeof(System.DateTime));
+    
+            var toDATEParameter = toDATE.HasValue ?
+                new ObjectParameter("ToDATE", toDATE) :
+                new ObjectParameter("ToDATE", typeof(System.DateTime));
+    
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AFTransactionDetails_Result>("AFTransactionDetails", aFUserIDParameter, fromDATEParameter, toDATEParameter, userIDParameter, flagParameter);
+        }
+    
+        public virtual ObjectResult<AFTransactionOperatorDetails_Result> AFTransactionOperatorDetails(Nullable<int> aFUserID, Nullable<System.DateTime> fromDATE, Nullable<System.DateTime> toDATE, Nullable<int> userID, Nullable<short> flag)
+        {
+            var aFUserIDParameter = aFUserID.HasValue ?
+                new ObjectParameter("AFUserID", aFUserID) :
+                new ObjectParameter("AFUserID", typeof(int));
+    
+            var fromDATEParameter = fromDATE.HasValue ?
+                new ObjectParameter("FromDATE", fromDATE) :
+                new ObjectParameter("FromDATE", typeof(System.DateTime));
+    
+            var toDATEParameter = toDATE.HasValue ?
+                new ObjectParameter("ToDATE", toDATE) :
+                new ObjectParameter("ToDATE", typeof(System.DateTime));
+    
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AFTransactionOperatorDetails_Result>("AFTransactionOperatorDetails", aFUserIDParameter, fromDATEParameter, toDATEParameter, userIDParameter, flagParameter);
+        }
+    
+        public virtual ObjectResult<AFTransactionsDetails_Result> AFTransactionsDetails(Nullable<System.DateTime> fromDATE, Nullable<System.DateTime> toDATE, Nullable<short> flag)
+        {
+            var fromDATEParameter = fromDATE.HasValue ?
+                new ObjectParameter("FromDATE", fromDATE) :
+                new ObjectParameter("FromDATE", typeof(System.DateTime));
+    
+            var toDATEParameter = toDATE.HasValue ?
+                new ObjectParameter("ToDATE", toDATE) :
+                new ObjectParameter("ToDATE", typeof(System.DateTime));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AFTransactionsDetails_Result>("AFTransactionsDetails", fromDATEParameter, toDATEParameter, flagParameter);
+        }
+    
+        public virtual ObjectResult<AmountWiseTransactionCount_Result> AmountWiseTransactionCount(Nullable<int> userID, Nullable<System.DateTime> fROMDATE, Nullable<System.DateTime> tODATE, Nullable<short> aPIID, Nullable<int> operatorID, Nullable<short> flag)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var fROMDATEParameter = fROMDATE.HasValue ?
+                new ObjectParameter("FROMDATE", fROMDATE) :
+                new ObjectParameter("FROMDATE", typeof(System.DateTime));
+    
+            var tODATEParameter = tODATE.HasValue ?
+                new ObjectParameter("TODATE", tODATE) :
+                new ObjectParameter("TODATE", typeof(System.DateTime));
+    
+            var aPIIDParameter = aPIID.HasValue ?
+                new ObjectParameter("APIID", aPIID) :
+                new ObjectParameter("APIID", typeof(short));
+    
+            var operatorIDParameter = operatorID.HasValue ?
+                new ObjectParameter("OperatorID", operatorID) :
+                new ObjectParameter("OperatorID", typeof(int));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AmountWiseTransactionCount_Result>("AmountWiseTransactionCount", userIDParameter, fROMDATEParameter, tODATEParameter, aPIIDParameter, operatorIDParameter, flagParameter);
+        }
+    
         public virtual ObjectResult<APaymentTransaction_Result> APaymentTransaction(Nullable<long> userId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, ObjectParameter flag)
         {
             var userIdParameter = userId.HasValue ?
@@ -192,8 +333,12 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<APaymentTransaction_Result>("APaymentTransaction", userIdParameter, fromDateParameter, toDateParameter, flag);
         }
     
-        public virtual ObjectResult<APIAmountSwitch_Result> APIAmountSwitch(Nullable<int> operatorId, string amount, ObjectParameter outPut)
+        public virtual ObjectResult<APIAmountSwitch_Result> APIAmountSwitch(Nullable<int> userID, Nullable<int> operatorId, string amount, ObjectParameter outPut)
         {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
             var operatorIdParameter = operatorId.HasValue ?
                 new ObjectParameter("OperatorId", operatorId) :
                 new ObjectParameter("OperatorId", typeof(int));
@@ -202,7 +347,7 @@ namespace DataModel
                 new ObjectParameter("Amount", amount) :
                 new ObjectParameter("Amount", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<APIAmountSwitch_Result>("APIAmountSwitch", operatorIdParameter, amountParameter, outPut);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<APIAmountSwitch_Result>("APIAmountSwitch", userIDParameter, operatorIdParameter, amountParameter, outPut);
         }
     
         public virtual ObjectResult<Nullable<int>> APIAmtSwitch(Nullable<short> aPIID, Nullable<int> operatorId, ObjectParameter outPut)
@@ -216,6 +361,52 @@ namespace DataModel
                 new ObjectParameter("OperatorId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("APIAmtSwitch", aPIIDParameter, operatorIdParameter, outPut);
+        }
+    
+        public virtual ObjectResult<APIBlankOPIDSwitch_Result> APIBlankOPIDSwitch(Nullable<int> operatorID, Nullable<short> apiID, ObjectParameter outPut)
+        {
+            var operatorIDParameter = operatorID.HasValue ?
+                new ObjectParameter("OperatorID", operatorID) :
+                new ObjectParameter("OperatorID", typeof(int));
+    
+            var apiIDParameter = apiID.HasValue ?
+                new ObjectParameter("ApiID", apiID) :
+                new ObjectParameter("ApiID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<APIBlankOPIDSwitch_Result>("APIBlankOPIDSwitch", operatorIDParameter, apiIDParameter, outPut);
+        }
+    
+        public virtual ObjectResult<APICircleWiseDetails_Result> APICircleWiseDetails(Nullable<int> userID, Nullable<System.DateTime> fROMDATE, Nullable<System.DateTime> tODATE, Nullable<short> aPIID, Nullable<int> circleID, Nullable<int> operatorID, Nullable<short> flag)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var fROMDATEParameter = fROMDATE.HasValue ?
+                new ObjectParameter("FROMDATE", fROMDATE) :
+                new ObjectParameter("FROMDATE", typeof(System.DateTime));
+    
+            var tODATEParameter = tODATE.HasValue ?
+                new ObjectParameter("TODATE", tODATE) :
+                new ObjectParameter("TODATE", typeof(System.DateTime));
+    
+            var aPIIDParameter = aPIID.HasValue ?
+                new ObjectParameter("APIID", aPIID) :
+                new ObjectParameter("APIID", typeof(short));
+    
+            var circleIDParameter = circleID.HasValue ?
+                new ObjectParameter("CircleID", circleID) :
+                new ObjectParameter("CircleID", typeof(int));
+    
+            var operatorIDParameter = operatorID.HasValue ?
+                new ObjectParameter("OperatorID", operatorID) :
+                new ObjectParameter("OperatorID", typeof(int));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<APICircleWiseDetails_Result>("APICircleWiseDetails", userIDParameter, fROMDATEParameter, tODATEParameter, aPIIDParameter, circleIDParameter, operatorIDParameter, flagParameter);
         }
     
         public virtual ObjectResult<APIDetail_Result> APIDetail(Nullable<int> operatorId, Nullable<int> schemeId, Nullable<short> apiID, ObjectParameter outPut)
@@ -248,6 +439,19 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("APIFailSwitch", operatorIDParameter, apiIDParameter, outPut);
         }
     
+        public virtual ObjectResult<APIPendingSwitch_Result> APIPendingSwitch(Nullable<int> operatorID, Nullable<short> apiID, ObjectParameter outPut)
+        {
+            var operatorIDParameter = operatorID.HasValue ?
+                new ObjectParameter("OperatorID", operatorID) :
+                new ObjectParameter("OperatorID", typeof(int));
+    
+            var apiIDParameter = apiID.HasValue ?
+                new ObjectParameter("ApiID", apiID) :
+                new ObjectParameter("ApiID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<APIPendingSwitch_Result>("APIPendingSwitch", operatorIDParameter, apiIDParameter, outPut);
+        }
+    
         public virtual ObjectResult<APIReconciliation_Result> APIReconciliation(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, ObjectParameter outPut)
         {
             var fromDateParameter = fromDate.HasValue ?
@@ -259,6 +463,23 @@ namespace DataModel
                 new ObjectParameter("ToDate", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<APIReconciliation_Result>("APIReconciliation", fromDateParameter, toDateParameter, outPut);
+        }
+    
+        public virtual ObjectResult<APIWiseAmountSwitch_Result> APIWiseAmountSwitch(Nullable<short> aPIID, Nullable<int> operatorId, string amount, ObjectParameter outPut)
+        {
+            var aPIIDParameter = aPIID.HasValue ?
+                new ObjectParameter("APIID", aPIID) :
+                new ObjectParameter("APIID", typeof(short));
+    
+            var operatorIdParameter = operatorId.HasValue ?
+                new ObjectParameter("OperatorId", operatorId) :
+                new ObjectParameter("OperatorId", typeof(int));
+    
+            var amountParameter = amount != null ?
+                new ObjectParameter("Amount", amount) :
+                new ObjectParameter("Amount", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<APIWiseAmountSwitch_Result>("APIWiseAmountSwitch", aPIIDParameter, operatorIdParameter, amountParameter, outPut);
         }
     
         public virtual ObjectResult<BalanceSummary_Result> BalanceSummary(Nullable<long> userID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, ObjectParameter flag)
@@ -389,6 +610,60 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CirclewiseapiSettings_Result>("CirclewiseapiSettings", noprefixParameter, operatorCodeParameter, flag);
         }
     
+        public virtual ObjectResult<CommissionSlabDetails_Result> CommissionSlabDetails(Nullable<int> commID, Nullable<decimal> amount, Nullable<short> flag)
+        {
+            var commIDParameter = commID.HasValue ?
+                new ObjectParameter("CommID", commID) :
+                new ObjectParameter("CommID", typeof(int));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("Amount", amount) :
+                new ObjectParameter("Amount", typeof(decimal));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CommissionSlabDetails_Result>("CommissionSlabDetails", commIDParameter, amountParameter, flagParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> CustomerReprocTransactionsupdate(Nullable<long> transactionID, string operatorRef, Nullable<short> aPIID, string aPIRef, string remarks, string apiReq, Nullable<decimal> commAmount, Nullable<decimal> chargeAmount, ObjectParameter flag)
+        {
+            var transactionIDParameter = transactionID.HasValue ?
+                new ObjectParameter("TransactionID", transactionID) :
+                new ObjectParameter("TransactionID", typeof(long));
+    
+            var operatorRefParameter = operatorRef != null ?
+                new ObjectParameter("OperatorRef", operatorRef) :
+                new ObjectParameter("OperatorRef", typeof(string));
+    
+            var aPIIDParameter = aPIID.HasValue ?
+                new ObjectParameter("APIID", aPIID) :
+                new ObjectParameter("APIID", typeof(short));
+    
+            var aPIRefParameter = aPIRef != null ?
+                new ObjectParameter("APIRef", aPIRef) :
+                new ObjectParameter("APIRef", typeof(string));
+    
+            var remarksParameter = remarks != null ?
+                new ObjectParameter("Remarks", remarks) :
+                new ObjectParameter("Remarks", typeof(string));
+    
+            var apiReqParameter = apiReq != null ?
+                new ObjectParameter("ApiReq", apiReq) :
+                new ObjectParameter("ApiReq", typeof(string));
+    
+            var commAmountParameter = commAmount.HasValue ?
+                new ObjectParameter("CommAmount", commAmount) :
+                new ObjectParameter("CommAmount", typeof(decimal));
+    
+            var chargeAmountParameter = chargeAmount.HasValue ?
+                new ObjectParameter("ChargeAmount", chargeAmount) :
+                new ObjectParameter("ChargeAmount", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("CustomerReprocTransactionsupdate", transactionIDParameter, operatorRefParameter, aPIIDParameter, aPIRefParameter, remarksParameter, apiReqParameter, commAmountParameter, chargeAmountParameter, flag);
+        }
+    
         public virtual ObjectResult<Nullable<int>> CustomerReprocTransactionupdate(Nullable<long> transactionID, string operatorRef, Nullable<short> aPIID, string aPIRef, string remarks, string apiReq, ObjectParameter flag)
         {
             var transactionIDParameter = transactionID.HasValue ?
@@ -491,6 +766,19 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("CustomerTransactionValidate", userIDParameter, numberParameter, amountParameter, refNumberParameter);
         }
     
+        public virtual ObjectResult<DashBoardOverView_Result> DashBoardOverView(Nullable<int> userID, Nullable<short> flag)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DashBoardOverView_Result>("DashBoardOverView", userIDParameter, flagParameter);
+        }
+    
         public virtual ObjectResult<DashBoardSalesTransaction_Result> DashBoardSalesTransaction(Nullable<long> userId, ObjectParameter flag)
         {
             var userIdParameter = userId.HasValue ?
@@ -500,6 +788,36 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DashBoardSalesTransaction_Result>("DashBoardSalesTransaction", userIdParameter, flag);
         }
     
+        public virtual ObjectResult<DashBoardServiceSales_Result> DashBoardServiceSales(Nullable<int> userID, Nullable<short> serviceID, Nullable<short> flag)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var serviceIDParameter = serviceID.HasValue ?
+                new ObjectParameter("ServiceID", serviceID) :
+                new ObjectParameter("ServiceID", typeof(short));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DashBoardServiceSales_Result>("DashBoardServiceSales", userIDParameter, serviceIDParameter, flagParameter);
+        }
+    
+        public virtual ObjectResult<DashBoardStatistic_Result> DashBoardStatistic(Nullable<int> userID, Nullable<short> flag)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DashBoardStatistic_Result>("DashBoardStatistic", userIDParameter, flagParameter);
+        }
+    
         public virtual ObjectResult<DashBoardTransaction_Result> DashBoardTransaction(Nullable<long> userId, ObjectParameter flag)
         {
             var userIdParameter = userId.HasValue ?
@@ -507,6 +825,64 @@ namespace DataModel
                 new ObjectParameter("UserId", typeof(long));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DashBoardTransaction_Result>("DashBoardTransaction", userIdParameter, flag);
+        }
+    
+        public virtual ObjectResult<DashBoardTransactionMode_Result> DashBoardTransactionMode(Nullable<int> userID, Nullable<System.DateTime> fROMDATE, Nullable<System.DateTime> tODATE, Nullable<short> aPIID, Nullable<int> operatorID, Nullable<short> flag)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var fROMDATEParameter = fROMDATE.HasValue ?
+                new ObjectParameter("FROMDATE", fROMDATE) :
+                new ObjectParameter("FROMDATE", typeof(System.DateTime));
+    
+            var tODATEParameter = tODATE.HasValue ?
+                new ObjectParameter("TODATE", tODATE) :
+                new ObjectParameter("TODATE", typeof(System.DateTime));
+    
+            var aPIIDParameter = aPIID.HasValue ?
+                new ObjectParameter("APIID", aPIID) :
+                new ObjectParameter("APIID", typeof(short));
+    
+            var operatorIDParameter = operatorID.HasValue ?
+                new ObjectParameter("OperatorID", operatorID) :
+                new ObjectParameter("OperatorID", typeof(int));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DashBoardTransactionMode_Result>("DashBoardTransactionMode", userIDParameter, fROMDATEParameter, tODATEParameter, aPIIDParameter, operatorIDParameter, flagParameter);
+        }
+    
+        public virtual ObjectResult<DashBoardTransactionModeSummary_Result> DashBoardTransactionModeSummary(Nullable<int> userID, Nullable<System.DateTime> fROMDATE, Nullable<System.DateTime> tODATE, Nullable<short> aPIID, Nullable<int> operatorID, Nullable<short> flag)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var fROMDATEParameter = fROMDATE.HasValue ?
+                new ObjectParameter("FROMDATE", fROMDATE) :
+                new ObjectParameter("FROMDATE", typeof(System.DateTime));
+    
+            var tODATEParameter = tODATE.HasValue ?
+                new ObjectParameter("TODATE", tODATE) :
+                new ObjectParameter("TODATE", typeof(System.DateTime));
+    
+            var aPIIDParameter = aPIID.HasValue ?
+                new ObjectParameter("APIID", aPIID) :
+                new ObjectParameter("APIID", typeof(short));
+    
+            var operatorIDParameter = operatorID.HasValue ?
+                new ObjectParameter("OperatorID", operatorID) :
+                new ObjectParameter("OperatorID", typeof(int));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DashBoardTransactionModeSummary_Result>("DashBoardTransactionModeSummary", userIDParameter, fROMDATEParameter, tODATEParameter, aPIIDParameter, operatorIDParameter, flagParameter);
         }
     
         public virtual ObjectResult<DmtStatementReport_Result> DmtStatementReport(Nullable<int> userid, Nullable<System.DateTime> fromdate, Nullable<System.DateTime> todate)
@@ -704,7 +1080,7 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getDmtBalanceByID_Result>("getDmtBalanceByID", userIDParameter);
         }
     
-        public virtual int getLatestRechargeForSameRequest(Nullable<int> userID, Nullable<int> operatorID, string number, Nullable<decimal> amount)
+        public virtual ObjectResult<getLatestRechargeForSameRequest_Result> getLatestRechargeForSameRequest(Nullable<int> userID, Nullable<int> operatorID, string number, Nullable<decimal> amount)
         {
             var userIDParameter = userID.HasValue ?
                 new ObjectParameter("UserID", userID) :
@@ -722,7 +1098,7 @@ namespace DataModel
                 new ObjectParameter("Amount", amount) :
                 new ObjectParameter("Amount", typeof(decimal));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("getLatestRechargeForSameRequest", userIDParameter, operatorIDParameter, numberParameter, amountParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getLatestRechargeForSameRequest_Result>("getLatestRechargeForSameRequest", userIDParameter, operatorIDParameter, numberParameter, amountParameter);
         }
     
         public virtual ObjectResult<getOperatorByOperatorID_Result> getOperatorByOperatorID(Nullable<int> operatorID)
@@ -772,6 +1148,39 @@ namespace DataModel
                 new ObjectParameter("LapuID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LapuBalanceByID_Result>("LapuBalanceByID", userIDParameter, lapuIDParameter);
+        }
+    
+        public virtual ObjectResult<MATMTransactions_Result> MATMTransactions(Nullable<int> userID, string agentID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string number, Nullable<long> txnID, Nullable<short> flag)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var agentIDParameter = agentID != null ?
+                new ObjectParameter("AgentID", agentID) :
+                new ObjectParameter("AgentID", typeof(string));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var numberParameter = number != null ?
+                new ObjectParameter("Number", number) :
+                new ObjectParameter("Number", typeof(string));
+    
+            var txnIDParameter = txnID.HasValue ?
+                new ObjectParameter("TxnID", txnID) :
+                new ObjectParameter("TxnID", typeof(long));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MATMTransactions_Result>("MATMTransactions", userIDParameter, agentIDParameter, fromDateParameter, toDateParameter, numberParameter, txnIDParameter, flagParameter);
         }
     
         public virtual ObjectResult<Nullable<int>> MposUpdatedTrans(Nullable<long> iD, Nullable<decimal> openingBal, Nullable<decimal> commPer, Nullable<decimal> commVal, Nullable<decimal> commAmt, Nullable<decimal> chargePer, Nullable<decimal> chargeVal, Nullable<decimal> chargeAmt, Nullable<decimal> cost, Nullable<decimal> closingBal, Nullable<decimal> chargeAmount, Nullable<decimal> commAount, string remark, string optID, string apiLog, Nullable<short> flag)
@@ -856,6 +1265,23 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MyCommission_Result>("MyCommission", userIdParameter, schemeIdParameter);
         }
     
+        public virtual ObjectResult<NoManualAPIProfitLossDetail_Result> NoManualAPIProfitLossDetail(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<short> flag)
+        {
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<NoManualAPIProfitLossDetail_Result>("NoManualAPIProfitLossDetail", fromDateParameter, toDateParameter, flagParameter);
+        }
+    
         public virtual ObjectResult<OperatorReconciliation_Result> OperatorReconciliation(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<int> operatorID, Nullable<short> aPIID, ObjectParameter outPut)
         {
             var fromDateParameter = fromDate.HasValue ?
@@ -875,6 +1301,27 @@ namespace DataModel
                 new ObjectParameter("APIID", typeof(short));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<OperatorReconciliation_Result>("OperatorReconciliation", fromDateParameter, toDateParameter, operatorIDParameter, aPIIDParameter, outPut);
+        }
+    
+        public virtual ObjectResult<OperatorReconciliationManual_Result> OperatorReconciliationManual(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<int> operatorID, Nullable<short> aPIID, ObjectParameter outPut)
+        {
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var operatorIDParameter = operatorID.HasValue ?
+                new ObjectParameter("OperatorID", operatorID) :
+                new ObjectParameter("OperatorID", typeof(int));
+    
+            var aPIIDParameter = aPIID.HasValue ?
+                new ObjectParameter("APIID", aPIID) :
+                new ObjectParameter("APIID", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<OperatorReconciliationManual_Result>("OperatorReconciliationManual", fromDateParameter, toDateParameter, operatorIDParameter, aPIIDParameter, outPut);
         }
     
         public virtual ObjectResult<OperatorReconciliationv2_Result> OperatorReconciliationv2(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<int> operatorID, Nullable<short> aPIID, Nullable<int> userID, Nullable<short> outPut)
@@ -937,6 +1384,69 @@ namespace DataModel
                 new ObjectParameter("Flag", typeof(short));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PANWLTransactions_Result>("PANWLTransactions", userIDParameter, agentIDParameter, fromDateParameter, toDateParameter, numberParameter, txnIDParameter, flagParameter);
+        }
+    
+        public virtual ObjectResult<PayoutLazyTransaction_Result> PayoutLazyTransaction(Nullable<long> userId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<int> limit, string findData, ObjectParameter flag)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var limitParameter = limit.HasValue ?
+                new ObjectParameter("Limit", limit) :
+                new ObjectParameter("Limit", typeof(int));
+    
+            var findDataParameter = findData != null ?
+                new ObjectParameter("FindData", findData) :
+                new ObjectParameter("FindData", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PayoutLazyTransaction_Result>("PayoutLazyTransaction", userIdParameter, fromDateParameter, toDateParameter, limitParameter, findDataParameter, flag);
+        }
+    
+        public virtual ObjectResult<PayoutsTransaction_Result> PayoutsTransaction(Nullable<long> userId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string number, Nullable<short> flag)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var numberParameter = number != null ?
+                new ObjectParameter("Number", number) :
+                new ObjectParameter("Number", typeof(string));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PayoutsTransaction_Result>("PayoutsTransaction", userIdParameter, fromDateParameter, toDateParameter, numberParameter, flagParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> PendingsSwitch(Nullable<int> userID, Nullable<int> operatorID)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("userID", userID) :
+                new ObjectParameter("userID", typeof(int));
+    
+            var operatorIDParameter = operatorID.HasValue ?
+                new ObjectParameter("operatorID", operatorID) :
+                new ObjectParameter("operatorID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("PendingsSwitch", userIDParameter, operatorIDParameter);
         }
     
         public virtual ObjectResult<RechargeLastTransaction_Result> RechargeLastTransaction(Nullable<long> userId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, ObjectParameter flag)
@@ -1117,6 +1627,19 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Remitterdetails_Result>("Remitterdetails", searchDataParameter, flag);
         }
     
+        public virtual ObjectResult<RequestLogDetails_Result> RequestLogDetails(Nullable<long> refNo, Nullable<short> flag)
+        {
+            var refNoParameter = refNo.HasValue ?
+                new ObjectParameter("RefNo", refNo) :
+                new ObjectParameter("RefNo", typeof(long));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RequestLogDetails_Result>("RequestLogDetails", refNoParameter, flagParameter);
+        }
+    
         public virtual ObjectResult<ServicesbyTransaction_Result> ServicesbyTransaction(Nullable<long> userId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, ObjectParameter flag)
         {
             var userIdParameter = userId.HasValue ?
@@ -1132,6 +1655,23 @@ namespace DataModel
                 new ObjectParameter("ToDate", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ServicesbyTransaction_Result>("ServicesbyTransaction", userIdParameter, fromDateParameter, toDateParameter, flag);
+        }
+    
+        public virtual ObjectResult<SpeedControlSwitch_Result> SpeedControlSwitch(Nullable<int> userID, Nullable<short> apiID, Nullable<int> operatorID)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("userID", userID) :
+                new ObjectParameter("userID", typeof(int));
+    
+            var apiIDParameter = apiID.HasValue ?
+                new ObjectParameter("apiID", apiID) :
+                new ObjectParameter("apiID", typeof(short));
+    
+            var operatorIDParameter = operatorID.HasValue ?
+                new ObjectParameter("operatorID", operatorID) :
+                new ObjectParameter("operatorID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpeedControlSwitch_Result>("SpeedControlSwitch", userIDParameter, apiIDParameter, operatorIDParameter);
         }
     
         public virtual ObjectResult<SPUserNameByType_Result> SPUserNameByType(string userType, Nullable<short> flag)
@@ -1162,6 +1702,23 @@ namespace DataModel
                 new ObjectParameter("ToDate", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TransactionCommission_Result>("TransactionCommission", userIdParameter, fromDateParameter, toDateParameter, flag);
+        }
+    
+        public virtual ObjectResult<TransactionCreditStatement_Result> TransactionCreditStatement(Nullable<long> userId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, ObjectParameter flag)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TransactionCreditStatement_Result>("TransactionCreditStatement", userIdParameter, fromDateParameter, toDateParameter, flag);
         }
     
         public virtual ObjectResult<TransactionLastStatement_Result> TransactionLastStatement(Nullable<long> userId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, ObjectParameter flag)
@@ -1223,6 +1780,27 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("TransactionLimit", userIDParameter, amountParameter, flagParameter);
         }
     
+        public virtual ObjectResult<TransactionLimitCircleOPWise_Result> TransactionLimitCircleOPWise(Nullable<short> aPIID, Nullable<int> operatorID, Nullable<int> circleID, Nullable<short> flag)
+        {
+            var aPIIDParameter = aPIID.HasValue ?
+                new ObjectParameter("APIID", aPIID) :
+                new ObjectParameter("APIID", typeof(short));
+    
+            var operatorIDParameter = operatorID.HasValue ?
+                new ObjectParameter("OperatorID", operatorID) :
+                new ObjectParameter("OperatorID", typeof(int));
+    
+            var circleIDParameter = circleID.HasValue ?
+                new ObjectParameter("CircleID", circleID) :
+                new ObjectParameter("CircleID", typeof(int));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TransactionLimitCircleOPWise_Result>("TransactionLimitCircleOPWise", aPIIDParameter, operatorIDParameter, circleIDParameter, flagParameter);
+        }
+    
         public virtual ObjectResult<TransactionProcessTime_Result> TransactionProcessTime(Nullable<int> userId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
         {
             var userIdParameter = userId.HasValue ?
@@ -1240,7 +1818,7 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TransactionProcessTime_Result>("TransactionProcessTime", userIdParameter, fromDateParameter, toDateParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> TransactionsProcessTime(Nullable<int> userId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<int> operatorId)
+        public virtual ObjectResult<TransactionsProcessTime_Result> TransactionsProcessTime(Nullable<int> userId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<int> operatorId)
         {
             var userIdParameter = userId.HasValue ?
                 new ObjectParameter("UserId", userId) :
@@ -1258,7 +1836,7 @@ namespace DataModel
                 new ObjectParameter("OperatorId", operatorId) :
                 new ObjectParameter("OperatorId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("TransactionsProcessTime", userIdParameter, fromDateParameter, toDateParameter, operatorIdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TransactionsProcessTime_Result>("TransactionsProcessTime", userIdParameter, fromDateParameter, toDateParameter, operatorIdParameter);
         }
     
         public virtual ObjectResult<TransactionStatement_Result> TransactionStatement(Nullable<long> userId, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, ObjectParameter flag)
@@ -1295,7 +1873,28 @@ namespace DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TransactionSummary_Result>("TransactionSummary", userIdParameter, fromDateParameter, toDateParameter, flag);
         }
     
-        public virtual ObjectResult<UserGSTTDSSummary_Result> UserGSTTDSSummary(Nullable<int> year, Nullable<int> month, Nullable<int> userID)
+        public virtual ObjectResult<TransactionTotalAverage_Result> TransactionTotalAverage(Nullable<int> userID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<short> flag)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TransactionTotalAverage_Result>("TransactionTotalAverage", userIDParameter, fromDateParameter, toDateParameter, flagParameter);
+        }
+    
+        public virtual ObjectResult<UserGSTTDSSummary_Result> UserGSTTDSSummary(Nullable<int> year, Nullable<int> month, Nullable<int> userID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<int> falg)
         {
             var yearParameter = year.HasValue ?
                 new ObjectParameter("Year", year) :
@@ -1309,7 +1908,37 @@ namespace DataModel
                 new ObjectParameter("UserID", userID) :
                 new ObjectParameter("UserID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UserGSTTDSSummary_Result>("UserGSTTDSSummary", yearParameter, monthParameter, userIDParameter);
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var falgParameter = falg.HasValue ?
+                new ObjectParameter("Falg", falg) :
+                new ObjectParameter("Falg", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UserGSTTDSSummary_Result>("UserGSTTDSSummary", yearParameter, monthParameter, userIDParameter, fromDateParameter, toDateParameter, falgParameter);
+        }
+    
+        public virtual ObjectResult<UsersCurrentLiability_Result> UsersCurrentLiability(Nullable<int> userID, Nullable<short> flag)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("Flag", flag) :
+                new ObjectParameter("Flag", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UsersCurrentLiability_Result>("UsersCurrentLiability", userIDParameter, flagParameter);
+        }
+    
+        public virtual ObjectResult<UsersCurrentLiabilityAuto_Result> UsersCurrentLiabilityAuto()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UsersCurrentLiabilityAuto_Result>("UsersCurrentLiabilityAuto");
         }
     
         public virtual ObjectResult<UserUsageDetails_Result> UserUsageDetails(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, ObjectParameter output)

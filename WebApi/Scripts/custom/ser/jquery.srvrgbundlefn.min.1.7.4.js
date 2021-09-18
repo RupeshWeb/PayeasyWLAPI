@@ -1628,3 +1628,40 @@ function CaptureAvdmcasfinalv2Request() {
         BindsData();
     });
 }
+
+function myFunctionShowWithdrawal() {
+    $("#divbtnWithdrawal").css("display", "block");
+    $('#CustomerTCWithdrawal').modal('hide');
+    $('.modal-backdrop').hide();
+
+    $('#withCustomertc').prop('checked', true); // Checks it
+    var type = jQuery("#withRequestType option:selected").text();
+
+    jQuery.ajax({
+        url: '/AEPS/ConsentAdd',
+        type: 'POST',
+        cache: false,
+        contentType: "application/json;",
+        data: "{'type':'" + type + "','status':true}",
+        success: function (response) {
+        }, error: function (response) {
+            /*alert('Something went wrong, try later.'); location.reload();*/
+        }, async: true
+    });
+}
+function myFunctionCancelConsentWithdrawal() {
+    $("#divbtnWithdrawal").css("display", "none");
+    var type = jQuery("#withRequestType option:selected").text();
+    $('#withCustomertc').prop('checked', false); // Unchecks it
+    jQuery.ajax({
+        url: '/AEPS/ConsentAdd',
+        type: 'POST',
+        cache: false,
+        contentType: "application/json;",
+        data: "{'type':'" + type + "','status':false}",
+        success: function (response) {
+        }, error: function (response) {
+            /*alert('Something went wrong, try later.'); location.reload();*/
+        }, async: true
+    });
+}

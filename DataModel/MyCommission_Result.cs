@@ -23,5 +23,9 @@ namespace DataModel
         public string OurCode { get; set; }
         public string OperatorType { get; set; }
         public string Status { get; set; }
+        public int CommID { get; set; }
+        public bool IsSlab { get; set; }
+        public bool CommStatus { get; set; }
+        public bool ServiceStatus { get; set; }
     }
 }

@@ -30,5 +30,8 @@ namespace BusinessServices
         APIReponseEntity CustomerCommRequest(int userID, string agentID, string merchantID, string mobileNo, string aadharNo, decimal amount, string bankName);
 
         APIReponseEntity CustomerCommV2Request(int userID, string agentID, string merchantID, string mobileNo, string aadharNo, decimal amount, string bankName, string mode);
+
+        APIReponseEntity ConsentAdd(int userID, string type, bool status);
+
     }
 }

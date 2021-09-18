@@ -61,5 +61,12 @@ namespace DataModel
         public string RetryAPiName { get; set; }
         public string ActionName { get; set; }
         public string UpdatedBy { get; set; }
+        public Nullable<decimal> AFCommAmount { get; set; }
+        public decimal AFChangeAmount { get; set; }
+        public int AffiliateUserID { get; set; }
+        public Nullable<decimal> GSTAmount { get; set; }
+        public Nullable<decimal> TDSAmount { get; set; }
+        public Nullable<bool> AepsCustomerConsent { get; set; }
+        public string AepsCustomerConsentText { get; set; }
     }
 }

@@ -438,6 +438,25 @@ namespace WebPlatApi.Controllers
             }
             return Json(_response, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        [SessionAuthorize]
+        public JsonResult ConsentAdd(string type, bool status)
+        {
+            APIReponseEntity _response = new APIReponseEntity();
+            try
+            {
+                int userID = Convert.ToInt32(Session["RTUserId"]);
+                _response = _aepsServices.ConsentAdd(userID, type, status);
+            }
+            catch (Exception ex)
+            {
+                _response.StatusCode = clsVariables.APIStatus.Exception;
+                _response.Message = ex.Message;
+            }
+            return Json(_response, JsonRequestBehavior.AllowGet);
+        }
+
         #endregion
 
     }

@@ -21,5 +21,6 @@ namespace DataModel
         public System.DateTime AddDate { get; set; }
         public System.DateTime EditDate { get; set; }
         public bool IsActive { get; set; }
+        public int UserID { get; set; }
     }
 }

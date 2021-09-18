@@ -60,5 +60,20 @@ namespace DataModel
         public string RejectedAmount { get; set; }
         public string BBPSCode { get; set; }
         public Nullable<int> StateName { get; set; }
+        public string APIOperatorCode26 { get; set; }
+        public string APIOperatorCode27 { get; set; }
+        public string APIOperatorCode28 { get; set; }
+        public string APIOperatorCode29 { get; set; }
+        public string APIOperatorCode30 { get; set; }
+        public string APIOperatorCode31 { get; set; }
+        public string APIOperatorCode32 { get; set; }
+        public string APIOperatorCode33 { get; set; }
+        public string APIOperatorCode34 { get; set; }
+        public string APIOperatorCode35 { get; set; }
+        public string APIOperatorCode36 { get; set; }
+        public string APIOperatorCode37 { get; set; }
+        public string APIOperatorCode38 { get; set; }
+        public string APIOperatorCode39 { get; set; }
+        public string APIOperatorCode40 { get; set; }
     }
 }

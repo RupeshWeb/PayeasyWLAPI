@@ -22,5 +22,11 @@ namespace DataModel
         public bool IsActive { get; set; }
         public decimal AmountLimit { get; set; }
         public int APIID1 { get; set; }
+        public short APIID2 { get; set; }
+        public short APIID3 { get; set; }
+        public short APIID4 { get; set; }
+        public short APIID5 { get; set; }
+        public short APIID6 { get; set; }
+        public int APICnt { get; set; }
     }
 }

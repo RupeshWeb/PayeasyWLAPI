@@ -67,6 +67,7 @@ namespace DataModel.UnitOfWork
         private GenericRepository<SDKAuthRequestLog> _sdkAuthRequestLogRepository;
         private GenericRepository<PANTransactionRequest> _panTransactionRequestRepository;
         private GenericRepository<ComplaintRegister> _complaintRegisterRepository;
+        private GenericRepository<ConsentLog> _consentLogRepository;
         #endregion
 
         public UnitOfWork()
@@ -710,6 +711,19 @@ namespace DataModel.UnitOfWork
                 if (this._complaintRegisterRepository == null)
                     this._complaintRegisterRepository = new GenericRepository<ComplaintRegister>(_context);
                 return _complaintRegisterRepository;
+            }
+        }
+
+        /// <summary>
+        /// Get/Set Property for token repository.
+        /// </summary>
+        public GenericRepository<ConsentLog> ConsentLogRepository
+        {
+            get
+            {
+                if (this._consentLogRepository == null)
+                    this._consentLogRepository = new GenericRepository<ConsentLog>(_context);
+                return _consentLogRepository;
             }
         }
 

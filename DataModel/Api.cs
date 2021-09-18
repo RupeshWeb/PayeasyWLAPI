@@ -21,5 +21,6 @@ namespace DataModel
         public string Password { get; set; }
         public bool Status { get; set; }
         public int Sort { get; set; }
+        public string Type { get; set; }
     }
 }

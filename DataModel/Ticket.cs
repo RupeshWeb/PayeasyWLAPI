@@ -25,5 +25,6 @@ namespace DataModel
         public Nullable<System.DateTime> ReplyDate { get; set; }
         public string Attachment { get; set; }
         public string UpdatedBy { get; set; }
+        public string APIStatus { get; set; }
     }
 }

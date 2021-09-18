@@ -432,5 +432,30 @@ namespace BusinessServices
             return _response;
         }
 
+        public APIReponseEntity ConsentAdd(int userID, string type, bool status)
+        {
+            APIReponseEntity _response = new APIReponseEntity();
+            try
+            {
+                ConsentLog _add = new ConsentLog();
+                _add.UserId = userID;
+                _add.ConsentType = type;
+                _add.AddDate = DateTime.Now;
+                _add.UpdateDate = DateTime.Now;
+                _add.ConsentStatus = status;
+                _unitOfWork.ConsentLogRepository.Insert(_add);
+                _unitOfWork.Save();
+
+                _response.StatusCode = clsVariables.APIStatus.Success;
+                _response.Message = Message.Su;
+            }
+            catch (Exception ex)
+            {
+                _response.StatusCode = clsVariables.APIStatus.Failed;
+                _response.Message = ex.Message;
+            }
+            return _response;
+        }
+
     }
 }

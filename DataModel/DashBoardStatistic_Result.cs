@@ -10,13 +10,14 @@
 namespace DataModel
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class OtherChargeSetting
+    public partial class DashBoardStatistic_Result
     {
-        public int ID { get; set; }
-        public decimal VerificationCharge { get; set; }
-        public int UserId { get; set; }
-        public System.DateTime DateModified { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public short CategoryID { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> TotalTxn { get; set; }
+        public Nullable<decimal> TotalSales { get; set; }
+        public string VDate { get; set; }
     }
 }
