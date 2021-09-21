@@ -216,6 +216,8 @@ namespace BusinessServices.Aeps
                                             objRechargeTransaction.APIRef = "NA";
                                             objRechargeTransaction.EXTRA9 = "Cash Withdrawal";
                                             objRechargeTransaction.EXTRA10 = "NA";
+                                            objRechargeTransaction.AepsCustomerConsent = true;
+                                            objRechargeTransaction.AepsCustomerConsentText = "I,the Customer, hereby authorize Bank to obtain and store my Aadhaar number,name and biomatrics to fetch,authenticate and store all such necessary details retrieved or to be retrieved from Unique Identification Authority of India(UIDAI) for the purpose of this transaction through Aadhaar enabled payment system (AEPS).In Case of any descrepancies,the bank reserves the sole right to block my account (if the same is with the Bank) and transaction without any further notice or intimation.";
                                             objRechargeTransaction.IpAddress = HttpContext.Current.Request.UserHostAddress;
                                             _unitOfWork.RechargeTransactionRepository.Insert(objRechargeTransaction);
                                             _unitOfWork.Save();

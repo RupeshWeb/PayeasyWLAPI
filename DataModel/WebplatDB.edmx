@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="WebplatDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="WebplatDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ActivityLog">
           <Key>
             <PropertyRef Name="Id" />
@@ -455,6 +455,7 @@
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="ConsentType" Type="varchar" MaxLength="5000" Nullable="false" />
           <Property Name="ConsentStatus" Type="bit" Nullable="false" />
+          <Property Name="ConsentText" Type="varchar" MaxLength="900" />
           <Property Name="AddDate" Type="datetime" Nullable="false" />
           <Property Name="UpdateDate" Type="datetime" Nullable="false" />
         </EntityType>
@@ -2584,8 +2585,7 @@
             <End Role="UserSession" EntitySet="UserSession" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WebplatDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -3041,6 +3041,7 @@
           <Property Name="ConsentStatus" Type="Boolean" Nullable="false" />
           <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ConsentText" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="CustomAPICommission">
           <Key>
@@ -4883,14 +4884,14 @@
             <Parameter Name="FLAG" Mode="In" Type="Int16" />
           </FunctionImport>
           <FunctionImport Name="getBalanceByID" ReturnType="Collection(WebplatDB.getBalanceByID_Result)">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCustomerTransaction" ReturnType="Collection(WebplatDB.GetCustomerTransaction_Result)">
             <Parameter Name="userID" Mode="In" Type="Int64" />
             <Parameter Name="refNumber" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="getDmtBalanceByID" ReturnType="Collection(WebplatDB.getDmtBalanceByID_Result)">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getLatestRechargeForSameRequest" ReturnType="Collection(WebplatDB.getLatestRechargeForSameRequest_Result)">
             <Parameter Name="UserID" Mode="In" Type="Int32" />
@@ -4899,16 +4900,16 @@
             <Parameter Name="Amount" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="getOperatorByOperatorID" ReturnType="Collection(WebplatDB.getOperatorByOperatorID_Result)">
-            <Parameter Name="OperatorID" Mode="In" Type="Int32" />
+          <Parameter Name="OperatorID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getUsageByID" ReturnType="Collection(WebplatDB.getUsageByID_Result)">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getUserByID" ReturnType="Collection(WebplatDB.getUserByID_Result)">
-            <Parameter Name="UserID" Mode="In" Type="Int32" />
+          <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getUserByUserType" ReturnType="Collection(WebplatDB.getUserByUserType_Result)">
-            <Parameter Name="usertype" Mode="In" Type="String" />
+          <Parameter Name="usertype" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="LapuBalanceByID" ReturnType="Collection(WebplatDB.LapuBalanceByID_Result)">
             <Parameter Name="UserID" Mode="In" Type="Int32" />
@@ -6892,6 +6893,7 @@
           <EntitySetMapping Name="ConsentLogs">
             <EntityTypeMapping TypeName="WebplatDB.ConsentLog">
               <MappingFragment StoreEntitySet="ConsentLog">
+                <ScalarProperty Name="ConsentText" ColumnName="ConsentText" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="ConsentType" ColumnName="ConsentType" />

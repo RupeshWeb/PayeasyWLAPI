@@ -443,6 +443,7 @@ namespace BusinessServices
                 _add.AddDate = DateTime.Now;
                 _add.UpdateDate = DateTime.Now;
                 _add.ConsentStatus = status;
+                _add.ConsentText = "I,the Customer, hereby authorize Bank to obtain and store my Aadhaar number,name and biomatrics to fetch,authenticate and store all such necessary details retrieved or to be retrieved from Unique Identification Authority of India(UIDAI) for the purpose of this transaction through Aadhaar enabled payment system (AEPS).In Case of any descrepancies,the bank reserves the sole right to block my account (if the same is with the Bank) and transaction without any further notice or intimation.";
                 _unitOfWork.ConsentLogRepository.Insert(_add);
                 _unitOfWork.Save();
 

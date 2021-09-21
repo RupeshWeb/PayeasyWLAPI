@@ -20,5 +20,6 @@ namespace DataModel
         public bool ConsentStatus { get; set; }
         public System.DateTime AddDate { get; set; }
         public System.DateTime UpdateDate { get; set; }
+        public string ConsentText { get; set; }
     }
 }
