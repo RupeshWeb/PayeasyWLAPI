@@ -108,7 +108,7 @@ namespace BusinessServices.Aeps
             AEPSAPIReponseEntity _response = new AEPSAPIReponseEntity();
             try
             {
-                if (amount > 0 && amount <= 200000)
+                if (amount > 99 && amount <= 10000)
                 {
                     var currentUser = _unitOfWork.UserRepository.Get(x => x.ID == userID);
                     if (currentUser != null && currentUser.Usertype == clsVariables.UserType.API)
@@ -382,7 +382,7 @@ namespace BusinessServices.Aeps
                 else
                 {
                     _response.StatusCode = clsVariables.APIStatus.Failed;
-                    _response.Message = "Transaction amount should be between 101 to 10000.";
+                    _response.Message = "Transaction amount should be between 100 to 10000.";
                 }
             }
             catch (Exception)
