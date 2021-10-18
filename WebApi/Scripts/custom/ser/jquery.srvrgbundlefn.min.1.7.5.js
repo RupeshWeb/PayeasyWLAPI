@@ -218,6 +218,7 @@ function GetPFA() {
 }
 
 var MethodCapture = '', finalUrl = '';
+var GetCustomDomName = '127.0.0.1';
 function getHttpError(jqXHR) {
     var err = "Unhandled Exception";
     if (jqXHR.status === 0) {
@@ -306,7 +307,7 @@ function ValidateCustomerRequest() {
         aadharNo += document.getElementById(parseInt(i) + 1).value;
     }
     if (bankName != '' && aadharNo != '' && aadharNo.length === 12 && mobileNo.length === 10 && amount != '' && deviceName != '') {
-        if (amount > 0 && amount <= 10000) {
+        if (amount > 99 && amount <= 10000) {
             if (agentTC && customerTC) {
                 swal({ title: "Processing", text: "Please wait..", imageUrl: "/Content/Plugins/img/Processing.gif", showConfirmButton: false });
                 jQuery.post("/AEPS/CashValidateRequest", { mobileNumber: mobileNo, bankName: bankName, aadharNumber: aadharNo, amount: amount }, function (result) {
@@ -323,7 +324,7 @@ function ValidateCustomerRequest() {
                 jQuery('#withErrorMessage').html("Terms and condition are required.");
             }
         } else {
-            jQuery('#withErrorMessage').html("Amount should be between 1 to 10000.");
+            jQuery('#withErrorMessage').html("Amount should be between 100 to 10000.");
         }
     } else {
         jQuery('#withErrorMessage').html("All field's are required.");
@@ -343,7 +344,7 @@ function CaptureAvdmRequest() {
         aadharNo += document.getElementById(parseInt(i) + 1).value;
     }
     if (bankName != '' && aadharNo != '' && aadharNo.length === 12 && mobileNo.length === 10 && amount != '' && deviceName != '') {
-        if (amount > 0 && amount <= 10000) {
+        if (amount > 99 && amount <= 10000) {
             if (agentTC && customerTC) {
                 jQuery('#withPidData').val(''), jQuery('#withPidDataOption').val('');
                 jQuery('#confirmationbox').hide(); jQuery('#confirmationboxfirnger').show();
@@ -430,7 +431,7 @@ function CaptureAvdmRequest() {
                 jQuery('#withErrorMessage').html("Terms and condition are required.");
             }
         } else {
-            jQuery('#withErrorMessage').html("Amount should be between 1 to 10000.");
+            jQuery('#withErrorMessage').html("Amount should be between 100 to 10000.");
         }
     } else {
         jQuery('#withErrorMessage').html("All field's are required.");
@@ -1251,9 +1252,9 @@ function ValidateCustomerv2Request() {
     }
     if (mode == '51') {
         if (amount == '') {
-            jQuery('#withErrorMessage').html("Amount should be between 1 to 10000."); return false;
-        } else if (amount <= 0 || amount > 10000) {
-            jQuery('#withErrorMessage').html("Amount should be between 1 to 10000."); return false;
+            jQuery('#withErrorMessage').html("Amount should be between 100 to 10000."); return false;
+        } else if (amount <= 99 || amount > 10000) {
+            jQuery('#withErrorMessage').html("Amount should be between 100 to 10000."); return false;
         }
     } else {
         jQuery('#withAmount').val('');
@@ -1263,21 +1264,25 @@ function ValidateCustomerv2Request() {
         if (agentTC && customerTC) {
             swal({ title: "Processing", text: "Please wait..", imageUrl: "/Content/Plugins/img/Processing.gif", showConfirmButton: false });
             jQuery.post("/AEPS/CashValidateV2Request", { mobileNumber: mobileNo, bankName: bankName, aadharNumber: aadharNo, amount: amount, mode: mode }, function (result) {
-                if (result.StatusCode === 1) {
-                    jQuery('#myModal').modal('show'); swal.close();
-                    jQuery('#viewtransactiontype').html(modeText);
-                    jQuery('#WithAadharNo').html('XXXXXXXX' + aadharNo.substring(8, 12));
-                    if (mode == '51') {
-                        jQuery('#transactionAmount').html(result.Data.Amount);
-                        jQuery('#transactionAmountViews').show();
+                if (toString.call(result) === '[object Object]') {
+                    if (result.StatusCode === 1) {
+                        jQuery('#myModal').modal('show'); swal.close();
+                        jQuery('#viewtransactiontype').html(modeText);
+                        jQuery('#WithAadharNo').html('XXXXXXXX' + aadharNo.substring(8, 12));
+                        if (mode == '51') {
+                            jQuery('#transactionAmount').html(result.Data.Amount);
+                            jQuery('#transactionAmountViews').show();
+                        } else {
+                            jQuery('#transactionAmountViews').hide();
+                            jQuery('#transactionAmount').html('');
+                        }
+                    } else if (result.StatusCode === 0) {
+                        swal('', result.Message, 'error')
                     } else {
-                        jQuery('#transactionAmountViews').hide();
-                        jQuery('#transactionAmount').html('');
+                        swal('', result.Message, 'warning')
                     }
-                } else if (result.StatusCode === 0) {
-                    swal('', result.Message, 'error')
                 } else {
-                    swal('', result.Message, 'warning')
+                    location.reload();
                 }
             });
         } else {
@@ -1302,9 +1307,9 @@ function CaptureAvdmv2Request() {
     }
     if (mode == '51') {
         if (amount == '') {
-            jQuery('#withErrorMessage').html("Amount should be between 1 to 10000."); return false;
-        } else if (amount <= 0 || amount > 10000) {
-            jQuery('#withErrorMessage').html("Amount should be between 1 to 10000."); return false;
+            jQuery('#withErrorMessage').html("Amount should be between 100 to 10000."); return false;
+        } else if (amount <= 99 || amount > 10000) {
+            jQuery('#withErrorMessage').html("Amount should be between 100 to 10000."); return false;
         }
     } else {
         jQuery('#withAmount').val('');
@@ -1400,30 +1405,91 @@ function CaptureAvdmv2Request() {
     }
 }
 function CaptureAvdmcasv2Request() {
+    //var strWadh = "";
+    //var strOtp = "";
+    //Demo();
+    //var XML = '<?xml version="1.0"?> <PidOptions ver="1.0"> <Opts fCount="1" fType="0" iCount="0" pCount="0" pgCount="2"' + strOtp + ' format="0" pidVer="2.0" timeout="10000" pTimeout="20000"' + strWadh + ' posh="UNKNOWN" env="p" /> ' + DemoFinalString + '<CustOpts><Param name="mantrakey" value="" /></CustOpts> </PidOptions>';
+    //var verb = "CAPTURE";
+    //var err = "";
+    //var res;
+    //$.support.cors = true;
+    //var httpStaus = false;
+    //var jsonstr = "";
+    //$.ajax({
+    //    type: "CAPTURE",
+    //    async: true,
+    //    crossDomain: true,
+    //    url: finalUrl + MethodCapture,
+    //    data: XML,
+    //    contentType: "text/xml; charset=utf-8",
+    //    processData: false,
+    //    success: function (data) {
+    //        httpStaus = true;
+    //        res = { httpStaus: httpStaus, data: data };
+    //        jQuery('#withPidData').val(data);
+    //        jQuery('#withPidDataOption').val(XML);
+
+    //        var $doc = $.parseXML(data);
+    //        var Message = $($doc).find('Resp').attr('errInfo');
+    //        if (Message == 'Success') {
+    //            CaptureAvdmcasfinalv2Request();
+    //        } else {
+    //            alert(Message); location.reload();
+    //        }
+    //    },
+    //    error: function (jqXHR, ajaxOptions, thrownError) {
+    //        alert(thrownError);
+    //        res = { httpStaus: httpStaus, err: getHttpError(jqXHR) };
+    //    },
+    //});
+
+    //return res;
+
     var strWadh = "";
     var strOtp = "";
     Demo();
-    var XML = '<?xml version="1.0"?> <PidOptions ver="1.0"> <Opts fCount="1" fType="0" iCount="0" pCount="0" pgCount="2"' + strOtp + ' format="0" pidVer="2.0" timeout="10000" pTimeout="20000"' + strWadh + ' posh="UNKNOWN" env="p" /> ' + DemoFinalString + '<CustOpts><Param name="mantrakey" value="" /></CustOpts> </PidOptions>';
+
+    if ($("#txtWadh").val() != "") {
+        strWadh = " wadh=\"" + $("#txtWadh").val() + '"';
+    }
+    if ($("#txtotp").val() != "") {
+        strOtp = " otp=\"" + $("#txtotp").val() + '"';
+    }
+    var XML = '<?xml version="1.0"?> <PidOptions ver="1.0"> <Opts fCount="1" fType="0" iCount="0" pCount="0" pgCount="2" format="0"   pidVer="2.0" timeout="10000" pTimeout="20000" posh="UNKNOWN" env="P" /> <CustOpts><Param name="mantrakey" value="" /></CustOpts> </PidOptions>';
+
+    finalUrl = "http://" + GetCustomDomName + ":11100";
+
+    try {
+        var protocol = window.location.href;
+        if (protocol.indexOf("https") >= 0) {
+            finalUrl = "https://" + GetCustomDomName + ":11100";
+        }
+    } catch (e) { }
+
     var verb = "CAPTURE";
     var err = "";
+
     var res;
     $.support.cors = true;
     var httpStaus = false;
     var jsonstr = "";
+    ;
     $.ajax({
+
         type: "CAPTURE",
-        async: true,
+        async: false,
         crossDomain: true,
         url: finalUrl + MethodCapture,
         data: XML,
         contentType: "text/xml; charset=utf-8",
         processData: false,
         success: function (data) {
+            //alert(data);
             httpStaus = true;
             res = { httpStaus: httpStaus, data: data };
+
             jQuery('#withPidData').val(data);
             jQuery('#withPidDataOption').val(XML);
-
             var $doc = $.parseXML(data);
             var Message = $($doc).find('Resp').attr('errInfo');
             if (Message == 'Success') {
@@ -1431,14 +1497,18 @@ function CaptureAvdmcasv2Request() {
             } else {
                 alert(Message); location.reload();
             }
+            //alert(Message);
+
         },
         error: function (jqXHR, ajaxOptions, thrownError) {
+            //$('#txtPidOptions').val(XML);
             alert(thrownError);
             res = { httpStaus: httpStaus, err: getHttpError(jqXHR) };
         },
     });
 
     return res;
+
 }
 
 function CaptureAvdmv2Requestv() {
@@ -1482,35 +1552,99 @@ function CaptureAvdmv2Requestv() {
     xhr.send();
 }
 function CaptureAvdmcasv2Requestv() {
-    var url = finalUrl + MethodCapture;
-    var PIDOPTS = '<PidOptions ver=\"1.0\">' + '<Opts fCount=\"1\" fType=\"0\" iCount=\"\" iType=\"\" pCount=\"\" pType=\"\" format=\"0\" pidVer=\"2.0\" timeout=\"10000\" otp=\"\" wadh=\"\" posh=\"\"/>' + '</PidOptions>';
-    var xhr;
-    var ua = window.navigator.userAgent;
-    var msie = ua.indexOf("MSIE ");
+    //var url = finalUrl + MethodCapture;
+    //var PIDOPTS = '<PidOptions ver=\"1.0\">' + '<Opts fCount=\"1\" fType=\"0\" iCount=\"\" iType=\"\" pCount=\"\" pType=\"\" format=\"0\" pidVer=\"2.0\" timeout=\"10000\" otp=\"\" wadh=\"\" posh=\"\"/>' + '</PidOptions>';
+    //var xhr;
+    //var ua = window.navigator.userAgent;
+    //var msie = ua.indexOf("MSIE ");
 
-    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-        xhr = new ActiveXObject("Microsoft.XMLHTTP");
-    } else {
-        xhr = new XMLHttpRequest();
+    //if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+    //    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    //} else {
+    //    xhr = new XMLHttpRequest();
+    //}
+
+    //xhr.open('CAPTURE', url, true);
+    //xhr.setRequestHeader("Content-Type", "text/xml");
+    //xhr.setRequestHeader("Accept", "text/xml");
+
+    //xhr.onreadystatechange = function () {
+    //    if (xhr.readyState == 4) {
+    //        var status = xhr.status;
+    //        if (status == 200) {
+    //            jQuery('#withPidData').val(xhr.responseText);
+    //            jQuery('#withPidDataOption').val(PIDOPTS);
+    //            CaptureAvdmcasfinalv2Request();
+    //        } else {
+    //            alert(xhr.response); location.reload();
+    //        }
+    //    }
+    //};
+    //xhr.send(PIDOPTS);
+
+    var strWadh = "";
+    var strOtp = "";
+    Demo();
+
+    if ($("#txtWadh").val() != "") {
+        strWadh = " wadh=\"" + $("#txtWadh").val() + '"';
     }
+    if ($("#txtotp").val() != "") {
+        strOtp = " otp=\"" + $("#txtotp").val() + '"';
+    }
+    var XML = '<?xml version="1.0"?> <PidOptions ver="1.0"> <Opts fCount="1" fType="0" iCount="0" pCount="0" pgCount="2" format="0"   pidVer="2.0" timeout="10000" pTimeout="20000" posh="UNKNOWN" env="P" /> <CustOpts><Param name="mantrakey" value="" /></CustOpts> </PidOptions>';
 
-    xhr.open('CAPTURE', url, true);
-    xhr.setRequestHeader("Content-Type", "text/xml");
-    xhr.setRequestHeader("Accept", "text/xml");
+    finalUrl = "http://" + GetCustomDomName + ":11100";
 
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-            var status = xhr.status;
-            if (status == 200) {
-                jQuery('#withPidData').val(xhr.responseText);
-                jQuery('#withPidDataOption').val(PIDOPTS);
+    try {
+        var protocol = window.location.href;
+        if (protocol.indexOf("https") >= 0) {
+            finalUrl = "https://" + GetCustomDomName + ":11100";
+        }
+    } catch (e) { }
+
+    var verb = "CAPTURE";
+    var err = "";
+
+    var res;
+    $.support.cors = true;
+    var httpStaus = false;
+    var jsonstr = "";
+    ;
+    $.ajax({
+
+        type: "CAPTURE",
+        async: false,
+        crossDomain: true,
+        url: finalUrl + MethodCapture,
+        data: XML,
+        contentType: "text/xml; charset=utf-8",
+        processData: false,
+        success: function (data) {
+            //alert(data);
+            httpStaus = true;
+            res = { httpStaus: httpStaus, data: data };
+
+            jQuery('#withPidData').val(data);
+            jQuery('#withPidDataOption').val(XML);
+            var $doc = $.parseXML(data);
+            var Message = $($doc).find('Resp').attr('errInfo');
+            if (Message == 'Success') {
                 CaptureAvdmcasfinalv2Request();
             } else {
-                alert(xhr.response); location.reload();
+                alert(Message); location.reload();
             }
-        }
-    };
-    xhr.send(PIDOPTS);
+            //alert(Message);
+
+        },
+        error: function (jqXHR, ajaxOptions, thrownError) {
+            //$('#txtPidOptions').val(XML);
+            alert(thrownError);
+            res = { httpStaus: httpStaus, err: getHttpError(jqXHR) };
+        },
+    });
+
+    return res;
 }
 function CaptureAvdmcasfinalv2Request() {
     var bankName = jQuery('#withBankName').val();
@@ -1526,9 +1660,9 @@ function CaptureAvdmcasfinalv2Request() {
     }
     if (mode == '51') {
         if (amount == '') {
-            jQuery('#withErrorMessage').html("Amount should be between 1 to 10000."); return false;
-        } else if (amount <= 0 || amount > 10000) {
-            jQuery('#withErrorMessage').html("Amount should be between 1 to 10000."); return false;
+            jQuery('#withErrorMessage').html("Amount should be between 100 to 10000."); return false;
+        } else if (amount <= 99 || amount > 10000) {
+            jQuery('#withErrorMessage').html("Amount should be between 100 to 10000."); return false;
         }
     } else {
         jQuery('#withAmount').val('');

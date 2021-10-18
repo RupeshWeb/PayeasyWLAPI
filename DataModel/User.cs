@@ -71,5 +71,13 @@ namespace DataModel
         public string ProfileImageUrl { get; set; }
         public string CINNo { get; set; }
         public string CompanyType { get; set; }
+        public Nullable<bool> IsBlock { get; set; }
+        public string Reason { get; set; }
+        public string KYCStatus { get; set; }
+        public Nullable<System.DateTime> KYCRequestDate { get; set; }
+        public Nullable<System.DateTime> KYCResponseDate { get; set; }
+        public string KYCRemarks { get; set; }
+        public string OfficeAddress { get; set; }
+        public string BusinessType { get; set; }
     }
 }

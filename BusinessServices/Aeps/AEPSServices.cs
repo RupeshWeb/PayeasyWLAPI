@@ -376,10 +376,10 @@ namespace BusinessServices
                 {
                     if (mode == "51")
                     {
-                        if (amount < 1 || amount > 10000)
+                        if (amount < 100 || amount > 10000)
                         {
                             _response.StatusCode = clsVariables.APIStatus.Failed;
-                            _response.Message = "The amount should be between 1 to 10000.";
+                            _response.Message = "The amount should be between 100 to 10000.";
                             return _response;
                         }
                     }

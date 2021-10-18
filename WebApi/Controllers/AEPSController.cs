@@ -1,6 +1,7 @@
 ﻿using BusinessEntities;
 using BusinessServices;
 using System;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using WebPlatApi.ActionFilters;
 
@@ -403,32 +404,59 @@ namespace WebPlatApi.Controllers
             AEPSAPIReponseEntity _response = new AEPSAPIReponseEntity();
             try
             {
-                var result = _aepsServices.ValidateUser(Session["RGMGDDATAINFO"].ToString());
-                if (result != null && result.UserID > 0)
+                Regex regx = new Regex("^[0-9]{10}");
+                if (regx.Matches(mobileNumber).Count > 0)
                 {
-                    if (mode == "51")
+                    Regex regxaadhar = new Regex("^[0-9]{12}");
+                    if (regxaadhar.Matches(aadharNumber).Count > 0)
                     {
-                        _response = _aepsServices.CashWithdrawal(result.UserID, result.AgentID, result.MerchantID, ClsMethods.GenereateUniqueNumber(9), mobileNumber, aadharNumber, amount, bankName, biometricData, "18.4621230", "73.8582062");
-                    }
-                    else if (mode == "52")
-                        _response = _aepsServices.BalanceInquiry(result.UserID, result.AgentID, result.MerchantID, "NA", mobileNumber, aadharNumber, bankName, biometricData, "18.4621230", "73.8582062");
-                    else if (mode == "53")
-                    {
-                        var miniResponse = _aepsServices.Ministatement(result.UserID, result.AgentID, result.MerchantID, "NA", mobileNumber, aadharNumber, bankName, biometricData, "18.4621230", "73.8582062");
-                        if (miniResponse.StatusCode == clsVariables.APIStatus.Success)
-                            Session["MiniStateobject"] = miniResponse;
-                        return Json(miniResponse, JsonRequestBehavior.AllowGet);
+                        Regex regxbankcode = new Regex("^[0-9]{1,9}");
+                        if (regxbankcode.Matches(bankName).Count > 0)
+                        {
+                            var result = _aepsServices.ValidateUser(Session["RGMGDDATAINFO"].ToString());
+                            if (result != null && result.UserID > 0)
+                            {
+                                if (mode == "51")
+                                {
+                                    _response = _aepsServices.CashWithdrawal(result.UserID, result.AgentID, result.MerchantID, ClsMethods.GenereateUniqueNumber(9), mobileNumber, aadharNumber, amount, bankName, biometricData, "18.4621230", "73.8582062");
+                                }
+                                else if (mode == "52")
+                                    _response = _aepsServices.BalanceInquiry(result.UserID, result.AgentID, result.MerchantID, "NA", mobileNumber, aadharNumber, bankName, biometricData, "18.4621230", "73.8582062");
+                                else if (mode == "53")
+                                {
+                                    var miniResponse = _aepsServices.Ministatement(result.UserID, result.AgentID, result.MerchantID, "NA", mobileNumber, aadharNumber, bankName, biometricData, "18.4621230", "73.8582062");
+                                    if (miniResponse.StatusCode == clsVariables.APIStatus.Success)
+                                        Session["MiniStateobject"] = miniResponse;
+                                    return Json(miniResponse, JsonRequestBehavior.AllowGet);
+                                }
+                                else
+                                {
+                                    _response.StatusCode = clsVariables.APIStatus.Failed;
+                                    _response.Message = "Invalid request format.";
+                                }
+                            }
+                            else
+                            {
+                                _response.StatusCode = clsVariables.APIStatus.Failed;
+                                _response.Message = "Invalid user.";
+                            }
+                        }
+                        else
+                        {
+                            _response.StatusCode = clsVariables.APIStatus.Failed;
+                            _response.Message = "Invalid bankCode.";
+                        }
                     }
                     else
                     {
                         _response.StatusCode = clsVariables.APIStatus.Failed;
-                        _response.Message = "Invalid request format.";
+                        _response.Message = "Aadhar no should be 12 digits.";
                     }
                 }
                 else
                 {
                     _response.StatusCode = clsVariables.APIStatus.Failed;
-                    _response.Message = "Invalid user.";
+                    _response.Message = "Mobile no should be 10 digits.";
                 }
             }
             catch (Exception ex)

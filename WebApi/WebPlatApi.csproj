@@ -829,7 +829,7 @@
     <Content Include="Scripts\custom\ref.min\nofity\sweetalert.min.js" />
     <Content Include="Scripts\custom\Service\angular.9.5.1.7.1.js" />
     <Content Include="Scripts\custom\Service\angular.routemember.rgpsmem.min.2.1.7.js" />
-    <Content Include="Scripts\custom\ser\jquery.srvrgbundlefn.min.1.7.4.js" />
+    <Content Include="Scripts\custom\ser\jquery.srvrgbundlefn.min.1.7.5.js" />
     <Content Include="Scripts\custom\System\angular.min.js" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />

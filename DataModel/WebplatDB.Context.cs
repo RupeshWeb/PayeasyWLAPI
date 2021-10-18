@@ -121,12 +121,14 @@ namespace DataModel
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<TransactionQueue> TransactionQueues { get; set; }
         public virtual DbSet<UserBank> UserBanks { get; set; }
+        public virtual DbSet<UserCookie> UserCookies { get; set; }
         public virtual DbSet<UserDocument> UserDocuments { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserSession> UserSessions { get; set; }
         public virtual DbSet<UserToken> UserTokens { get; set; }
         public virtual DbSet<ValidateParameter> ValidateParameters { get; set; }
         public virtual DbSet<ValidateParameterGrouping> ValidateParameterGroupings { get; set; }
+        public virtual DbSet<VirtualAccountNoCollect> VirtualAccountNoCollects { get; set; }
     
         public virtual ObjectResult<Nullable<int>> AEPSCustomerTransactionupdate(Nullable<long> transactionID, string operatorRef, string aadharNo, string bankName, string custMobileNo, string fNOStatus, string txnLogs, ObjectParameter flag)
         {

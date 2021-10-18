@@ -593,6 +593,9 @@
     <Compile Include="UserBank.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserCookie.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserDocument.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
@@ -618,6 +621,9 @@
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ValidateParameterGrouping.cs">
+      <DependentUpon>WebplatDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VirtualAccountNoCollect.cs">
       <DependentUpon>WebplatDB.tt</DependentUpon>
     </Compile>
     <Compile Include="WebplatDB.Context.cs">

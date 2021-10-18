@@ -17,7 +17,7 @@ namespace DataModel
         public int Id { get; set; }
         public int UserId { get; set; }
         public string DocumentType { get; set; }
-        public bool DocumentNumber { get; set; }
+        public string DocumentNumber { get; set; }
         public string DocumentFilePath { get; set; }
         public string Remarks { get; set; }
         public string Extra1 { get; set; }

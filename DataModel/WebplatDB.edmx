@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="WebplatDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="WebplatDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ActivityLog">
           <Key>
             <PropertyRef Name="Id" />
@@ -1525,6 +1525,18 @@
           <Property Name="ReplyDate" Type="datetime" />
           <Property Name="Reply" Type="varchar" MaxLength="500" />
         </EntityType>
+        <EntityType Name="UserCookie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="RequestAttempt" Type="int" Nullable="false" />
+          <Property Name="RequestType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AddDate" Type="datetime" Nullable="false" />
+          <Property Name="EditDate" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="varchar" MaxLength="550" />
+        </EntityType>
         <EntityType Name="UserDocuments">
           <Key>
             <PropertyRef Name="Id" />
@@ -1532,7 +1544,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="DocumentType" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DocumentNumber" Type="bit" Nullable="false" />
+          <Property Name="DocumentNumber" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="DocumentFilePath" Type="varchar" MaxLength="200" />
           <Property Name="Remarks" Type="varchar" MaxLength="200" />
           <Property Name="Extra1" Type="varchar" MaxLength="200" />
@@ -1607,6 +1619,14 @@
           <Property Name="ProfileImageUrl" Type="varchar" MaxLength="250" />
           <Property Name="CINNo" Type="varchar" MaxLength="50" />
           <Property Name="CompanyType" Type="varchar" MaxLength="80" />
+          <Property Name="IsBlock" Type="bit" />
+          <Property Name="Reason" Type="varchar" MaxLength="500" />
+          <Property Name="KYCStatus" Type="varchar" MaxLength="50" />
+          <Property Name="KYCRequestDate" Type="datetime" />
+          <Property Name="KYCResponseDate" Type="datetime" />
+          <Property Name="KYCRemarks" Type="varchar" MaxLength="500" />
+          <Property Name="OfficeAddress" Type="varchar" MaxLength="500" />
+          <Property Name="BusinessType" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="UserSession">
           <Key>
@@ -1662,6 +1682,35 @@
           <Property Name="Value" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="AddDate" Type="datetime" Nullable="false" />
           <Property Name="EditDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VirtualAccountNoCollect">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="APIName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AccountId" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="GSTIN" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CustomerID" Type="varchar" MaxLength="150" />
+          <Property Name="AccountNo" Type="varchar" MaxLength="80" />
+          <Property Name="IfscCode" Type="varchar" MaxLength="50" />
+          <Property Name="AccountType" Type="varchar" MaxLength="50" />
+          <Property Name="VirtualAccountNumber" Type="varchar" MaxLength="200" />
+          <Property Name="VirtualIfscCode" Type="varchar" MaxLength="200" />
+          <Property Name="AcName" Type="varchar" MaxLength="150" />
+          <Property Name="BankName" Type="varchar" MaxLength="150" />
+          <Property Name="AcRefID" Type="varchar" MaxLength="50" />
+          <Property Name="APIRefID" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="550" Nullable="false" />
+          <Property Name="ModifyOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="varchar" MaxLength="5550" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK__ChargeMon__Schem__67A95F59">
@@ -2518,12 +2567,14 @@
           <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TransactionQueue" EntityType="Self.TransactionQueue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserBank" EntityType="Self.UserBank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserCookie" EntityType="Self.UserCookie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserDocuments" EntityType="Self.UserDocuments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserSession" EntityType="Self.UserSession" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserToken" EntityType="Self.UserToken" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ValidateParameter" EntityType="Self.ValidateParameter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ValidateParameterGrouping" EntityType="Self.ValidateParameterGrouping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VirtualAccountNoCollect" EntityType="Self.VirtualAccountNoCollect" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__ChargeMon__Schem__67A95F59" Association="Self.FK__ChargeMon__Schem__67A95F59">
             <End Role="Scheme" EntitySet="Scheme" />
             <End Role="ChargeMoneyTrans" EntitySet="ChargeMoneyTrans" />
@@ -2585,7 +2636,8 @@
             <End Role="UserSession" EntitySet="UserSession" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WebplatDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -3039,9 +3091,9 @@
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="ConsentType" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ConsentStatus" Type="Boolean" Nullable="false" />
+          <Property Name="ConsentText" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
           <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ConsentText" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="CustomAPICommission">
           <Key>
@@ -4109,6 +4161,18 @@
           <Property Name="ReplyDate" Type="DateTime" Precision="3" />
           <Property Name="Reply" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="UserCookie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="RequestAttempt" Type="Int32" Nullable="false" />
+          <Property Name="RequestType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="UserDocument">
           <Key>
             <PropertyRef Name="Id" />
@@ -4116,7 +4180,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="DocumentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DocumentNumber" Type="Boolean" Nullable="false" />
+          <Property Name="DocumentNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DocumentFilePath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Extra1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
@@ -4191,6 +4255,14 @@
           <Property Name="ProfileImageUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="CINNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CompanyType" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="IsBlock" Type="Boolean" />
+          <Property Name="Reason" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="KYCStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KYCRequestDate" Type="DateTime" Precision="3" />
+          <Property Name="KYCResponseDate" Type="DateTime" Precision="3" />
+          <Property Name="KYCRemarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OfficeAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           </EntityType>
         <EntityType Name="UserSession">
           <Key>
@@ -4246,6 +4318,35 @@
           <Property Name="Value" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EditDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VirtualAccountNoCollect">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="APIName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AccountId" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GSTIN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustomerID" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="IfscCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VirtualAccountNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="VirtualIfscCode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="AcName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="BankName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="AcRefID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="APIRefID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="550" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModifyOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="String" MaxLength="5550" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_Balance_Users">
@@ -4527,12 +4628,14 @@
           <EntitySet Name="Tickets" EntityType="Self.Ticket" />
           <EntitySet Name="TransactionQueues" EntityType="Self.TransactionQueue" />
           <EntitySet Name="UserBanks" EntityType="Self.UserBank" />
+          <EntitySet Name="UserCookies" EntityType="Self.UserCookie" />
           <EntitySet Name="UserDocuments" EntityType="Self.UserDocument" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="UserSessions" EntityType="Self.UserSession" />
           <EntitySet Name="UserTokens" EntityType="Self.UserToken" />
           <EntitySet Name="ValidateParameters" EntityType="Self.ValidateParameter" />
           <EntitySet Name="ValidateParameterGroupings" EntityType="Self.ValidateParameterGrouping" />
+          <EntitySet Name="VirtualAccountNoCollects" EntityType="Self.VirtualAccountNoCollect" />
           <AssociationSet Name="FK_Balance_Users" Association="Self.FK_Balance_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Balance" EntitySet="Balances" />
@@ -4884,14 +4987,14 @@
             <Parameter Name="FLAG" Mode="In" Type="Int16" />
           </FunctionImport>
           <FunctionImport Name="getBalanceByID" ReturnType="Collection(WebplatDB.getBalanceByID_Result)">
-          <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCustomerTransaction" ReturnType="Collection(WebplatDB.GetCustomerTransaction_Result)">
             <Parameter Name="userID" Mode="In" Type="Int64" />
             <Parameter Name="refNumber" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="getDmtBalanceByID" ReturnType="Collection(WebplatDB.getDmtBalanceByID_Result)">
-          <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getLatestRechargeForSameRequest" ReturnType="Collection(WebplatDB.getLatestRechargeForSameRequest_Result)">
             <Parameter Name="UserID" Mode="In" Type="Int32" />
@@ -4900,16 +5003,16 @@
             <Parameter Name="Amount" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="getOperatorByOperatorID" ReturnType="Collection(WebplatDB.getOperatorByOperatorID_Result)">
-          <Parameter Name="OperatorID" Mode="In" Type="Int32" />
+            <Parameter Name="OperatorID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getUsageByID" ReturnType="Collection(WebplatDB.getUsageByID_Result)">
-          <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getUserByID" ReturnType="Collection(WebplatDB.getUserByID_Result)">
-          <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="getUserByUserType" ReturnType="Collection(WebplatDB.getUserByUserType_Result)">
-          <Parameter Name="usertype" Mode="In" Type="String" />
+            <Parameter Name="usertype" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="LapuBalanceByID" ReturnType="Collection(WebplatDB.LapuBalanceByID_Result)">
             <Parameter Name="UserID" Mode="In" Type="Int32" />
@@ -6893,11 +6996,11 @@
           <EntitySetMapping Name="ConsentLogs">
             <EntityTypeMapping TypeName="WebplatDB.ConsentLog">
               <MappingFragment StoreEntitySet="ConsentLog">
-                <ScalarProperty Name="ConsentText" ColumnName="ConsentText" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="ConsentType" ColumnName="ConsentType" />
                 <ScalarProperty Name="ConsentStatus" ColumnName="ConsentStatus" />
+                <ScalarProperty Name="ConsentText" ColumnName="ConsentText" />
                 <ScalarProperty Name="AddDate" ColumnName="AddDate" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
               </MappingFragment>
@@ -8031,6 +8134,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="UserCookies">
+            <EntityTypeMapping TypeName="WebplatDB.UserCookie">
+              <MappingFragment StoreEntitySet="UserCookie">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RequestAttempt" ColumnName="RequestAttempt" />
+                <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="UserDocuments">
             <EntityTypeMapping TypeName="WebplatDB.UserDocument">
               <MappingFragment StoreEntitySet="UserDocuments">
@@ -8113,6 +8229,14 @@
                 <ScalarProperty Name="ProfileImageUrl" ColumnName="ProfileImageUrl" />
                 <ScalarProperty Name="CINNo" ColumnName="CINNo" />
                 <ScalarProperty Name="CompanyType" ColumnName="CompanyType" />
+                <ScalarProperty Name="IsBlock" ColumnName="IsBlock" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="KYCStatus" ColumnName="KYCStatus" />
+                <ScalarProperty Name="KYCRequestDate" ColumnName="KYCRequestDate" />
+                <ScalarProperty Name="KYCResponseDate" ColumnName="KYCResponseDate" />
+                <ScalarProperty Name="KYCRemarks" ColumnName="KYCRemarks" />
+                <ScalarProperty Name="OfficeAddress" ColumnName="OfficeAddress" />
+                <ScalarProperty Name="BusinessType" ColumnName="BusinessType" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -8172,6 +8296,36 @@
                 <ScalarProperty Name="Value" ColumnName="Value" />
                 <ScalarProperty Name="AddDate" ColumnName="AddDate" />
                 <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VirtualAccountNoCollects">
+            <EntityTypeMapping TypeName="WebplatDB.VirtualAccountNoCollect">
+              <MappingFragment StoreEntitySet="VirtualAccountNoCollect">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="APIName" ColumnName="APIName" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="IfscCode" ColumnName="IfscCode" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="VirtualAccountNumber" ColumnName="VirtualAccountNumber" />
+                <ScalarProperty Name="VirtualIfscCode" ColumnName="VirtualIfscCode" />
+                <ScalarProperty Name="AcName" ColumnName="AcName" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="AcRefID" ColumnName="AcRefID" />
+                <ScalarProperty Name="APIRefID" ColumnName="APIRefID" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifyOn" ColumnName="ModifyOn" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
               </MappingFragment>
             </EntityTypeMapping>

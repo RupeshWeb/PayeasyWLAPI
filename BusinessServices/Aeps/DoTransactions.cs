@@ -793,57 +793,65 @@ namespace BusinessServices.Aeps
             APIReponseEntity _response = new APIReponseEntity();
             try
             {
-                var currentUser = _unitOfWork.UserRepository.Get(x => x.ID == userID);
-                if (currentUser != null && currentUser.Usertype == clsVariables.UserType.API)
+                if (amount >= 0 && amount <= 10000)
                 {
-                    #region Comm Method
-                    amount = amount == 0 ? 1 : amount;
-                    var operatorId = TransferAmount(amount);
-                    var getApi = ClsPayment.GetAPI(_unitOfWork, operatorId, currentUser.SchemeID, 0, 1);
-                    if (getApi == null)
+                    var currentUser = _unitOfWork.UserRepository.Get(x => x.ID == userID);
+                    if (currentUser != null && currentUser.Usertype == clsVariables.UserType.API)
                     {
-                        _response.StatusCode = clsVariables.APIStatus.Failed;
-                        _response.Message = "Configuration not set.";
-                        return _response;
-                    }
-                    else if (getApi.ApiStatus == false)
-                    {
-                        _response.StatusCode = clsVariables.APIStatus.Failed;
-                        _response.Message = "Transaction service temporary is unavailable.";
-                        return _response;
-                    }
-                    else if (getApi.OperatorStatus == "0")
-                    {
-                        _response.StatusCode = clsVariables.APIStatus.Failed;
-                        _response.Message = "Operator server down.";
-                        return _response;
-                    }
-                    if (!ClsPayment.ServiceAuth(_unitOfWork, currentUser.ID, getApi.ServiceID))
-                    {
-                        _response.StatusCode = clsVariables.APIStatus.Failed;
-                        _response.Message = Message.ServiceNotAuth;
-                        return _response;
-                    }
-                    #endregion
+                        #region Comm Method
+                        amount = amount == 0 ? 1 : amount;
+                        var operatorId = TransferAmount(amount);
+                        var getApi = ClsPayment.GetAPI(_unitOfWork, operatorId, currentUser.SchemeID, 0, 1);
+                        if (getApi == null)
+                        {
+                            _response.StatusCode = clsVariables.APIStatus.Failed;
+                            _response.Message = "Configuration not set.";
+                            return _response;
+                        }
+                        else if (getApi.ApiStatus == false)
+                        {
+                            _response.StatusCode = clsVariables.APIStatus.Failed;
+                            _response.Message = "Transaction service temporary is unavailable.";
+                            return _response;
+                        }
+                        else if (getApi.OperatorStatus == "0")
+                        {
+                            _response.StatusCode = clsVariables.APIStatus.Failed;
+                            _response.Message = "Operator server down.";
+                            return _response;
+                        }
+                        if (!ClsPayment.ServiceAuth(_unitOfWork, currentUser.ID, getApi.ServiceID))
+                        {
+                            _response.StatusCode = clsVariables.APIStatus.Failed;
+                            _response.Message = Message.ServiceNotAuth;
+                            return _response;
+                        }
+                        #endregion
 
-                    TransactionCommDetailsEntity _subResponse = new TransactionCommDetailsEntity();
-                    _subResponse.Amount = amount;
-                    _subResponse.Surcharge = ((getApi.ServiceChargePer * amount) / 100) + getApi.ServiceChargeVal;
-                    _subResponse.Margin = ((getApi.CommPer * amount) / 100) + getApi.CommVal;
-                    if (getApi.OperatorType == clsVariables.OperatorType.P2A)
-                    {
-                        _subResponse.GST = (_subResponse.Margin * 18) / 118;
-                        _subResponse.TDS = ((_subResponse.Margin - _subResponse.GST) * 5) / 100;
-                    }
+                        TransactionCommDetailsEntity _subResponse = new TransactionCommDetailsEntity();
+                        _subResponse.Amount = amount;
+                        _subResponse.Surcharge = ((getApi.ServiceChargePer * amount) / 100) + getApi.ServiceChargeVal;
+                        _subResponse.Margin = ((getApi.CommPer * amount) / 100) + getApi.CommVal;
+                        if (getApi.OperatorType == clsVariables.OperatorType.P2A)
+                        {
+                            _subResponse.GST = (_subResponse.Margin * 18) / 118;
+                            _subResponse.TDS = ((_subResponse.Margin - _subResponse.GST) * 5) / 100;
+                        }
 
-                    _response.StatusCode = clsVariables.APIStatus.Success;
-                    _response.Message = Message.Su;
-                    _response.Data = _subResponse;
+                        _response.StatusCode = clsVariables.APIStatus.Success;
+                        _response.Message = Message.Su;
+                        _response.Data = _subResponse;
+                    }
+                    else
+                    {
+                        _response.StatusCode = clsVariables.APIStatus.Failed;
+                        _response.Message = "You are not authorized.";
+                    }
                 }
                 else
                 {
                     _response.StatusCode = clsVariables.APIStatus.Failed;
-                    _response.Message = "You are not authorized.";
+                    _response.Message = "Transaction amount should be between 100 to 10000.";
                 }
             }
             catch (Exception ex)

@@ -12,14 +12,14 @@ namespace DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class ConsentLog
+    public partial class UserCookie
     {
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        public string ConsentType { get; set; }
-        public bool ConsentStatus { get; set; }
-        public string ConsentText { get; set; }
+        public int ID { get; set; }
+        public int UserID { get; set; }
+        public int RequestAttempt { get; set; }
+        public string RequestType { get; set; }
         public System.DateTime AddDate { get; set; }
-        public System.DateTime UpdateDate { get; set; }
+        public System.DateTime EditDate { get; set; }
+        public string Remarks { get; set; }
     }
 }
