@@ -193,7 +193,7 @@ namespace BusinessServices.Aeps
                 _response.StatusCode = clsVariables.APIStatus.Exception;
                 _response.Message = ex.Message;
             }
-            ClsMethods.AEPSRequestLogs(userID, mobileNo, "Cash Withdrawal", _response.ApiResponse.ApiUrl, _response.ApiResponse.ApiRequest, _response.ApiResponse.ApiResponse, txnID, string.Empty, string.Empty);
+            ClsMethods.AEPSRequestLogs(userID, mobileNo, "Cash Withdrawal", _response.ApiResponse.ApiUrl, _response.ApiResponse.ApiRequest + " / Header: " + _response.ApiResponse.HeaderEncryption + " / Body: " + _response.ApiResponse.BodyEncryption, _response.ApiResponse.ApiResponse, txnID, string.Empty, string.Empty);
             return _response;
         }
 
@@ -305,7 +305,7 @@ namespace BusinessServices.Aeps
                 _response.StatusCode = clsVariables.APIStatus.Exception;
                 _response.Message = ex.Message;
             }
-            ClsMethods.AEPSRequestLogs(userID, mobileNo, "Balance Inquiry", _response.ApiResponse.ApiUrl, _response.ApiResponse.ApiRequest, _response.ApiResponse.ApiResponse, txnID, clientRefID, string.Empty);
+            ClsMethods.AEPSRequestLogs(userID, mobileNo, "Balance Inquiry", _response.ApiResponse.ApiUrl, _response.ApiResponse.ApiRequest + " / Header: " + _response.ApiResponse.HeaderEncryption + " / Body: " + _response.ApiResponse.BodyEncryption, _response.ApiResponse.ApiResponse, txnID, clientRefID, string.Empty);
             return _response;
         }
 
@@ -401,7 +401,7 @@ namespace BusinessServices.Aeps
                 _response.StatusCode = clsVariables.APIStatus.Exception;
                 _response.Message = ex.Message;
             }
-            ClsMethods.AEPSRequestLogs(userID, txnID.ToString(), "Transaction Status", _response.ApiResponse.ApiUrl, _response.ApiResponse.ApiRequest, _response.ApiResponse.ApiResponse, txnID, string.Empty, string.Empty);
+            ClsMethods.AEPSRequestLogs(userID, txnID.ToString(), "Transaction Status", _response.ApiResponse.ApiUrl, _response.ApiResponse.ApiRequest + " / Header: " + _response.ApiResponse.HeaderEncryption + " / Body: " + _response.ApiResponse.BodyEncryption, _response.ApiResponse.ApiResponse, txnID, string.Empty, string.Empty);
             return _response;
         }
 
@@ -513,7 +513,7 @@ namespace BusinessServices.Aeps
                 _response.StatusCode = clsVariables.APIStatus.Exception;
                 _response.Message = ex.Message;
             }
-            ClsMethods.AEPSRequestLogs(userID, mobileNo, "Balance Inquiry", _response.ApiResponse.ApiUrl, _response.ApiResponse.ApiRequest, _response.ApiResponse.ApiResponse, txnID, clientRefID, string.Empty);
+            ClsMethods.AEPSRequestLogs(userID, mobileNo, "Balance Inquiry", _response.ApiResponse.ApiUrl, _response.ApiResponse.ApiRequest + " / Header: " + _response.ApiResponse.HeaderEncryption + " / Body: " + _response.ApiResponse.BodyEncryption, _response.ApiResponse.ApiResponse, txnID, clientRefID, string.Empty);
             return _response;
         }
 
@@ -624,7 +624,7 @@ namespace BusinessServices.Aeps
                 _response.StatusCode = clsVariables.APIStatus.Exception;
                 _response.Message = ex.Message;
             }
-            ClsMethods.AEPSRequestLogs(userID, mobileNo, "Balance Inquiry", _response.ApiResponse.ApiUrl, _response.ApiResponse.ApiRequest, _response.ApiResponse.ApiResponse, txnID, clientRefID, string.Empty);
+            ClsMethods.AEPSRequestLogs(userID, mobileNo, "Balance Inquiry", _response.ApiResponse.ApiUrl, _response.ApiResponse.ApiRequest + " / Header: " + _response.ApiResponse.HeaderEncryption + " / Body: " + _response.ApiResponse.BodyEncryption, _response.ApiResponse.ApiResponse, txnID, clientRefID, string.Empty);
             return _response;
         }
         #endregion
@@ -704,8 +704,8 @@ namespace BusinessServices.Aeps
             {
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
                 string requestBody = new JavaScriptSerializer().Serialize(requestobj);
-                requestobj.PidData = "XXXX";//remove pid data
-                requestobj.AadharNo = "XXXXXXXX" + requestobj.AadharNo.Substring(8, 4);
+                //requestobj.PidData = "XXXX";//remove pid data
+                //requestobj.AadharNo = "XXXXXXXX" + requestobj.AadharNo.Substring(8, 4);
 
                 _response.ApiUrl = endPoint;
                 _response.ApiRequest = new JavaScriptSerializer().Serialize(requestobj);
@@ -742,8 +742,8 @@ namespace BusinessServices.Aeps
             {
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
                 string requestBody = new JavaScriptSerializer().Serialize(requestobj);
-                requestobj.PidData = "XXXX";
-                requestobj.AadharNo = "XXXXXXXX" + requestobj.AadharNo.Substring(8, 4);
+                //requestobj.PidData = "XXXX";
+                //requestobj.AadharNo = "XXXXXXXX" + requestobj.AadharNo.Substring(8, 4);
                 _response.ApiUrl = endPoint;
                 _response.ApiRequest = new JavaScriptSerializer().Serialize(requestobj);
                 _response.HeaderEncryption = APIHeader();
@@ -779,8 +779,8 @@ namespace BusinessServices.Aeps
             {
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
                 string requestBody = new JavaScriptSerializer().Serialize(requestobj);
-                requestobj.PidData = "XXXX";
-                requestobj.AadharNo = "XXXXXXXX" + requestobj.AadharNo.Substring(8, 4);
+                //requestobj.PidData = "XXXX";
+                //requestobj.AadharNo = "XXXXXXXX" + requestobj.AadharNo.Substring(8, 4);
                 _response.ApiUrl = endPoint;
                 _response.ApiRequest = new JavaScriptSerializer().Serialize(requestobj);
                 _response.HeaderEncryption = APIHeader();
